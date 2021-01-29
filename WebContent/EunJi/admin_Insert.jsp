@@ -65,10 +65,10 @@ img{
 	<jsp:include page="navigationBar.jsp"/>
 	<div>
 		<h1 style="text-align:center; color: green;">메뉴 추가</h1>
-		<form action="" id="form" method="post">
+		<form action="${pageContext.request.contextPath}/insert.do" id="form" method="post" enctype="multipart/form-data">
 			<div id="container" >
 			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p>
-			<p><input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p>
+			<p><input type="file" name="menu_fileName" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p>
 			<p>
 						<select name="category" required="required">
 							<option value="category">select category</option>
@@ -82,7 +82,7 @@ img{
 						
 						<p><input type="text" name="name" placeholder="name" autocomplete="off"></p>
 						<p><input type="text" name="price" placeholder="price" autocomplete="off"></p>
-						<p><textarea name="comment" cols="40" rows="4" wrap="hard" placeholder="comment" style="resize: none;"></textarea>
+						<p><textarea name="content" cols="40" rows="4" wrap="hard" placeholder="content" style="resize: none;"></textarea>
 						<p><input style="width:100px;" type="submit" value="추가"></p>
 					</div>
 
