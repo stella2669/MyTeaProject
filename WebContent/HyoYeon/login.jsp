@@ -80,8 +80,8 @@ footer {
 <body>
 
 	<!-- Navigation -->
- 	<%@ include file="../EunJi/navigationBar.jsp"%>  
-
+    <jsp:include page="../EunJi/navigationBar.jsp"/>
+    
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-12 text-center">
