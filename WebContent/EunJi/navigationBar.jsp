@@ -5,7 +5,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Navigation Bar</title>
-<link rel="stylesheet" href="style_navigation.css">
+<style>
+body {
+	margin: 0;
+	background-color: lightgray;
+}
+
+.nav-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: ivory;	
+	list-style-type: none;
+}
+
+.nav-item {
+	padding: 20px;
+	cursor: pointer;
+}
+
+.nav-item:nth-child(n+2):nth-child(-n+5):hover {
+	background-color: blue;
+}
+
+.nav-item a {
+	font-size: 30px;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;
+	color: green;
+}
+</style>
 </head>
 <body>
 	<nav>
