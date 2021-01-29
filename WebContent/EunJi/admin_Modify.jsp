@@ -67,7 +67,7 @@ img{
 		<h1 style="text-align:center; color: green;">메뉴 추가</h1>
 		<form action="" id="form" method="post">
 			<div id="container" >
-			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p>
+			<p><img src="<%=  %>" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p>
 			<p><input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p>
 			<p>
 						<select name="category" required="required">
@@ -80,9 +80,9 @@ img{
 						</select>
 						</p>
 						
-						<p><input type="text" name="name" placeholder="name" autocomplete="off"></p>
-						<p><input type="text" name="price" placeholder="price" autocomplete="off"></p>
-						<p><textarea name="comment" cols="40" rows="4" wrap="hard" style="resize: none;">바깥에 값 넣어주기</textarea>
+						<p><input type="text" name="name" placeholder="name" autocomplete="off" value="<%= %>"></p>
+						<p><input type="text" name="price" placeholder="price" autocomplete="off" value="<%= %>"></p>
+						<p><textarea name="content" cols="40" rows="4" wrap="hard" style="resize: none;"><%= %></textarea>
 						<p><input style="width:100px;" type="submit" value="수정"></p>
 					</div>
 
