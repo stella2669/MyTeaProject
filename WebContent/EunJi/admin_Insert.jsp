@@ -24,7 +24,7 @@
 <style>
 #form{
 	width: 500px;
-   	height: 700px;
+   	height: 712px;
  	border: 3px solid lightgray;
  	border-radius: 20px;
  	margin : 40px auto;

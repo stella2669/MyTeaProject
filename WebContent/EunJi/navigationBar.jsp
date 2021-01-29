@@ -8,7 +8,7 @@
 <style>
 body {
 	margin: 0;
-	background-color: lightgray;
+	background-color: #f9f9f9;
 }
 
 .nav-container {
