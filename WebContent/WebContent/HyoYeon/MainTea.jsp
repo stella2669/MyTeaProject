@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
-test
-=======
-dgdgdg
->>>>>>> branch 'master' of https://github.com/stella2669/MyTeaProject.git
+xÆ¼¹é¾Æ
 </body>
 </html>
