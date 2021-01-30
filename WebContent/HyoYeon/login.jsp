@@ -52,7 +52,7 @@ footer {
 }
 #form {
 	width: 450px;
-	height: 400px;
+	height: 300px;
 	border: 3px solid lightgray;
 	border-radius: 20px;
 	margin: 80px auto;
@@ -68,7 +68,7 @@ footer {
 	margin-top: 50px;
 	padding: 20px 20px;
 	border-radius: 10px;
-	background-color: #bcaaa4;
+	background-color: #689f38;
 }
 </style>
 </head>
@@ -83,13 +83,13 @@ footer {
 				<h1>로그인</h1>
 				<hr>
 
-				<h3>Login coffee shop</h3>
+				<h3>Login My Tea</h3>
 				<form action="" method="post" id="form"> 
 					<div id="id">
-						ID:<input type="text" placeholder="id" >
+						ID: <input type="text" placeholder="id" >
 					</div>
 					<div id="pw">
-						PW:<input type="password" placeholder="password">
+						PW: <input type="password" placeholder="password">
 					</div>
 					<input type="submit" value="로그인" id="btn" size="50">
 				</form>
