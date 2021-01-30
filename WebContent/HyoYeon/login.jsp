@@ -14,8 +14,8 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 <style>
 @font-face {
-	font-family: hzStyleFont;
-	src: url("../font/ImcreSoojin.ttf");
+	/* font-family: hzStyleFont;
+	src: url("../font/ImcreSoojin.ttf"); */
 }
 * {
 	font-family: hzStyleFont;
@@ -89,7 +89,7 @@ footer {
 				<hr>
 
 				<h3>Login coffee shop</h3>
-				<form action="After_login.jsp" method="post" id="form"> 
+				<form action="" method="post" id="form"> 
 					<div id="id">
 						ID:<input type="text" placeholder="id" >
 					</div>
