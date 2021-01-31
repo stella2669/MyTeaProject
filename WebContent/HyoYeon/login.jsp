@@ -84,12 +84,12 @@ footer {
 				<hr>
 
 				<h3>Login My Tea</h3>
-				<form action="" method="post" id="form"> 
+				<form action="/login" method="post" id="form">  <!-- 액션 연결방법!!!!?? -->
 					<div id="id">
-						ID: <input type="text" placeholder="id" >
+						ID: <input type="text" name="id" placeholder="id" >
 					</div>
 					<div id="pw">
-						PW: <input type="password" placeholder="password">
+						PW: <input type="password" name="pw" placeholder="password">
 					</div>
 					<input type="submit" value="로그인" id="btn" size="50">
 				</form>
