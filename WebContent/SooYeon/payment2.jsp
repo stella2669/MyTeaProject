@@ -80,12 +80,12 @@
 				<table style="text-align: center;">
 					<tr>
 						<td><a href="#" class="open"><img
-								src="../img/credit-card(1).png" height="200px" width="200px"></a>
+								src="../img/credit-card(2).png" height="200px" width="200px"></a>
 							<h2>신용카드</h2></td>
-						<td><img id="credit" src="../img/phone(1).png"  height="200px" width="200px"
+						<td><img id="credit" src="../img/phone(2).png"  height="200px" width="200px"
 							onclick="location:'#'">
 							<h2>휴대폰결제</h2></td>
-						<td><img id="credit" src="../img/money(1).png" height="200px" width="200px"
+						<td><img id="credit" src="../img/money(2).png" height="200px" width="200px"
 							onclick="location:'#'">
 							<h2>무통장입금</h2></td>
 					</tr>
