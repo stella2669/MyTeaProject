@@ -10,6 +10,7 @@ img {
 	margin: 100px auto;
 	display: block; 
 	position: relative;
+	top: 44%;
 }
 h3{
 	position: absolute;

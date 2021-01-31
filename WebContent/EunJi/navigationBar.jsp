@@ -17,7 +17,7 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: ivory;	
+	background-color: #94af76;	
 	list-style-type: none;
 }
 
@@ -35,7 +35,7 @@ body {
 	font-weight: 500;
 	text-align: center;
 	text-decoration: none;
-	color: green;
+	color: #f8ffd7;
 }
 </style>
 </head>
