@@ -15,41 +15,31 @@
 * {
 	font-family: hzStyleFont;
 }
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-	margin-bottom: 0;
-	border-radius: 0;
-	border: none;
-	background-color: #b1bfca;
-}
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+
 .row.content {
 	height: 1119px;
 	text-align: center;
 	vertical-align: middle;
 }
-/* Set gray background color and 100% height */
-.sidenav {
+/* .sidenav {
 	padding-top: 20px;
 	background-color: #f1f1f1;
 	height: 100%;
-}
-/* Set black background color, white text and some padding */
+} */
 footer {
 	background-color: #555;
 	color: white;
 	padding: 15px;
 }
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-	.sidenav {
-		height: auto;
-		padding: 15px;
-	}
-	.row.content {
-		height: auto;
-	}
-}
+/* @media screen and (max-width: 767px) { */
+/* 	.sidenav { */
+/* 		height: auto; */
+/* 		padding: 15px; */
+/* 	} */
+/* 	.row.content { */
+/* 		height: auto; */
+/* 	} */
+/* } */
 #form {
 	width: 450px;
 	height: 300px;
@@ -84,7 +74,7 @@ footer {
 				<hr>
 
 				<h3>Login My Tea</h3>
-				<form action="/login" method="post" id="form">  <!-- 액션 연결방법!!!!?? -->
+				<form action="login" method="post" id="form">  <!-- 액션 연결방법!!!!?? -->
 					<div id="id">
 						ID: <input type="text" name="id" placeholder="id" >
 					</div>
