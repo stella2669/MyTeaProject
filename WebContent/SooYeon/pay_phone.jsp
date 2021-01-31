@@ -11,66 +11,19 @@
 	$(document).ready(function() {
 
 		$(".open").on('click', function() {
-			$(".popup").show();
+			$(".popup_2").show();
 			$(".dim").show();
 
 		});
 	});
-	/* $(document).ready(function() {
-
-		$(".open").on('click', function() {
-			$("popup").show();
-			$(".dim").show();
-
-		});
-	}); */
 </script>
-<script type="text/javascript">
-	var cardNumber = document.getElementById('card_number');
-	cardNumber.onkeyup = function(event) {
-		event = event || window.event;
-		var _val = this.value.trim();
-		this.value = autoHypenCard(_val);
-	};
-</script>
-<script type="text/javascript">
-	function autoHypenCard(str) {
-		str = str.replace(/[^0-9]/g, '');
-		var tmp = '';
-		if (str.length < 4) {
-			return str;
-		} else if (str.length < 8) {
-			tmp += str.substr(0, 4);
-			tmp += '-';
-			tmp += str.substr(4, 4);
-			return tmp;
-		} else if (str.length < 12) {
-			tmp += str.substr(0, 4);
-			tmp += '-';
-			tmp += str.substr(4, 4);
-			tmp += '-';
-			tmp += str.substr(8, 4);
-			return tmp;
-		} else if (str.length < 17) {
 
-			tmp += str.substr(0, 4);
-			tmp += '-';
-			tmp += str.substr(4, 4);
-			tmp += '-';
-			tmp += str.substr(8, 4);
-			tmp += '-';
-			tmp += str.substr(12, 4);
-			return tmp;
-		}
-		return str;
-	}
-</script>
 <style>
 .payment_select {
 	text-align: center;
 }
 
-.popup {
+.popup_1, .popup_2, .popup_3, .popup_4 {
 	display: none;
 	position: fixed;
 	left: 50%;
@@ -93,7 +46,7 @@
 	transition: all 0.5s; */
 }
 
-.popup h2 {
+.popup_2 h2 {
 	padding: 0 0 42px;
 	border-bottom: 3px solid #444;
 	font-weight: normal;
@@ -104,7 +57,7 @@
 	color: #222;
 }
 
-.popup close {
+.popup_2 close {
 	position: absolute;
 	right: 40;
 	top: 40;
@@ -114,8 +67,8 @@
 	color: transparent;
 }
 
-.popup .con {
-	padding: 40 78px; /* 좌우여백 */
+.popup_2 .con {
+	padding: 40 78px; /* 체크: 좌우여백 */
 	border-bottom: 1px solid #e8e8e8;
 }
 
@@ -164,8 +117,8 @@ table.option {
 }
 
 table.option th, table.option td {
-	padding: 0 0 20px;
-	text-align: left;
+	padding: 0 0 10px; /* 체크: 줄간격 /원래는 20px*/
+	text-align: left; /*체크*/
 }
 
 table.option th {
@@ -189,15 +142,19 @@ select {
 	background: #fff;
 }
 
+.id_2 {
+	width: 5%;
+}
+
 input /* [type="date"] */ {
-	width: 100%;
+	/* width: 50%; */
 	height: 32px;
 	font-size: 14px;
 	color: #373737;
 	border: 1px solid #e8e8e8;
 	background: #fff;
 	text-decoration: none;
-	text-indent: 20px;
+	text-indent: 20px; /* 들여쓰기 */
 	transition: all 0.5s;
 	vertical-align: middle;
 	border-radius: 3px;
@@ -231,7 +188,7 @@ input[type="checkbox"]+label:before, input[type="radio"]+label:before {
 
 input[type="checkbox"]:checked+label:before, input[type="radio"]:checked+label:before
 	{
-	border: :2px solid #666;
+	border: :7px solid #666;
 }
 
 .txt_center {
@@ -272,7 +229,6 @@ a:link, a:hover, a:active {
 </style>
 </head>
 <body>
-
 	<!-- Navigation -->
 	<jsp:include page="../EunJi/navigationBar.jsp" />
 
@@ -300,8 +256,8 @@ a:link, a:hover, a:active {
 			</div>
 		</div>
 	</div>
-	<div class="popup">
-		<h2>카드정보</h2>
+	<div class="popup_2">
+		<h2>휴대폰 결제</h2>
 		<div class="con">
 			<table class="option">
 				<colgroup>
@@ -309,78 +265,62 @@ a:link, a:hover, a:active {
 					<col>
 				</colgroup>
 				<tr>
-					<th><label for="list1">카드구분</label></th>
-					<td id="list1">
-						<ul>
-							<li><input type="radio" id="ra_1"><label for="ra_1">개인카드</label></li>
-							<li><input type="radio" id="ra_2"><label for="ra_2">법인카드</label></li>
-						</ul>
-					</td>
+					<th><label for="list1">상품명</label></th>
+					<td id="list1"><%="#"%></td>
 				</tr>
 				<tr>
-					<th><label for="list2">카드선택</label></th>
-					<td id="list2"><select name="card_select">
-							<option value="국민">국민</option>
-							<option value="비씨">비씨</option>
-							<option value="신한">신한</option>
-							<option value="현대">현대</option>
-							<option value="삼성">삼성</option>
-							<option value="롯데">롯데</option>
-							<option value="외환">외환</option>
-							<option value="농협">농협</option>
-							<option value="하나">하나</option>
-							<option value="우리">우리</option>
-							<option value="광주">광주</option>
-							<option value="수협">수협</option>
-							<option value="씨티">씨티</option>
-							<option value="전북">전북</option>
-							<option value="제주">제주</option>
-							<option value="카카오뱅크">카카오뱅크</option>
-							<option value="케이뱅크">케이뱅크</option>
-							<option value="UnionPay">UnionPay/해외발급</option>
-					</select></td>
+					<th><label for="list2">결제금액</label></th>
+					<td id="list2"><%="#"%></td>
 				</tr>
 
 				<tr>
-					<th><label for="list3">카드번호</label></th>
-					<td id="list3"><input type="text" class="form-control"
-						name="card_number" id="card_number" maxlength="19"
-						placeholder="하이픈(-) 없이 입력"></td>
+					<th><label for="list3">결제일</label></th>
+					<td id="list3"><%="#"%></td>
 				</tr>
 				<tr>
-					<th><label for="list4">유효기간</label></th>
-					<td id="list4"><input type="text" id="validation_date"
-						placeholder="MM/YY"></td>
-					<th><label for="list4_1">&nbsp;&nbsp;&nbsp;CVC&nbsp;&nbsp;&nbsp;</label></th>
-					<td id="list4_1"><input type="text" id="cvc"
-						placeholder="카드 뒷면 3자리 숫자"></td>
+					<th><label for="list4">통신사</label></th>
+					<td id="list4"><ul>
+							<li><input type="radio">SKT</li>
+							<li><input type="radio">KT</li>
+							<li><input type="radio">LG</li>
+							<li><input type="radio">알뜰폰 <select>
+									<option>선택해주세요</option>
+									<option>KCT</option>
+									<option>헬로모바일</option>
+									<option>SK7Mobile</option>
+							</select></li>
+						</ul></td>
 				</tr>
 				<tr>
-					<th><label for="list5">카드비밀번호</label></th>
-					<td id="list5"><input type="text" id="card_pwd"
-						placeholder="비밀번호 앞 2자리 숫자"></td>
+					<th><label for="list5">주민번호</label></th>
+					<td id="list5"><input type="text" id="id">&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<input
+						type="text" id="id_2" class="id_2"> ******</td>
 				</tr>
 				<tr>
-					<th><label for="list6">할부기간</label></th>
-					<td id="list6"><select>
-							<option>일시불</option>
-							<option>3개월</option>
-							<option>6개월</option>
-							<option>10개월</option>
-					</select></td>
-
+					<th><label for="list6">휴대폰결제 비밀번호</label></th>
+					<td id="list6"><ul>
+							<li><input type="radio">사용함&nbsp;&nbsp;&nbsp;</li>
+							<li><input type="radio">사용안함(일반결제)</li>
+						</ul></td>
+				</tr>
+				<tr>
+					<th><label for="list7">인증번호</label></th>
+					<td id="list7"><input type="text" id="인증번호"
+						placeholder="인증번호 입력">&nbsp;&nbsp;
+						<button type="button" id="certify" class="certify">요청</button></td>
 				</tr>
 			</table>
 			<div class="agree">
-				<input type="checkbox" id=chk_1><label for="chk_1"><span>[필수]</span>전체
-					약관 동의</label> <a href="#a" class="view">전문보기</a>
+				<input type="checkbox" id=chk_1><label for="chk_1"><span>[필수]
+				</span>전체 약관 및 결제동의</label> <a href="#a" class="view">전문보기</a>
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">확인</a>
-			<a href="#" class="reset">취소</a>
+			<a href="#" class="submit">확인</a> <a href="#" class="reset">취소</a>
 		</div>
+
 	</div>
+
 	<div class="dim"></div>
 
 
