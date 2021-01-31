@@ -14,13 +14,13 @@ img {
 h3{
 	position: absolute;
 	top: 44%;
-	left: 42%;
+	left: 41%;
 }
 
 #text a{
 	text-decoration: none;
-	color: green;
-	border: 2px solid green;
+	color: #2e7d32;
+	border: 3px solid #2e7d32;
 	border-radius: 10px;
 	padding: 10px;
 	
@@ -35,7 +35,7 @@ h3{
 	<img src="../img/tea-bag.png">
 </div>
 <div id="text">
-	<h3><a href="../EunJi/selectMenu">만들러가기</a></h3>
+	<h3><a href="../EunJi/selectMenu.jsp">만들러가기</a></h3>
 </div>
 
 </body>
