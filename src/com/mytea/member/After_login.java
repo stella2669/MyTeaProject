@@ -1,4 +1,4 @@
-package com.mytea.controller;
+package com.mytea.member;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -26,7 +26,7 @@ public class After_login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		doAction(request,response);
 	
 	
 	}
@@ -35,9 +35,26 @@ public class After_login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doGet(request, response);
+		doAction(request,response);
 
 	
 	}
+	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
+		String id=request.getParameter("id");
+		String pw= request.getParameter("pw");
+		
+		
+		
+	}
+	
 
 }
+
+
+
+
+
+
+
