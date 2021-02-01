@@ -1,4 +1,13 @@
 @charset "UTF-8";
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
+	
 .payment_select {
 	text-align: center;
 }
@@ -51,6 +60,9 @@
 	padding: 40 78px; /* 체크: 좌우여백 */
 	border-bottom: 1px solid #e8e8e8;
 }
+
+.popup_1 .test {padding: 40 78px; /* 체크: 좌우여백 */
+	border-bottom: 1px solid #e8e8e8;}
 
 .agree {
 	position: relative;
