@@ -73,7 +73,7 @@ footer {
 				<h1>로그인</h1>
 				<hr>
 
-				<h3>Login My Tea</h3>
+				<h2>Login My Tea</h2>
 				<form action="login" method="post" id="form">  <!-- 액션 연결방법!!!!?? -->
 					<div id="id">
 						ID: <input type="text" name="id" placeholder="id" >
