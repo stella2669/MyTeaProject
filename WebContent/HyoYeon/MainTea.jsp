@@ -6,6 +6,14 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <style type="text/css">
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
 img {
 	margin: 100px auto;
 	display: block; 
