@@ -64,7 +64,7 @@ public class ProductDao {
 		return result;
 	}
 	
-	// 메뉴 출력
+	// 전체 메뉴 출력
 	public ArrayList<ProductDto> allProductRetrieve(){
 		String query = "select * from product";
 		ArrayList<ProductDto> products = new ArrayList<ProductDto>();

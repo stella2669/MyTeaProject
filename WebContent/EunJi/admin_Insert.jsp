@@ -68,7 +68,7 @@ img{
 		<form action="${pageContext.request.contextPath}/insert.do" id="form" method="post" enctype="multipart/form-data">
 			<div id="container" >
 			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p>
-			<p><input type="file" name="menu_fileName" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p>
+			<p><input type="file" name="product_fileName" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p>
 			<p>
 						<select name="category" required="required">
 							<option value="category">select category</option>
