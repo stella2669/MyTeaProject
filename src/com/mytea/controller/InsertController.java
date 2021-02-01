@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mytea.dao.MenuDao;
-import com.mytea.dto.MenuDto;
+import com.mytea.dao.ProductDao;
+import com.mytea.dto.ProductDto;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -39,24 +39,24 @@ public class InsertController extends HttpServlet {
 		MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
 		
 		//MultipartRequest를 통해 넘어온 입력값들 변수에 저장
-		String menu_fileName = multi.getFilesystemName("menu_fileName");
-		String menu_fileFullPath = savePath + "/" + menu_fileName;
+		String product_fileName = multi.getFilesystemName("product_fileName");
+		String product_fileFullPath = savePath + "/" + product_fileName;
 		String category = multi.getParameter("category");
 		String name = multi.getParameter("name");
 		int price = Integer.valueOf(multi.getParameter("price"));
 		String content = multi.getParameter("content");
 		
-		MenuDto dto = new MenuDto();
+		ProductDto dto = new ProductDto(product_fileFullPath,product_fileName, category, name, price, content);
 		
-		dto.setMenu_fileFullPath(menu_fileFullPath);
-		dto.setMenu_fileName(menu_fileName);
-		dto.setCategory(category);
-		dto.setName(name);
-		dto.setPrice(price);
-		dto.setContent(content);
+//		dto.setProduct_fileFullPath(product_fileFullPath);
+//		dto.setProduct_fileName(product_fileName);
+//		dto.setCategory(category);
+//		dto.setName(name);
+//		dto.setPrice(price);
+//		dto.setContent(content);
 		
-		MenuDao dao = MenuDao.getInstance();
-		int result = dao.insertMenu(dto);
+		ProductDao dao = ProductDao.getInstance();
+		int result = dao.insertProduct(dto);
 		
 		PrintWriter out = response.getWriter();
 		if(result == 1) {
