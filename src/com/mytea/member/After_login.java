@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class After_login
  */
-@WebServlet(name = "login", urlPatterns = { "/login" })
+@WebServlet("/login")
 public class After_login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,7 +26,6 @@ public class After_login extends HttpServlet {
 	
 	
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doAction(request,response);

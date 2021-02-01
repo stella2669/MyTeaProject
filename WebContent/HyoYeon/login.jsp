@@ -74,7 +74,7 @@ footer {
 				<hr>
 
 				<h2>Login My Tea</h2>
-				<form action="login" method="post" id="form">  <!-- 액션 연결방법!!!!?? -->
+				<form action="${pageContext.request.contextPath}/login" method="post" id="form"> 
 					<div id="id">
 						ID: <input type="text" name="id" placeholder="id" >
 					</div>

@@ -26,7 +26,8 @@ public class MemberDao {
 	public MemberDao() {
 
 	}
-	//이건 왜 필요해??
+	
+	// 커넥션 풀 쓸때 사용.
 	private Connection getConnection() {
 		Context context = null;
 		DataSource dataSource = null;
@@ -59,7 +60,7 @@ public class MemberDao {
 			set = pstmt.executeQuery();
 			
 			if (set.next()) { 
-				dbPwd = set.getString("pw");
+				dbPwd = set.getString("pw"); //디비에 pw
 				if (dbPwd.equals(pw)) { 
 					if(id.equals("admin")) {
 						result = MemberDao.LOGIN_ADMIN; //2
