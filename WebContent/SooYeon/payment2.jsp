@@ -27,7 +27,7 @@
 	}); */
 </script>
 <script type="text/javascript">
-	var cardNumber = document.getElementById('card_number');
+	var cardNumber = document.getElementById('card_umber');
 	cardNumber.onkeyup = function(event) {
 		event = event || window.event;
 		var _val = this.value.trim();

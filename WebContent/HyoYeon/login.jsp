@@ -9,11 +9,12 @@
 
 <style>
 @font-face {
-	/* font-family: hzStyleFont;
-	src: url("../font/ImcreSoojin.ttf"); */
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
 }
+
 * {
-	font-family: hzStyleFont;
+	font-family: HoonSinamonR;
 }
 
 .row.content {
@@ -50,6 +51,7 @@ footer {
 }
 #id {
 	margin: 30px 80px;
+	font-size: 24px;
 }
 #pw {
 	margin: 0px 80px;
