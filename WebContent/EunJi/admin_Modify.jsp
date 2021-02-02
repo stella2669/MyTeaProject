@@ -91,7 +91,7 @@ img{
 <!-- 				</form>  -->
 				<c:forEach var="dto" items="${products}">
 					<div>
-					<img src="/${savePath}/${dto.product_fileName}">
+					<img src="${request.getSession().getServletContext().getRealPath('/')}/img/${dto.product_fileName}"/>
 						${dto.name}
 					</div>
 				</c:forEach>
