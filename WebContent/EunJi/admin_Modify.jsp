@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,28 +67,34 @@ img{
 	<jsp:include page="navigationBar.jsp"/>
 	<div>
 		<h1 style="text-align:center; color: green;">메뉴 추가</h1>
-		<form action="" id="form" method="post">
-			<div id="container" >
-			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p>
-			<p><input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p>
-			<p>
-						<select name="category" required="required">
-							<option value="category">select category</option>
-							<option value="coffee">Coffee</option>
-							<option value="nonCoffee">NonCoffee</option>
-							<option value="tea">Tea</option>
-							<option value="blended">Blended</option>
-							<option value="etc">etc.</option>
-						</select>
-						</p>
+<!-- 		<form action="" id="form" method="post"> -->
+<!-- 			<div id="container" > -->
+<!-- 			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p> -->
+<!-- 			<p><input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p> -->
+<!-- 			<p> -->
+<!-- 						<select name="category" required="required"> -->
+<!-- 							<option value="category">select category</option> -->
+<!-- 							<option value="coffee">Coffee</option> -->
+<!-- 							<option value="nonCoffee">NonCoffee</option> -->
+<!-- 							<option value="tea">Tea</option> -->
+<!-- 							<option value="blended">Blended</option> -->
+<!-- 							<option value="etc">etc.</option> -->
+<!-- 						</select> -->
+<!-- 						</p> -->
 						
-						<p><input type="text" name="name" placeholder="name" autocomplete="off" value="<%= %>"></p>
-						<p><input type="text" name="price" placeholder="price" autocomplete="off" value="<%= %>"></p>
-						<p><textarea name="content" cols="40" rows="4" wrap="hard" style="resize: none;"><%= %></textarea>
-						<p><input style="width:100px;" type="submit" value="수정"></p>
-					</div>
+<%-- 						<p><input type="text" name="name" placeholder="name" autocomplete="off" value="<%= %>"></p> --%>
+<%-- 						<p><input type="text" name="price" placeholder="price" autocomplete="off" value="<%= %>"></p> --%>
+<%-- 						<p><textarea name="content" cols="40" rows="4" wrap="hard" style="resize: none;"><%= %></textarea> --%>
+<!-- 						<p><input style="width:100px;" type="submit" value="수정"></p> -->
+<!-- 					</div> -->
 
-				</form> 
+<!-- 				</form>  -->
+				<c:forEach var="dto" items="${products}">
+					<div>
+					<img src="/${savePath}/${dto.product_fileName}">
+						${dto.name}
+					</div>
+				</c:forEach>
 			</div>
 	
 </body>
