@@ -38,19 +38,24 @@ public class After_login extends HttpServlet {
 	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
-//		response.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=UTF-8");
+		response.setContentType("text/html;charset=UTF-8"); //자바스크립트 한글깨짐 
+		
 		String id=request.getParameter("id");
 		String pw= request.getParameter("pw");
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(); 
         PrintWriter out = response.getWriter();
 		
+        MemberDao dao = MemberDao.getInstance();
+		int userCheck = dao.userCheck(id, pw);
+        
 		if(id.equals("admin") && pw.equals("admin")) {
 			session.setAttribute("id", id);
-			response.sendRedirect("../EunJi/admin_Insert.jsp");
+		//	response.sendRedirect("../EunJi/admin_Insert.jsp");  //이부분 연결이 안됨!!!
+			out.print("<script> location.href='../EunJi/admin_Insert.jsp'; </script> ");
 		} else {
 			out.print("<script>alert('아이디와 비밀번호를 확인해주세요.');history.back();</script> ");
 		}
+		
 		
 		
 		
