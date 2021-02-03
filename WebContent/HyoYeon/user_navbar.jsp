@@ -48,6 +48,7 @@ body {
 			<li class="nav-item"><a href="admin_Modify.jsp">Modify</a></li>
 			<li class="nav-item"><a href="admin_Delete.jsp">Delete</a></li>
 			<li class="nav-item"><a href="admin_Member.jsp">Member</a></li>
+			<li class="nav-item"> <%=session.getAttribute("id") %>님 환영합니다. </li>
 		</ul>
 	</nav>
 </body>
