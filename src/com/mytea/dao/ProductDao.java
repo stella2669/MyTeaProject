@@ -64,7 +64,7 @@ public class ProductDao {
 		return result;
 	}
 	
-	// 메뉴 출력
+	// 전체 메뉴 출력
 	public ArrayList<ProductDto> allProductRetrieve(){
 		String query = "select * from product";
 		ArrayList<ProductDto> products = new ArrayList<ProductDto>();
@@ -75,7 +75,7 @@ public class ProductDao {
 			PreparedStatement pstmt = connection.prepareStatement(query);
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				String product_fileFullPath = rs.getString("product_fileFullPath");
 				String product_fileName = rs.getString("product_fileName");
 				String category = rs.getString("category");

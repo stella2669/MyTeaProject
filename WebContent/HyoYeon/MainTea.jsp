@@ -44,7 +44,7 @@ h3{
 	<img src="../img/tea-bag.png">
 </div>
 <div id="text">
-	<h3><a href="../EunJi/selectMenu.jsp">만들러가기</a></h3>
+	<h3><a href="../productList.jsp">만들러가기</a></h3>
 </div>
 
 </body>
