@@ -18,7 +18,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #94af76;	
-	list-style-type: none;
+	list-style-type: none;+
 }
 
 .nav-item {
