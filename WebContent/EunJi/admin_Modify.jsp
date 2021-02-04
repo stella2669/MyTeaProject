@@ -81,7 +81,7 @@ img{
 <!-- 							<option value="etc">etc.</option> -->
 <!-- 						</select> -->
 <!-- 						</p> -->
-						
+
 <%-- 						<p><input type="text" name="name" placeholder="name" autocomplete="off" value="<%= %>"></p> --%>
 <%-- 						<p><input type="text" name="price" placeholder="price" autocomplete="off" value="<%= %>"></p> --%>
 <%-- 						<p><textarea name="content" cols="40" rows="4" wrap="hard" style="resize: none;"><%= %></textarea> --%>
@@ -91,7 +91,7 @@ img{
 <!-- 				</form>  -->
 				<c:forEach var="dto" items="${products}">
 					<div>
-					<img src="${request.getSession().getServletContext().getRealPath('/')}/img/${dto.product_fileName}"/>
+					<img src="${request.getSession().getServletContext().getRealPath('/')}/${dto.product_fileName}"/>
 						${dto.name}
 					</div>
 				</c:forEach>
