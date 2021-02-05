@@ -24,7 +24,6 @@
 <style>
 #form{
 	width: 500px;
-   	height: 712px;
  	border: 3px solid lightgray;
  	border-radius: 20px;
  	margin : 40px auto;
@@ -71,12 +70,10 @@ img{
 			<p><input type="file" name="product_fileName" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p>
 			<p>
 						<select name="category" required="required">
-							<option value="category">select category</option>
-							<option value="coffee">Coffee</option>
-							<option value="nonCoffee">NonCoffee</option>
-							<option value="tea">Tea</option>
-							<option value="blended">Blended</option>
-							<option value="etc">etc.</option>
+							<option value="Flower">Flower</option>
+							<option value="Fruit">Fruit</option>
+							<option value="Leaf">Leaf</option>
+							<option value="etc.">etc.</option>
 						</select>
 						</p>
 						
