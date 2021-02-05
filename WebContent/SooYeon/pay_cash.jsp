@@ -12,7 +12,7 @@
 	$(document).ready(function() {
 
 		$(".open").on('click', function() {
-			$(".popup_3").show();
+			$(".popup_4").show();
 			$(".dim").show();
 
 		});
@@ -37,10 +37,10 @@
 						<td><img id="credit" src="../img/credit-card.png"
 							onclick="location:'#'">
 							<h2>실시간 계좌이체</h2></td>
-						<td><img id="credit" src="../img/credit-card.png"
+						<td><img id="#" src="../img/credit-card.png"
 							onclick="location:'#'">
 							<h2>휴대폰</h2></td>
-						<td><img id="credit" src="../img/credit-card.png"
+						<td><img id="#" src="../img/credit-card.png"
 							onclick="location:'#'">
 							<h2>나중에 결제</h2></td>
 					</tr>
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="popup_3">
+	<div class="popup_4">
 		<h2>무통장 입금</h2>
 		<div class="con">
 			<table class="option">

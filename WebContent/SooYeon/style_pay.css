@@ -9,7 +9,18 @@
 }
 	
 .payment_select {
+	padding-top:10%;
+	width:50%;
+	margin: 0 auto;
 	text-align: center;
+	text-align: center;
+}
+
+table.sel_pay td{
+	position:relative;
+	left:15%;
+	padding: 0 0 20px; /* 줄간격 */
+
 }
 
 .popup_1, .popup_2, .popup_3, .popup_4 {
@@ -61,9 +72,6 @@
 	border-bottom: 1px solid #e8e8e8;
 }
 
-.popup_1 .test {padding: 40 78px; /* 체크: 좌우여백 */
-	border-bottom: 1px solid #e8e8e8;}
-
 .agree {
 	position: relative;
 	margin: 28px 0 0;
@@ -88,7 +96,6 @@
 	text-align: center;
 	line-height: 30px;
 	border-radius: 3px;
-	font-size: 14px;
 }
 
 
@@ -105,11 +112,17 @@
 	transition: all 0.5s;
 }
 
+
 table.option {
-	border-bottom: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;	
+	width:100%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 table.option th, table.option td {
+	position:relative;
+	left:15%;
 	padding: 0 0 20px; /* 체크: 줄간격 */
 	text-align: left; /*체크*/
 }
@@ -117,13 +130,13 @@ table.option th, table.option td {
 table.option th {
 	padding-top: 15px;
 	vertical-align: top;
-	font-size: 14px;
 	color: #222;
 	text-align: left;
-	font-weight: normal;
 }
+
+table.option th em {color: #999;}
 .notice{
-font-size: 11px;}
+font-size: 14px;}
 em {
 color: red;
 }
@@ -134,21 +147,19 @@ table.option tr:last-child th, table.option tr:last-child td {
 
 select {
 	height: 32px;
-	font-size: 14px;
 	color: #373737;
 	border: 1px solid #e8e8e8;
 	background: #fff;
 	border-radius: 3px;
 }
 
-.id_2 {
-	width: 5%;
+.iden_2 {
+	width: 5px;
 }
 
-input /* [type="date"] */  {
+input {
 	/* width: 50%; */
 	height: 32px;
-	font-size: 14px;
 	color: #373737;
 	border: 1px solid #e8e8e8;
 	background: #fff;
@@ -159,20 +170,19 @@ input /* [type="date"] */  {
 	border-radius: 3px;
 }
 
-/* input:placeholder {color: #999; font-size: 14px;} 26:42 */
+input:placeholder {color: #999;} 26:42 */
 /* select:focus,
 input:focus {border: 1px solid red} ?? */
-input[type="checkbox"]{ /* 체크박스 날리기 */
+input[type=checkbox]{ /* 체크박스 날리기 */
 	position: absolute;
 	left: -3000%;
 }
 
-input[type="checkbox"]+label { /* 체크박스 뒤에 레이블이 올 경우 디자인 */
-	font-size: 14px;
+input[type=checkbox]+label { /* 체크박스 뒤에 레이블이 올 경우 디자인 */
 	color: #666;
 } 
 
-input[type="checkbox"]+label:before {
+input[type=checkbox]+label:before {
 	content: "";
 	display: inline-block;
 	width: 20px;
@@ -185,7 +195,7 @@ input[type="checkbox"]+label:before {
 	transition: all 0.3s;
 }
 
-input[type="checkbox"]:checked+label:before
+input[type=checkbox]:checked+label:before
 	{
 	border: :7px solid #666;
 }
@@ -207,7 +217,6 @@ input[type="checkbox"]:checked+label:before
 }
 
 ul, ol, li {
-	font-size: 14px; 
 	display: inline-block;
 	list-style: none;
 }
