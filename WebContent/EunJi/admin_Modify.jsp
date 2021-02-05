@@ -24,20 +24,21 @@
 	}
 </script>
 <style>
-#form{
-	width: 500px;
-   	height: 700px;
- 	border: 3px solid lightgray;
+#list{
+	width: 100%;
  	border-radius: 20px;
  	margin : 40px auto;
 }
 
 #container{
+	width: 150px;
+	display: inline-block;
 	border-radius: 20px;
 	background-color: white;
-	margin: 0 auto;
+ 	border: 2px solid lightgray;
 	padding: 20px;
 	text-align: center;
+ 	margin : 40px auto;
 }
 
 input {
@@ -64,9 +65,9 @@ img{
 </style>
 </head>
 <body>
-	<jsp:include page="navigationBar.jsp"/>
-	<div>
-		<h1 style="text-align:center; color: green;">메뉴 추가</h1>
+	<jsp:include page="navigationBar.jsp" flush="true"/>
+	<h1 style="text-align:center; color: green;">메뉴 추가</h1>
+	<div id="list">
 <!-- 		<form action="" id="form" method="post"> -->
 <!-- 			<div id="container" > -->
 <!-- 			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p> -->
@@ -90,9 +91,11 @@ img{
 
 <!-- 				</form>  -->
 				<c:forEach var="dto" items="${products}">
-					<div>
-					<img src="${request.getSession().getServletContext().getRealPath('/')}/${dto.product_fileName}"/>
-						${dto.name}
+					<div id="container">
+						<p><img src="../img/default.png" width="80px"></p>
+						<p>${dto.name}</p>
+						<p>${dto.category}</p>
+						<p>${dto.price}</p>
 					</div>
 				</c:forEach>
 			</div>
