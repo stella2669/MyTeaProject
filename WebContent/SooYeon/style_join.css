@@ -92,7 +92,7 @@ table.option th em {color: #dd0000;}
 
 
 input[type=text], input[type=tel], input[type=date], select {	
-	width:50%;
+	width:150px;
 	height: 32px;
 	color: #373737;
 	border: 2px solid #e8e8e8;
@@ -109,15 +109,18 @@ input[type=button] {
 	display: inline-block;
 	width: 100px;
 	height: 32px;
+	border: 2px solid #e1d6d6;
 	background: #e1d6d6;
 	line-height: 50px;
 	color: #7f7f7f;
 	text-align: center;
 	border-radius: 3px;
+	vertical-align: middle;
+	
 	
 }
 
-input:placeholder {color: #999;}
+input:placeholder {color: #999; text-decoration: none;}
 
 select:focus,
 input:focus {border: #e1d6d6;}
