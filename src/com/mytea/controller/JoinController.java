@@ -33,11 +33,12 @@ public class JoinController extends HttpServlet {
 		
 		
 	}
-	
+	// doAction메소드의 역할?
 	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html); charset=utf-8");
 		
+		//값 불러오기?
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
@@ -49,12 +50,15 @@ public class JoinController extends HttpServlet {
 		String address2 = request.getParameter("address2");
 		String postcode = request.getParameter("postcode");
 		
+		//세션에 저장하기?
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
 		
+		// 무슨 일을 하는 부분..? + 오류
 		MemberDao dao = MemberDao.getInstance();
 		int insertMember = dao.insertMember(id,pw,name,birth,phone,email1,email2,address1,address2,postcode);
 		
+		System.out.println();
 		
 	}
 
