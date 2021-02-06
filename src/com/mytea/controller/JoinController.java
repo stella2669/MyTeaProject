@@ -53,6 +53,7 @@ public class JoinController extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		MemberDao dao = MemberDao.getInstance();
+		int insertMember = dao.insertMember(dto);
 		
 		
 	}
