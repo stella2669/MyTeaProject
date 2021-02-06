@@ -1,11 +1,13 @@
 package com.mytea.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Join.do")
 public class JoinController extends HttpServlet {
@@ -43,6 +45,8 @@ public class JoinController extends HttpServlet {
 		String address1 = request.getParameter("address1");
 		String address2 = request.getParameter("address2");
 		String postcode = request.getParameter("postcode");
+		
+		HttpSession session = request.getSession();
 		
 	}
 
