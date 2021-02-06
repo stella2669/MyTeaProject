@@ -118,15 +118,15 @@
 					<th><label for="list1">아이디</label><span><em> *</em></span></th>
 					<td id="list1"><input type="text" id="id">
 						<button type="button" class="button h60 btn_gray_dark"
-							id="id_check" onclick="javascript:">중복확인</button></td>
+							id="id_check" onclick="javascript:" autocomplete="off">중복확인</button></td>
 				</tr>
 				<tr>
 					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
-					<td id="list2"><input type="text" id="pw" maxlength="14"></td>
+					<td id="list2"><input type="text" id="pw" maxlength="14" autocomplete="off"></td>
 				</tr>
 				<tr>
 					<th><label for="list3">비밀번호 확인</label><span><em> *</em></span></th>
-					<td id="list3"><input type="text" id="pw_check" maxlength="14"></td>
+					<td id="list3"><input type="text" id="pw_check" maxlength="14" autocomplete="off"></td>
 				</tr>
 				<tr>
 					<th><label for="list4">이름</label><span><em> *</em></span></th>
@@ -168,7 +168,7 @@
 					<td id="list8"><input type="text" placeholder="우편번호"
 						name="postcode" maxlength="5" size="6"> <input
 						type="button" value="우편번호 검색" onclick="execDaumPostcode()"><br>
-						<input type="text" placeholder="주소 입력" name="address1" size="30"><br>
+						<input type="text" placeholder="주소 입력" name="address1" size="30">
 						<input type="text" placeholder="상세주소 입력" name="address2" size="30">
 					</td>
 				</tr>
