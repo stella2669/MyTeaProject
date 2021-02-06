@@ -92,7 +92,7 @@ table.option th em {color: #dd0000;}
 
 
 input[type=text], input[type=tel], input[type=date], select {	
-	width:100%;
+	width:50%;
 	height: 32px;
 	color: #373737;
 	border: 2px solid #e8e8e8;
@@ -107,8 +107,8 @@ input[type=text], input[type=tel], input[type=date], select {
 
 input[type=button] {
 	display: inline-block;
-	width: 170px;
-	height: 50px;
+	width: 100px;
+	height: 32px;
 	background: #e1d6d6;
 	line-height: 50px;
 	color: #7f7f7f;
