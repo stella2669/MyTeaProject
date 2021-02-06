@@ -139,6 +139,7 @@ input:focus {border: #e1d6d6;}
 	color: #7f7f7f;
 	text-align: center;
 	border-radius: 3px;
+	font-size: 20px;
 }
 
 ul, ol, li {
