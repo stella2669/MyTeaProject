@@ -39,11 +39,13 @@ public class ProductDao {
 	public int insertProduct(ProductDto dto) {
 		int result = -1;
 		String query = "insert into product values(?,?,?,?,?,?)";
+		Connection connection = null;
+		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try{
-			Connection connection = getConnection();
-			PreparedStatement pstmt = connection.prepareStatement(query);
+			connection = getConnection();
+			pstmt = connection.prepareStatement(query);
 			pstmt.setString(1, dto.getProduct_fileFullPath());
 			pstmt.setString(2, dto.getProduct_fileName());
 			pstmt.setString(3, dto.getCategory());
@@ -59,6 +61,20 @@ public class ProductDao {
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 		
 		return result;
@@ -68,11 +84,13 @@ public class ProductDao {
 	public ArrayList<ProductDto> allProductRetrieve(){
 		String query = "select * from product";
 		ArrayList<ProductDto> products = new ArrayList<ProductDto>();
+		Connection connection = null;
+		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try {
-			Connection connection = getConnection();
-			PreparedStatement pstmt = connection.prepareStatement(query);
+			connection = getConnection();
+			pstmt = connection.prepareStatement(query);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -88,6 +106,20 @@ public class ProductDao {
 			}	
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 		
 		return products;
