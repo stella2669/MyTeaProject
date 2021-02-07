@@ -57,7 +57,7 @@ body {
 			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">ADMIN</li>
 			<li class="nav-item"><a href="${contextPath}/EunJi/admin_Insert.jsp">Insert</a></li>
 			<li class="nav-item"><a href="${contextPath}/modify">Modify</a></li>
-			<li class="nav-item"><a href="${contextPath}/EunJi/admin_Delete.jsp">Delete</a></li>
+			<li class="nav-item"><a href="${contextPath}/delete">Delete</a></li>
 			<li class="nav-item"><a href="${contextPath}/EunJi/admin_Member.jsp">Member</a></li>
 		</ul>
 	</nav>
