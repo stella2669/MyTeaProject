@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +32,7 @@
 
 #container{
 	width: 150px;
+	height: 200px;
 	display: inline-block;
 	border-radius: 20px;
 	background-color: white;
@@ -51,14 +52,6 @@ select {
 	font-size: 20px;
 }
 
-.input-file-button{
-	width: 250px;
-	height: 300px;
-  	border-radius: 4px;
-  	border: 1px solid lightgray;
-  	background-color: lightgray;
-  	cursor: pointer;
-}
 img{
 	border-radius : 20px;
 }
@@ -66,37 +59,15 @@ img{
 </head>
 <body>
 	<jsp:include page="navigationBar.jsp" flush="true"/>
-	<h1 style="text-align:center; color: green;">메뉴 추가</h1>
+	<h1 style="text-align:center; color: green;">메뉴 수정</h1>
 	<div id="list">
-<!-- 		<form action="" id="form" method="post"> -->
-<!-- 			<div id="container" > -->
-<!-- 			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p> -->
-<!-- 			<p><input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p> -->
-<!-- 			<p> -->
-<!-- 						<select name="category" required="required"> -->
-<!-- 							<option value="category">select category</option> -->
-<!-- 							<option value="coffee">Coffee</option> -->
-<!-- 							<option value="nonCoffee">NonCoffee</option> -->
-<!-- 							<option value="tea">Tea</option> -->
-<!-- 							<option value="blended">Blended</option> -->
-<!-- 							<option value="etc">etc.</option> -->
-<!-- 						</select> -->
-<!-- 						</p> -->
-
-<%-- 						<p><input type="text" name="name" placeholder="name" autocomplete="off" value="<%= %>"></p> --%>
-<%-- 						<p><input type="text" name="price" placeholder="price" autocomplete="off" value="<%= %>"></p> --%>
-<%-- 						<p><textarea name="content" cols="40" rows="4" wrap="hard" style="resize: none;"><%= %></textarea> --%>
-<!-- 						<p><input style="width:100px;" type="submit" value="수정"></p> -->
-<!-- 					</div> -->
-
-<!-- 				</form>  -->
 				<c:forEach var="dto" items="${products}">
-					<div id="container">
-						<p><img src="../img/default.png" width="80px"></p>
-						<p>${dto.name}</p>
-						<p>${dto.category}</p>
-						<p>${dto.price}</p>
-					</div>
+						<div id="container">
+							<p><img src="../img/default.png" width="80px"></p>
+							<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
+							<p>${dto.category}</p>
+							<p>${dto.price}</p>
+						</div>
 				</c:forEach>
 			</div>
 	
