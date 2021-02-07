@@ -64,7 +64,7 @@ img{
 	<jsp:include page="navigationBar.jsp"/>
 	<div>
 		<h1 style="text-align:center; color: green;">메뉴 추가</h1>
-		<form action="insert.do" id="form" method="post" enctype="multipart/form-data">
+		<form action="${pageContext.request.contextPath}/insert.do" id="form" method="post" enctype="multipart/form-data">
 			<div id="container" >
 			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p>
 			<p><input type="file" name="product_fileName" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p>
