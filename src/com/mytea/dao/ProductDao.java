@@ -177,6 +177,8 @@ public class ProductDao {
 			pstmt.setInt(2, dto.getPrice());
 			pstmt.setString(3, dto.getContent());
 			pstmt.setString(4, dto.getName());
+			
+			//이부분이 에러가 나는것같다..
 			int num = pstmt.executeUpdate();
 			
 			if(num > 0) {
