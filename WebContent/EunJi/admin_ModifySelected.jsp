@@ -102,7 +102,8 @@ img{
 					</select>
 				</p>
 						
-				<p><input type="text" name="name" value="${dto.name}" disabled></p>
+				<p><input type="text" name="name" value="${dto.name}" disabled>
+				<input type="hidden" name="name" value="${dto.name}"></p>
 				<p><input type="text" name="price" placeholder="price" value="${dto.price}" autocomplete="off"></p>
 				<p><textarea name="content" cols="30" rows="4"placeholder="content" wrap="hard" style="resize: none; font-size:25px;">${dto.content}</textarea>
 				<p><input style="width:100px;" type="submit" value="수정하기">&nbsp;&nbsp;&nbsp;<button type="button" style="width:100px;" onclick="history.back()">뒤로가기</button></p>
