@@ -40,17 +40,17 @@ public class InsertController extends HttpServlet {
 		MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
 		
 		//MultipartRequest를 통해 넘어온 입력값들 변수에 저장
-		String product_fileName = multi.getFilesystemName("product_fileName");
-		String product_fileFullPath = savePath + "/" + product_fileName;
+		String fileName = multi.getFilesystemName("fileName");
+		String fileFullPath = savePath + "/" + fileName;
 		String category = multi.getParameter("category");
 		String name = multi.getParameter("name");
 		int price = Integer.valueOf(multi.getParameter("price"));
 		String content = multi.getParameter("content");
 		
-		ProductDto dto = new ProductDto(product_fileFullPath,product_fileName, category, name, price, content);
+		ProductDto dto = new ProductDto(fileFullPath,fileName, category, name, price, content);
 		
-//		dto.setProduct_fileFullPath(product_fileFullPath);
-//		dto.setProduct_fileName(product_fileName);
+//		dto.setfileFullPath(fileFullPath);
+//		dto.setfileName(fileName);
 //		dto.setCategory(category);
 //		dto.setName(name);
 //		dto.setPrice(price);

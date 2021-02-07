@@ -2,57 +2,75 @@ package com.mytea.dto;
 
 public class ProductDto {
 
-	private String product_fileFullPath;
-	private String product_fileName;
+	private String fileFullPath;
+	private String fileName;
 	private String category;
 	private String name;
 	private int price;
 	private String content;
 	
-	public ProductDto(String product_fileFullPath, String product_fileName, String category, String name, int price, String content) {
-		this.product_fileFullPath = product_fileFullPath;
-		this.product_fileName = product_fileName;
+	public ProductDto(String fileFullPath, String fileName, String category, String name, int price, String content) {
+		this.fileFullPath = fileFullPath;
+		this.fileName = fileName;
 		this.category = category;
 		this.name = name;
 		this.price = price;
 		this.content = content;
 	}
 	
-	public String getProduct_fileFullPath() {
-		return product_fileFullPath;
+	public ProductDto(String category, String name, int price, String content) {
+		this.category = category;
+		this.name = name;
+		this.price = price;
+		this.content = content;
 	}
-	public void setProduct_fileFullPath(String product_fileFullPath) {
-		this.product_fileFullPath = product_fileFullPath;
+
+	public String getFileFullPath() {
+		return fileFullPath;
 	}
-	public String getProduct_fileName() {
-		return product_fileName;
+
+	public void setFileFullPath(String fileFullPath) {
+		this.fileFullPath = fileFullPath;
 	}
-	public void setProduct_fileName(String product_fileName) {
-		this.product_fileName = product_fileName;
+
+	public String getFileName() {
+		return fileName;
 	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
 	public String getCategory() {
 		return category;
 	}
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getPrice() {
 		return price;
 	}
+
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+
 }

@@ -10,16 +10,26 @@
 <title>Insert title here</title>
 
 <style>
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
+
 #list{
 	width: 100%;
  	border-radius: 20px;
  	margin : 40px;
 	text-align: left;
+	font-size: 25px;
 }
 
 #container{
 	width: 250px;
-	height: 300px;
+	height: 350px;
 	display: inline-block;
 	border-radius: 20px;
 	background-color: white;
@@ -28,11 +38,6 @@
 	text-align: center;
  	margin : 40px auto;
 }
-
-input {
-  width: 300px;
-  font-size: 20px;
-} 
 
 select {
 	width: 300px;
@@ -47,30 +52,16 @@ img{
 </style>
 </head>
 <body>
-	<jsp:include page="navigationBar.jsp" flush="true"/>
-	<h1 style="text-align:center; color: green;">메뉴 수정</h1>
-	<div id="list">
-		<c:forEach var="dto" items="${products}">
-				<div id="container">
-					<p><img src="/MyTea/img/${dto.product_fileName}"></p>
-					<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
-					<p>${dto.category}</p>
-					<p>+${dto.price}원</p>
-				</div>
-		</c:forEach>
-	</div>
-	
-</body>
-</head>
-<body>
-	<jsp:include page="navigationBar.jsp" flush="true"/>
+	<jsp:include page="../HyoYeon/user_navbar.jsp" flush="true"/>
 	<h1 style="text-align:center; color: green;">상품 목록</h1>
+
+	<h2 style="text-align:center; color: green;">수량을 입력해주세요!</h2>
+	<h2 style="text-align:center; color: green;"><input type="radio" name="amount" value="10">10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30 (ea)</h2>
 	<div id="list">
-		<h3>입수량을 입력해주세요! <input type="radio" name="amount" value="10">10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30</h3>
 		<c:forEach var="dto" items="${products}">
 			<input type="checkbox" name="product">
 				<div id="container">
-					<p><img src="/MyTea/img/${dto.product_fileName}"></p>
+					<p><img src="/MyTea/img/${dto.fileName}"></p>
 					<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
 					<p>${dto.category}</p>
 					<p>+${dto.price}원</p>
