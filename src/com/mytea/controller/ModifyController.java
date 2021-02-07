@@ -74,35 +74,25 @@ public class ModifyController extends HttpServlet {
 			
 		}else if(action.equals("/modifySelected.do")) {
 			response.setContentType("text/html; charset=UTF-8");
-
-			// 파일이 저장될 서버의 경로. 되도록이면 getRealPath 이용!
-			String savePath = request.getServletContext().getRealPath("img");
 			
-			//파일크기 15MB로 제한
-			int sizeLimit = 1024*1024*15;
 			
-			// request객체					저장될 서버 경로				파일 최대 크기		인코딩 방식			파일명 중복방지처리
-			//(HttpServletRequest request, String saveDirectory, int maxPostSize, String encoding, FileRenamePolicy policy)
-			MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
+			String category = request.getParameter("category");
+			String name = request.getParameter("name");
+			System.out.println(category);
+			System.out.println(name);
+			int price = Integer.parseInt(request.getParameter("price"));
+			String content = request.getParameter("content");
 			
-			//MultipartRequest를 통해 넘어온 입력값들 변수에 저장
-			String product_fileName = multi.getFilesystemName("product_fileName");
-			String product_fileFullPath = savePath + "/" + product_fileName;
-			String category = multi.getParameter("category");
-			String name = multi.getParameter("name");
-			int price = Integer.valueOf(multi.getParameter("price"));
-			String content = multi.getParameter("content");
-			
-			ProductDto dto = new ProductDto(product_fileFullPath,product_fileName, category, name, price, content);
+			ProductDto dto = new ProductDto(category, name, price, content);
 			
 			int result = dao.modifyProduct(dto);
-			
+			System.out.println(result);
 			PrintWriter out = response.getWriter();
 			
 			if(result == 1) {
-				out.println("<script>alert('메뉴 수정 성공!!'); location.href='/modify';</script>");
+				out.println("<script>alert('메뉴 수정 성공!!');location.href='/EunJi/admin_Modify.jsp'</script>");
 			}else {
-				out.println("<script>alert('메뉴 수정 실패ㅠ 다시 돌아갈게요ㅜ'); location.href='/modify';</script>");
+				out.println("<script>alert('메뉴 수정 실패ㅠ 다시 돌아갈게요ㅜ');location.href='/EunJi/admin_Modify.jsp'</script>");
 			}
 		}
 		
