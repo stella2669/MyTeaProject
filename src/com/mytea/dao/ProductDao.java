@@ -178,7 +178,6 @@ public class ProductDao {
 			pstmt.setString(3, dto.getContent());
 			pstmt.setString(4, dto.getName());
 			
-			//이부분이 에러가 나는것같다..
 			int num = pstmt.executeUpdate();
 			
 			if(num > 0) {
@@ -187,6 +186,42 @@ public class ProductDao {
 				result = -1;
 			}
 			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	
+	public int deleteProduct(ProductDto dto) {
+		int result = 0;
+		String query = "delete from product where name=?";
+		
+		try {
+			connection = getConnection();
+			pstmt = connection.prepareStatement(query);
+			pstmt.setString(1, dto.getName());
+			int num = pstmt.executeUpdate();
+			
+			if(num > 0) {
+				result = 1;
+			}else {
+				result = -1;
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
