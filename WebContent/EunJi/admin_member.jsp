@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="font.css">
 <meta charset="UTF-8">
 <title>관리자 | 회원 관리</title>
 </head>

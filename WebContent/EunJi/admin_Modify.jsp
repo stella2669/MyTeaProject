@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="font.css">
 <meta charset="UTF-8">
 <title>관리자 | 메뉴 추가</title>
 <script type="text/javascript">
@@ -27,17 +28,18 @@
 #list{
 	width: 100%;
  	border-radius: 20px;
- 	margin : 40px auto;
+ 	margin : 40px;
+	text-align: left;
 }
 
 #container{
-	width: 150px;
-	height: 200px;
+	width: 250px;
+	height: 300px;
 	display: inline-block;
 	border-radius: 20px;
 	background-color: white;
  	border: 2px solid lightgray;
-	padding: 20px;
+	padding: 5px;
 	text-align: center;
  	margin : 40px auto;
 }
@@ -54,6 +56,8 @@ select {
 
 img{
 	border-radius : 20px;
+	width: 150px;
+	height: 130px;
 }
 </style>
 </head>
@@ -61,15 +65,15 @@ img{
 	<jsp:include page="navigationBar.jsp" flush="true"/>
 	<h1 style="text-align:center; color: green;">메뉴 수정</h1>
 	<div id="list">
-				<c:forEach var="dto" items="${products}">
-						<div id="container">
-							<p><img src="../img/default.png" width="80px"></p>
-							<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
-							<p>${dto.category}</p>
-							<p>${dto.price}</p>
-						</div>
-				</c:forEach>
-			</div>
+		<c:forEach var="dto" items="${products}">
+				<div id="container">
+					<p><img src="/MyTea/img/${dto.product_fileName}"></p>
+					<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
+					<p>${dto.category}</p>
+					<p>+${dto.price}원</p>
+				</div>
+		</c:forEach>
+	</div>
 	
 </body>
 </html>

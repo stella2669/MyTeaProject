@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="font.css">
 <meta charset="UTF-8">
 <title>관리자 | 메뉴 추가</title>
 <script type="text/javascript">

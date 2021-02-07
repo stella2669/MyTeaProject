@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="font.css">
 <meta charset="UTF-8">
 <title>Navigation Bar</title>
 <style>
