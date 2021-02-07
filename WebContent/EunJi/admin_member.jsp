@@ -3,9 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="font.css">
 <meta charset="UTF-8">
 <title>관리자 | 회원 관리</title>
+<style>
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="navigationBar.jsp"/>

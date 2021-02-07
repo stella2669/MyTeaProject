@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="font.css">
 <meta charset="UTF-8">
 <title>관리자 | 메뉴 추가</title>
 <script type="text/javascript">
@@ -23,6 +22,15 @@
 	}
 </script>
 <style>
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
+
 #form{
 	width: 500px;
  	border: 3px solid lightgray;

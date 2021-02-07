@@ -5,7 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자 | 메뉴 삭제</title>
-<link rel="stylesheet" type="text/css" href="font.css">
+<style>
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="navigationBar.jsp"/>

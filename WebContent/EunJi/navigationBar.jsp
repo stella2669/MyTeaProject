@@ -6,10 +6,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="font.css">
 <meta charset="UTF-8">
 <title>Navigation Bar</title>
 <style>
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
+
 body {
 	margin: 0;
 	background-color: #f9f9f9;
