@@ -11,7 +11,7 @@
 <style>
 @font-face {
 	font-family: HoonSinamonR;
-	src: url("../font/HoonSinamonR.ttf"); 
+	src: url("/MyTea/font/HoonSinamonR.ttf"); 
 }
 
 * {
