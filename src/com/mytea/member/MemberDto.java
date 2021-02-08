@@ -2,9 +2,7 @@ package com.mytea.member;
 
 public class MemberDto {
 	private String id;
-	private String id_check;
 	private String pw;
-	private String pw_check;
 	private String name;
 	private String birth;
 	private String phone;
@@ -20,23 +18,11 @@ public class MemberDto {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getId_check() {
-		return id_check;
-	}
-	public void setId_check(String id_check) {
-		this.id_check = id_check;
-	}
 	public String getPw() {
 		return pw;
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
-	}
-	public String getPw_check() {
-		return pw_check;
-	}
-	public void setPw_check(String pw_check) {
-		this.pw_check = pw_check;
 	}
 	public String getName() {
 		return name;
