@@ -73,7 +73,7 @@ footer {
 			<div class="col-sm-12 text-center">
 				<h1>로그인</h1>
 				<hr>
-
+				
 				<h2>Login My Tea</h2>
 				<form action="${pageContext.request.contextPath}/login" method="post" id="form"> 
 					<div id="id">
