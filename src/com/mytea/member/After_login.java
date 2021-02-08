@@ -48,9 +48,8 @@ public class After_login extends HttpServlet {
 			session.setAttribute("id", id);
 
 			out.print("<script>alert('관리자 페이지로 이동합니다.');location.href='/MyTea/EunJi/admin_Insert.jsp';</script>");
-//			response.sendRedirect("../EunJi/admin_Insert.jsp");    //이부분 연결이 안됨!!!
+//			response.sendRedirect("../EunJi/admin_Insert.jsp");  
 
-			//out.print("<script> location.href='../EunJi/admin_Insert.jsp'; </script> ");
 		} 
 
 		else if(cknum == -1) { //회원이 아닐때. 
@@ -64,17 +63,16 @@ public class After_login extends HttpServlet {
 //		}
 		else if(cknum == 1) { //로그인 성공  
 			out.print("<script>alert('로그인 성공!!!');</script>");
-//			MemberDto dto = dao.getMember(id); 
-//			if(dto==null) {
-//				out.print("<script>alert('아이디가 존재하지 않습니다.'); history.back();</script>");
-//			}else { //값이 null이 아닐경우니까 회원일 경우
-//				String name= dto.getName();
+			MemberDto dto = dao.getMember(id); 
+			if(dto==null) {
+				out.print("<script>alert('아이디가 존재하지 않습니다.'); history.back();</script>");
+			}else { 	//값이 null이 아닐경우니까 회원일 경우
+				String name= dto.getName();
 				session.setAttribute("id", id);
 				
-				response.sendRedirect("../HyoYeon/user_navbar.jsp"); 
-//			}
-			
-		} else {
+				out.print("<script>alert('로그인 성공!!');location.href='/MyTea/HyoYeon/user_navbar.jsp';</script>");
+			}
+		}else {
 			out.print("<script>alert('아이디와 비밀번호를 확인해주세요.');history.back();</script> ");
 		}
 		

@@ -41,7 +41,7 @@ h3{
 </style>
 </head>
 <body>
-<jsp:include page="../EunJi/navigationBar.jsp"></jsp:include> 
+<jsp:include page="user_navbar.jsp"></jsp:include> 
 <div>
 	<img src="../img/tea-bag.png">
 </div>
