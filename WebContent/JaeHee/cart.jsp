@@ -33,7 +33,7 @@
 	font-size : 200%;
 	padding: 20px 20px;
 	border-radius: 10px;
-	background-color: #bcaaa4;
+	background-color: #689f38;
 
 	
 }
@@ -78,9 +78,9 @@ p{
 		</div>
 		<br>
 		<div class="button">
-			<input type="button" class="btn" value="더 추가하기" onclick=>
-			<input type="button" class="btn" value="결제 하기">
-			<input type="button" class="btn" value="비회원 결제하기">
+			<input type="button" class="btn" value="더 추가하기" onclick="javascript:window.location='../EunJi/productList.jsp'">
+			<input type="button" class="btn" value="결제 하기" onclick="javascript:window.location='pay_information.jsp'">
+			<input type="button" class="btn" value="비회원 결제하기" onclick="javascript:window.location='pay_information.jsp'">
 		</div>
 </body>
 </html>
