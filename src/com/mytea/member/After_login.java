@@ -47,8 +47,8 @@ public class After_login extends HttpServlet {
 		if(id.equals("admin") && pw.equals("admin")) {
 			session.setAttribute("id", id);
 
-			out.print("<script>alert('관리자 페이지로 이동합니다.');</script>");
-			response.sendRedirect("../EunJi/admin_Insert.jsp");    //이부분 연결이 안됨!!!
+			out.print("<script>alert('관리자 페이지로 이동합니다.');location.href='/MyTea/EunJi/admin_Insert.jsp';</script>");
+//			response.sendRedirect("../EunJi/admin_Insert.jsp");    //이부분 연결이 안됨!!!
 
 			//out.print("<script> location.href='../EunJi/admin_Insert.jsp'; </script> ");
 		} 
