@@ -101,7 +101,7 @@ public class MemberDao {
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet set = null;
-			String query = "select id from user_member where id=?";
+			String query = "select id from tea_member where id=?";
 
 			try {
 				conn = getConnection();
@@ -134,7 +134,7 @@ public class MemberDao {
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String query = "insert into user_member values(?,?,?,?,?,?,?,?,?,?,?,?)";
+		String query = "insert into tea_member values(?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		try {
 			conn = getConnection();
@@ -179,7 +179,7 @@ public class MemberDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet set = null;
-		String query = "select * from user_member where id=?";
+		String query = "select * from tea_member where id=?";
 
 		try {
 			conn = getConnection();
