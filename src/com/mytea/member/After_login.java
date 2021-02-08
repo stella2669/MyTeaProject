@@ -31,6 +31,7 @@ public class After_login extends HttpServlet {
 	}
  
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		doAction(request,response);
 
 	
@@ -53,6 +54,7 @@ public class After_login extends HttpServlet {
 			
 			out.print("<script>alert('관리자 페이지로 이동합니다.');</script>");
 			response.sendRedirect("../EunJi/admin_Insert.jsp");    //이부분 연결이 안됨!!!
+			
 			//out.print("<script> location.href='../EunJi/admin_Insert.jsp'; </script> ");
 		} 
 		
