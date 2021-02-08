@@ -58,15 +58,19 @@ img{
 	<h2 style="text-align:center; color: green;">수량을 입력해주세요!</h2>
 	<h2 style="text-align:center; color: green;"><input type="radio" name="amount" value="10">10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30 (ea)</h2>
 	<div id="list">
-		<c:forEach var="dto" items="${products}">
-			<input type="checkbox" name="product">
-				<div id="container">
-					<p><img src="/MyTea/img/${dto.fileName}"></p>
-					<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
-					<p>${dto.category}</p>
-					<p>+${dto.price}원</p>
-				</div>
-		</c:forEach>
+		<ul>
+			<c:forEach var="dto" items="${products}">
+				<li>
+					<input type="checkbox" name="product">
+					<div id="container">
+						<p><img src="/MyTea/img/${dto.fileName}"></p>
+						<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
+						<p>${dto.category}</p>
+						<p>+${dto.price}원</p>
+					</div>
+				</li>
+			</c:forEach>
+		</ul>
 	</div>
 </body>
 </html>
