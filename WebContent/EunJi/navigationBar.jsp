@@ -59,6 +59,7 @@ body {
 			<li class="nav-item"><a href="${contextPath}/modify">Modify</a></li>
 			<li class="nav-item"><a href="${contextPath}/delete">Delete</a></li>
 			<li class="nav-item"><a href="${contextPath}/EunJi/admin_Member.jsp">Member</a></li>
+			<li class="nav-item"> <%=session.getAttribute("id") %>님 환영합니다. </li>
 		</ul>
 	</nav>
 </body>

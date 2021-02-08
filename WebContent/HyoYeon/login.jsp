@@ -23,11 +23,7 @@
 	text-align: center;
 	vertical-align: middle;
 }
-/* .sidenav {
-	padding-top: 20px;
-	background-color: #f1f1f1;
-	height: 100%;
-} */
+
 footer {
 	background-color: #555;
 	color: white;
@@ -52,10 +48,11 @@ footer {
 }
 #id {
 	margin: 30px 80px;
-	font-size: 24px;
+	font-size: 30px;
 }
 #pw {
 	margin: 0px 80px;
+	font-size: 30px;
 }
 #btn {
 	margin-top: 50px;
