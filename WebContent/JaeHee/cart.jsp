@@ -6,36 +6,13 @@
 <meta charset="UTF-8">
 <title>cart</title>
 <style>
-body {
-	margin: 0;
-	background-color: #f9f9f9;
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
 }
 
-.nav-container {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: ivory;	
-	list-style-type: none;
-}
-
-.nav-item {
-	padding: 20px;
-	cursor: pointer;
-}
-
-.nav-item:nth-child(n+2):nth-child(-n+5):hover {
-	background-color: blue;
-}
-
-.nav-item a {
-	font-size: 30px;
-	font-weight: 500;
-	text-align: center;
-	text-decoration: none;
-	color: green;
+* {
+	font-family: HoonSinamonR;
 }
 
 .information{
@@ -44,13 +21,10 @@ body {
 	margin : 100px;
 }
 
-
 .button{
 	width : 100%;
 	height : 100px;
 	text-align : center;
-
-
 }
 
 .btn{
@@ -91,14 +65,8 @@ p{
 </style>
 </head>
 <body>
-	<nav>
-		<ul class="nav-container">
-			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Make Your Tea</li>
-			<li class="nav-item"><a href="../HyoYeon/MainTea.jsp">Main</a></li>
-			<li class="nav-item"><a href="../EunJi/selectMenu.jsp">Make Tea</a></li>
-			<li class="nav-item"><a href="cart.jsp">Cart</a></li>
-		</ul>
-	</nav>
+
+	<jsp:include page="../HyoYeon/user_navbar.jsp"></jsp:include>
 	<br>
 		<div class="information">
 			<img class="tea_img" src="../img/default.png"/>
@@ -110,8 +78,9 @@ p{
 		</div>
 		<br>
 		<div class="button">
-			<button class="btn" type="button">더 추가하기</button>
-			<button class="btn" type="button">결제 하기</button>
+			<input type="button" class="btn" value="더 추가하기" onclick=>
+			<input type="button" class="btn" value="결제 하기">
+			<input type="button" class="btn" value="비회원 결제하기">
 		</div>
 </body>
 </html>
