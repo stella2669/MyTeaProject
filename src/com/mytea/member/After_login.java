@@ -21,15 +21,11 @@ public class After_login extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doAction(request,response);
-	
-	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		doAction(request,response);
-
-
 	}
 	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -69,9 +65,8 @@ public class After_login extends HttpServlet {
 				out.print("<script>alert('로그인 성공!!');location.href='/MyTea/HyoYeon/MainTea.jsp';</script>");
 			}
 		}else {
-			out.print("<script>alert('아이디와 비밀번호를 확인해주세요.');history.back();</script> ");
+		 	out.print("<script>alert('아이디와 비밀번호를 확인해주세요.');history.back();</script> ");
 		}
-		
 	}
 	
 }
