@@ -102,7 +102,6 @@
 
 
 <form action="Join.do" method="post">
-
 	<div class="container-fluid">
 		<div class="header">
 			<img alt="" src="../img/MyTea_logo.png" width="130" height="130">

@@ -16,9 +16,9 @@ public class MemberDao {
 	public static final int MEMBER_LOGIN_SUCCESS = 1; // 로그인성공
 	public static final int MEMBER_LOGIN_IS_NOT = -1; // 로그인실패
 	public static final int LOGIN_ADMIN = 2; // 어드민 로그인
-
+//싱글턴
 	private static MemberDao instance = new MemberDao();
-
+//static메서드를 통해서만 생성할 수 있도록 함
 	public static MemberDao getInstance() {
 		return instance;
 	}
