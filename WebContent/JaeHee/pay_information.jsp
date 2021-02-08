@@ -58,7 +58,7 @@ form{
 	height: 30px;
 	font-size : 100%;
 	border-radius: 10px;
-	background-color: #bcaaa4;
+	background-color: #689f38;
 }
 
 </style>
@@ -106,7 +106,7 @@ form{
 		
 		<form>
 			<h2>주문 정보</h2>
-			<p>주문 정보 리스트 부분</p>
+			<p>주문 정보 리스트 부</p>
 			<br><br>
 			<h2>주문인 정보</h2>
 			이름: <input type="text"><br>
