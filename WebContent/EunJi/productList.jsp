@@ -73,6 +73,7 @@ img{
 		</ul>
 	</div>
 	
+	
 	<input type="button" value="장바구니 " onclick="javascript:window.location='../JaeHee/cart.jsp'"> 
 </body>
 </html>
