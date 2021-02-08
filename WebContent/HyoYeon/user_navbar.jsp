@@ -16,9 +16,9 @@ body {
 	flex-direction: row;
 	width: 100%;
 	margin: 0;
-	padding: 0;
+/* 	padding: 0; */
 	background-color: #94af76;	
-	list-style-type: none;+
+	list-style-type: none;
 }
 
 .nav-item {
@@ -37,18 +37,20 @@ body {
 	text-decoration: none;
 	color: #f8ffd7;
 }
+
 </style>
 </head>
 <body>
 	<nav>
 		<ul class="nav-container">
-<!-- 		<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">ADMIN</li> -->
-			<li><img src="../img/logo.png" height="90" width="90"></li>
-			<li class="nav-item"><a href="admin_Insert.jsp">Insert</a></li>
-			<li class="nav-item"><a href="admin_Modify.jsp">Modify</a></li>
-			<li class="nav-item"><a href="admin_Delete.jsp">Delete</a></li>
-			<li class="nav-item"><a href="admin_Member.jsp">Member</a></li>
-			<li class="nav-item"> <%=session.getAttribute("id") %>님 환영합니다. </li>
+<!-- 		<li><img src="../img/logo.png" height="90" width="90"></li> -->
+			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
+			<li class="nav-item"><a href="../EunJi/productList.jsp">product</a></li>
+			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
+			<li class="nav-item"><a href="login.jsp">login</a></li>
+			<li class="nav-item"><a href="admin_Member.jsp">logout</a></li>
+			<li class="nav-item"><%=session.getAttribute("id") %>님 환영합니다. </li>
+			<li class="nav-item">logout</li>
 		</ul>
 	</nav>
 </body>

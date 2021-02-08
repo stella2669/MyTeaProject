@@ -12,7 +12,9 @@ import javax.sql.DataSource;
 import com.mytea.dto.ProductDto;
 
 public class ProductDao {
-
+	private Connection connection = null;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
 	private static ProductDao instance = new ProductDao();
 	
 	public static ProductDao getInstance() {
@@ -39,13 +41,13 @@ public class ProductDao {
 	public int insertProduct(ProductDto dto) {
 		int result = -1;
 		String query = "insert into product values(?,?,?,?,?,?)";
-		ResultSet rs = null;
+
 		
 		try{
-			Connection connection = getConnection();
-			PreparedStatement pstmt = connection.prepareStatement(query);
-			pstmt.setString(1, dto.getProduct_fileFullPath());
-			pstmt.setString(2, dto.getProduct_fileName());
+			connection = getConnection();
+			pstmt = connection.prepareStatement(query);
+			pstmt.setString(1, dto.getFileFullPath());
+			pstmt.setString(2, dto.getFileName());
 			pstmt.setString(3, dto.getCategory());
 			pstmt.setString(4, dto.getName());
 			pstmt.setInt(5, dto.getPrice());
@@ -59,6 +61,20 @@ public class ProductDao {
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 		
 		return result;
@@ -66,30 +82,164 @@ public class ProductDao {
 	
 	// 전체 메뉴 출력
 	public ArrayList<ProductDto> allProductRetrieve(){
-		String query = "select * from product";
+		String query = "select * from product order by name";
 		ArrayList<ProductDto> products = new ArrayList<ProductDto>();
-		ResultSet rs = null;
+		
 		
 		try {
-			Connection connection = getConnection();
-			PreparedStatement pstmt = connection.prepareStatement(query);
+			connection = getConnection();
+			pstmt = connection.prepareStatement(query);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				String product_fileFullPath = rs.getString("product_fileFullPath");
-				String product_fileName = rs.getString("product_fileName");
+				String fileFullPath = rs.getString("fileFullPath");
+				String fileName = rs.getString("fileName");
 				String category = rs.getString("category");
 				String name = rs.getString("name");
 				int price = rs.getInt("price");
 				String content = rs.getString("content");
 				
 				//product객체 만들어 products 리스트에 하나씩 넣기.
-				products.add(new ProductDto(product_fileFullPath,product_fileName, category, name, price, content));
+				products.add(new ProductDto(fileFullPath,fileName, category, name, price, content));
 			}	
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 		
 		return products;
+	}
+	
+//Modify.jsp 페이지의 전체 product목록 중 하나를 선택했을 때 선택한 정보만 출력
+	public ProductDto findSelected(String _name) {
+		ProductDto dto = null;
+		String query = "select * from product where name=?";	
+		
+		try {
+			connection = getConnection();
+			pstmt = connection.prepareStatement(query);
+			pstmt.setString(1, _name);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				String fileFullPath = rs.getString(1);
+				String fileName = rs.getString(2);
+				String category = rs.getString(3);
+				String name = rs.getString(4);
+				int price = rs.getInt(5);
+				String content = rs.getString(6);
+				
+				dto = new ProductDto(fileFullPath, fileName, category, name, price, content);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return dto;
+	}
+	
+	public int modifyProduct(ProductDto dto) {
+		int result = 0;
+		String query = "update product set category=?, price=?, content=? where name=?";
+
+		try{
+			connection = getConnection();
+			pstmt = connection.prepareStatement(query);
+			pstmt.setString(1, dto.getCategory());
+			pstmt.setInt(2, dto.getPrice());
+			pstmt.setString(3, dto.getContent());
+			pstmt.setString(4, dto.getName());
+			
+			int num = pstmt.executeUpdate();
+			
+			if(num > 0) {
+				result = 1;
+			}else {
+				result = -1;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	
+	public int deleteProduct(ProductDto dto) {
+		int result = 0;
+		String query = "delete from product where name=?";
+		
+		try {
+			connection = getConnection();
+			pstmt = connection.prepareStatement(query);
+			pstmt.setString(1, dto.getName());
+			int num = pstmt.executeUpdate();
+			
+			if(num > 0) {
+				result = 1;
+			}else {
+				result = -1;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
+		return result;
 	}
 }

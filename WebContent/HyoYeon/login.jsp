@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>Bootstrap Example</title>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,11 +23,7 @@
 	text-align: center;
 	vertical-align: middle;
 }
-/* .sidenav {
-	padding-top: 20px;
-	background-color: #f1f1f1;
-	height: 100%;
-} */
+
 footer {
 	background-color: #555;
 	color: white;
@@ -51,16 +48,18 @@ footer {
 }
 #id {
 	margin: 30px 80px;
-	font-size: 24px;
+	font-size: 30px;
 }
 #pw {
 	margin: 0px 80px;
+	font-size: 30px;
 }
 #btn {
 	margin-top: 50px;
 	padding: 20px 20px;
 	border-radius: 10px;
 	background-color: #689f38;
+	font-size: 30px;
 }
 </style>
 </head>
@@ -78,7 +77,7 @@ footer {
 				<h2>Login My Tea</h2>
 				<form action="${pageContext.request.contextPath}/login" method="post" id="form"> 
 					<div id="id">
-						ID: <input type="text" name="id" placeholder="id" >
+						ID: <input type="text" name="id" placeholder="id">
 					</div>
 					<div id="pw">
 						PW: <input type="password" name="pw" placeholder="password">

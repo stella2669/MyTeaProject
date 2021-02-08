@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,81 +24,72 @@
 	}
 </script>
 <style>
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("../font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
+
 #list{
 	width: 100%;
  	border-radius: 20px;
- 	margin : 40px auto;
+ 	margin : 40px;
+	text-align: left;
+	font-size: 30px;
 }
 
 #container{
-	width: 150px;
+	width: 250px;
+	height: 370px;
 	display: inline-block;
 	border-radius: 20px;
 	background-color: white;
  	border: 2px solid lightgray;
-	padding: 20px;
+	padding: 5px;
 	text-align: center;
- 	margin : 40px auto;
+ 	margin : 19px;
+
+}
+
+h1 {
+	text-align: center;
+	color: green;
+	font-size: 40px;
 }
 
 input {
   width: 300px;
-  font-size: 20px;
+  font-size: 25px;
 } 
 
 select {
 	width: 300px;
-	font-size: 20px;
+	font-size: 30px;
 }
 
-.input-file-button{
-	width: 250px;
-	height: 300px;
-  	border-radius: 4px;
-  	border: 1px solid lightgray;
-  	background-color: lightgray;
-  	cursor: pointer;
-}
 img{
 	border-radius : 20px;
+	width: 150px;
+	height: 130px;
 }
 </style>
 </head>
 <body>
 	<jsp:include page="navigationBar.jsp" flush="true"/>
-	<h1 style="text-align:center; color: green;">메뉴 추가</h1>
+	<h1>메뉴 수정</h1>
 	<div id="list">
-<!-- 		<form action="" id="form" method="post"> -->
-<!-- 			<div id="container" > -->
-<!-- 			<p><img src="" id="loadImg" width="300px" onerror="this.src='../img/default.png'" style="margin-top: 20px;"></p> -->
-<!-- 			<p><input type="file" id="imgAttach" name="imgAttach" onchange="LoadImg()" style="margin-left: 40px;"/></p> -->
-<!-- 			<p> -->
-<!-- 						<select name="category" required="required"> -->
-<!-- 							<option value="category">select category</option> -->
-<!-- 							<option value="coffee">Coffee</option> -->
-<!-- 							<option value="nonCoffee">NonCoffee</option> -->
-<!-- 							<option value="tea">Tea</option> -->
-<!-- 							<option value="blended">Blended</option> -->
-<!-- 							<option value="etc">etc.</option> -->
-<!-- 						</select> -->
-<!-- 						</p> -->
-
-<%-- 						<p><input type="text" name="name" placeholder="name" autocomplete="off" value="<%= %>"></p> --%>
-<%-- 						<p><input type="text" name="price" placeholder="price" autocomplete="off" value="<%= %>"></p> --%>
-<%-- 						<p><textarea name="content" cols="40" rows="4" wrap="hard" style="resize: none;"><%= %></textarea> --%>
-<!-- 						<p><input style="width:100px;" type="submit" value="수정"></p> -->
-<!-- 					</div> -->
-
-<!-- 				</form>  -->
-				<c:forEach var="dto" items="${products}">
-					<div id="container">
-						<p><img src="../img/default.png" width="80px"></p>
-						<p>${dto.name}</p>
-						<p>${dto.category}</p>
-						<p>${dto.price}</p>
-					</div>
-				</c:forEach>
-			</div>
+		<c:forEach var="dto" items="${products}">
+				<div id="container">
+					<p><img src="/MyTea/img/${dto.fileName}"></p>
+					<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
+					<p>${dto.category}</p>
+					<p>+${dto.price}원</p>
+				</div>
+		</c:forEach>
+	</div>
 	
 </body>
 </html>
