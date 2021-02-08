@@ -78,7 +78,7 @@ p{
 		</div>
 		<br>
 		<div class="button">
-			<input type="button" class="btn" value="더 추가하기">
+			<input type="button" class="btn" value="더 추가하기" onclick=>
 			<input type="button" class="btn" value="결제 하기">
 			<input type="button" class="btn" value="비회원 결제하기">
 		</div>
