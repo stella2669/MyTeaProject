@@ -37,9 +37,7 @@ body {
 	text-decoration: none;
 	color: #f8ffd7;
 }
-#welcome{
-	text-align: center;
-}
+
 </style>
 </head>
 <body>
@@ -47,11 +45,12 @@ body {
 		<ul class="nav-container">
 <!-- 		<li><img src="../img/logo.png" height="90" width="90"></li> -->
 			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
-			<li class="nav-item"><a href="admin_Insert.jsp">product</a></li>
-			<li class="nav-item"><a href="admin_Modify.jsp">cart</a></li>
-			<li class="nav-item"><a href="admin_Delete.jsp">login</a></li>
+			<li class="nav-item"><a href="../EunJi/productList.jsp">product</a></li>
+			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
+			<li class="nav-item"><a href="login.jsp">login</a></li>
 			<li class="nav-item"><a href="admin_Member.jsp">logout</a></li>
-			<li id="welcome"><%=session.getAttribute("id") %>님 환영합니다. </li>
+			<li class="nav-item"><%=session.getAttribute("id") %>님 환영합니다. </li>
+			<li class="nav-item">logout</li>
 		</ul>
 	</nav>
 </body>

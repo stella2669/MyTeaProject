@@ -57,14 +57,14 @@ public class After_login extends HttpServlet {
 			out.print("<script>alert('비밀번호를 확인해주세요');history.back();</script>");
 		} 
 		else if(cknum == 1) { //로그인 성공  
-			out.print("<script>alert('로그인 성공!!!');</script>");
+//			out.print("<script>alert('로그인 성공!!!');</script>");
 			MemberDto dto = dao.getMember(id); 
 			if(dto==null) {
 				out.print("<script>alert('아이디가 존재하지 않습니다.'); history.back();</script>");
 				
 			}else {		//값이 null이 아닐경우니까 회원일 경우
-				String name= dto.getName();
-				session.setAttribute("id", id);
+//				String name= dto.getName();
+//				session.setAttribute("id", id);
 				
 				out.print("<script>alert('로그인 성공!!');location.href='/MyTea/HyoYeon/MainTea.jsp';</script>");
 			}
