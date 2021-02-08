@@ -67,7 +67,7 @@ public class JoinController extends HttpServlet {
 		dto.setAddress2(address2);
 		dto.setPostcode(postcode);
 		
-		// 무슨 일을 하는 부분..? + 오류
+		// 무슨 일을 하는 부분..? 
 		//dao의 insert 부르기?
 		MemberDao dao = MemberDao.getInstance();
 		//dao에 dto요소를 전부 db에 insert하기
