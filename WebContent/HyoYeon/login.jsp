@@ -59,6 +59,7 @@ footer {
 	padding: 20px 20px;
 	border-radius: 10px;
 	background-color: #689f38;
+	font-size: 30px;
 }
 </style>
 </head>
@@ -76,7 +77,7 @@ footer {
 				<h2>Login My Tea</h2>
 				<form action="${pageContext.request.contextPath}/login" method="post" id="form"> 
 					<div id="id">
-						ID: <input type="text" name="id" placeholder="id" >
+						ID: <input type="text" name="id" placeholder="id">
 					</div>
 					<div id="pw">
 						PW: <input type="password" name="pw" placeholder="password">
