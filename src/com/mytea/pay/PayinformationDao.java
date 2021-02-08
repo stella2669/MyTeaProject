@@ -9,7 +9,11 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.mytea.member.MemberDao;
+
 public class PayinformationDao {
+	public static final int MEMBER_NONEXISTENT = 0; 
+	public static final int MEMBER_EXISTENT = 1; 
 	
 	private static PayinformationDao payInstance = new PayinformationDao();
 	
@@ -24,21 +28,22 @@ public class PayinformationDao {
 	public int confirmId(String id) {
 		int result=0;
 		
-		Connection connection = getConnection();
+		Connection connection = null;
 		PreparedStatement pstmt = null;
 		ResultSet set = null;
 		String query = "select id from tea_member where id=?";
 		
 		try {
+			connection = getConnection();
 			pstmt = connection.prepareStatement(query);
 			pstmt.setString(1, id);
 			set = pstmt.executeQuery();
 			
 			if(set.next()) {
-				result = 1;
+				result = MemberDao.MEMBER_EXISTENT;
 			}
 			else {
-				result = 0;
+				result = MemberDao.MEMBER_NONEXISTENT;
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -47,8 +52,8 @@ public class PayinformationDao {
 			set.close();
 			pstmt.close();
 			connection.close();
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (Exception e2) {
+			e2.printStackTrace();
 			}
 		}
 		return result;
@@ -59,12 +64,13 @@ public class PayinformationDao {
 		Connection connection = getConnection();
 		ResultSet rs = null;
 		String query = "select name,phone,post,address from tea_member where id=?";
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		PayinformationDto dto = null;
 		
 		try {
-			stmt = connection.createStatement();
-			rs = stmt.executeQuery(query);
+			pstmt = connection.prepareStatement(query);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery(query);
 			
 			if(rs.next()) {
 				dto = new PayinformationDto();
@@ -78,10 +84,10 @@ public class PayinformationDao {
 		}finally {
 			try {
 			rs.close();
-			stmt.close();
+			pstmt.close();
 			connection.close();
-		} catch(Exception e) {
-			e.printStackTrace();
+		} catch(Exception e2) {
+			e2.printStackTrace();
 		 }
 		}
 		

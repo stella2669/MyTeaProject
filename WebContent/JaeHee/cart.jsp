@@ -78,9 +78,11 @@ p{
 		</div>
 		<br>
 		<div class="button">
-			<input type="button" class="btn" value="더 추가하기" onclick="javascript:window.location='../EunJi/productList.jsp'">
-			<input type="button" class="btn" value="결제 하기" onclick="javascript:window.location='pay_information.jsp'">
-			<input type="button" class="btn" value="비회원 결제하기" onclick="javascript:window.location='pay_information.jsp'">
+		<form action="${pageContext.request.contextPath}/payinfo.do" method="post">
+			<input type="submit" class="btn" value="더 추가하기">
+			<input type="submit" class="btn" value="결제 하기">
+			<input type="submit" class="btn" value="비회원 결제하기">
+		</form>
 		</div>
 </body>
 </html>
