@@ -14,8 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import com.mytea.dao.ProductDao;
 import com.mytea.dto.ProductDto;
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 /**
  * Servlet implementation class ModifyController
@@ -90,9 +88,10 @@ public class ModifyController extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			
 			if(result == 1) {
-				out.println("<script>alert('메뉴 수정 성공!!');location.href='/EunJi/admin_Modify.jsp'</script>");
+				out.println("<script>alert('메뉴 수정 성공!!');");
+				out.println("location.href = '/MyTea/modify';</script>");
 			}else {
-				out.println("<script>alert('메뉴 수정 실패ㅠ 다시 돌아갈게요ㅜ');location.href='/EunJi/admin_Modify.jsp'</script>");
+				out.println("<script>alert('메뉴 수정 실패ㅠ 다시 돌아갈게요ㅜ');location.href='/MyTea/modify'</script>");
 			}
 		}
 		

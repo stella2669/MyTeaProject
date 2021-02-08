@@ -52,7 +52,7 @@ public class After_login extends HttpServlet {
 			session.setAttribute("id", id);
 		//	response.sendRedirect("../EunJi/admin_Insert.jsp");  //이부분 연결이 안됨!!!
 			out.print("<script>alert('관리자 페이지로 이동합니다.');</script>");
-			out.print("<script> location.href='../EunJi/admin_Insert.jsp'; </script> ");
+			out.print("<script> location.href='/MyTea/admin_Insert.jsp'; </script> ");
 		} else {
 			out.print("<script>alert('아이디와 비밀번호를 확인해주세요.');history.back();</script> ");
 		}

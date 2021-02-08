@@ -1,6 +1,7 @@
 package com.mytea.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -9,16 +10,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.mytea.dao.ProductDao;
 import com.mytea.dto.ProductDto;
 
-/**
- * Servlet implementation class ProductController
- */
-@WebServlet("/product/*")
-public class ProductController extends HttpServlet {
+@WebServlet("/delete/*")
+public class DeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,36 +27,53 @@ public class ProductController extends HttpServlet {
 	}
 
 	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		String nextPage = "/EunJi/admin_Delete.jsp";
 		String nextPage = null;
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		
 		String action = request.getPathInfo();
 		
-		//어떤 request에서 넘어왔는지 acrtion값 확인
+		//어떤 request에서 넘어왔는지 action값 확인
 		System.out.println("action: " + action);
 		
 		ProductDao dao = ProductDao.getInstance();
 		
-		//MainTea.jsp에서 만들러가기 눌렀을 때
 		if(action == null) {
 			ArrayList<ProductDto> products = dao.allProductRetrieve();
-			HttpSession session = request.getSession();
+			request.setAttribute("products", products);
 			
-			String savePath = request.getServletContext().getRealPath("img");
+			nextPage = "/EunJi/admin_Delete.jsp";
 			
-			session.setAttribute("savePath", savePath);
-			session.setAttribute("products", products);
+		}else if(action.equals("/selected.do")) {
+			String _name = (String)request.getParameter("name");
 			
-			nextPage = "/EunJi/productList.jsp";
+			//url통해 넘어온 name값 확인
+			System.out.println(_name);
 			
-		}else if(action.equals("")){
+			ProductDto dto = dao.findSelected(_name);
+			request.setAttribute("dto", dto);
 			
-			nextPage = 
+			nextPage = "/EunJi/admin_DeleteSelected.jsp";
+			
+		}else if(action.equals("/deleteSelected.do")) {
+			response.setContentType("text/html; charset=UTF-8");
+			
+			String _name = (String)request.getParameter("name");
+			ProductDto dto = dao.findSelected(_name);
+			
+			int result = dao.deleteProduct(dto);
+		
+			PrintWriter out = response.getWriter();
+			
+			if(result == 1) {
+				out.println("<script>alert('메뉴 삭제 성공!!');location.href='/MyTea/delete';</script>");
+			}else {
+				out.println("<script>alert('메뉴 삭제 실패ㅠ 다시 돌아갈게요ㅜ');location.href='/MyTea/delete';</script>");
+			}
 		}
 		
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
-		dispatcher.forward(request, response);
+		dispatcher.forward(request,  response);
 	}
 }
