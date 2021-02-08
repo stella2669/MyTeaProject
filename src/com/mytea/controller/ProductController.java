@@ -53,10 +53,11 @@ public class ProductController extends HttpServlet {
 			
 			nextPage = "/EunJi/productList.jsp";
 			
-		}else if(action.equals("")){
-			
-			nextPage = 
 		}
+//			else if(action.equals("")){
+//			
+//			nextPage = 
+//		}
 		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
