@@ -101,7 +101,7 @@
 	</div> -->
 
 
-<form action="Join.do" method="post">
+<form action="../Join.do" method="post" name="frm">
 	<div class="container-fluid">
 		<div class="header">
 			<img alt="" src="../img/MyTea_logo.png" width="130" height="130">
@@ -179,7 +179,9 @@
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">가입하기</a>
+		<ul>
+			<li class="submit">가입하기</li>
+		</ul>
 		</div>
 
 	</div>

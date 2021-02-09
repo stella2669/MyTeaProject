@@ -3,6 +3,7 @@ package com.mytea.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.mytea.member.MemberDao;
 import com.mytea.member.MemberDto;
+import com.oracle.jrockit.jfr.RequestDelegate;
 
 @WebServlet("/Join.do")
 public class JoinController extends HttpServlet {
@@ -25,17 +27,12 @@ public class JoinController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		actionDo(request,response);
+		
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		actionDo(request,response);
-		
-		
-	}
-	// actionDo메소드의 역할?
-	protected void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html); charset=utf-8");
 		
@@ -81,7 +78,8 @@ public class JoinController extends HttpServlet {
 			request.setAttribute("msg", "회원가입에 실패했습니다.");
 		}
 		
-		request.getRequestDispatcher("HyoYeon/login.jsp").forward(request, response);
+		RequestDispatcher dispatcher =	request.getRequestDispatcher("HyoYeon/login.jsp");
+	    dispatcher.forward(request, response);
 		
 		System.out.println();
 		
