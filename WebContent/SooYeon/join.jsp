@@ -80,6 +80,59 @@ $(document).ready(function() {
 });
 	
 </script>
+<script type="text/javascript">
+function infoConfirm() {
+	   if (document.reg_frm.id.value.length == 0) {
+	      alert("아이디는 필수 사항입니다.");
+	      reg_frm.id.focus();
+	      return;
+	   }
+
+	   if (document.reg_frm.id.value.length < 4) {
+	      alert("아이디는 4자리 이상이여야합니다");
+	      reg_frm.id.focus();
+	      return;
+	   }
+
+	   if (document.reg_frm.pw.value.length == 0) {
+	      alert("비밀번호는 필수 사항입니다.");
+	      reg_frm.pw.focus();
+	      return;
+	   }
+
+	   if (document.reg_frm.pw.value != document.reg_frm.pw_check.value) {
+	      alert("비밀번호가 일치하지 않습니다.");
+	      reg_frm.pw.focus();
+	      return;
+	   }
+
+	   if (document.reg_frm.name.value.length == 0) {
+	      alert("이름은 필수 사항입니다.");
+	      reg_frm.name.focus();
+	      return;
+	   }
+
+	   if (document.reg_frm.email.value.length == 0) {
+	      alert("아이디는 필수 사항입니다.");
+	      reg_frm.name.focus();
+	      return;
+	   }
+	   
+	   if (document.reg_frm.email.value.length == 0) {
+	      alert("이메일은 필수 사항입니다.");
+	      reg_frm.email.focus();
+	      return;
+	   }
+	   
+	   if (document.reg_frm.address.value.length == 0) {
+	      alert("주소는 필수 사항입니다.");
+	      reg_frm.address.focus();
+	      return;
+	   }
+	   
+	   document.reg_frm.submit();
+	}
+</script>
 </head>
 <body>
 
@@ -118,7 +171,7 @@ $(document).ready(function() {
 	</div> -->
 
 
-<form action="../Join.do" method="post" name="frm">
+<form action="../Join.do" method="post" name="reg_frm">
 	<div class="container-fluid">
 		<div class="header">
 			<img alt="" src="../img/MyTea_logo.png" width="130" height="130">
@@ -134,8 +187,8 @@ $(document).ready(function() {
 				<tr>
 					<th><label for="list1">아이디</label><span><em> *</em></span></th>
 					<td id="list1"><input type="text" id="id" name="id">
-						<button type="button" class="button h60 btn_gray_dark"
-							id="id_check" onclick="javascript:" autocomplete="off">중복확인</button></td>
+						<input type="button" class="button h60 btn_gray_dark"
+							id="id_check" onclick="javascript:" autocomplete="off" value="중복확인"></td>
 				</tr>
 				<tr>
 					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
@@ -197,7 +250,7 @@ $(document).ready(function() {
 		</div>
 		<div class="txt_center">
 	
-			<input type="submit" onclick="infoConfirm()" value="가입하기">
+			<input type="button" onclick="infoConfirm()" value="가입하기">
 	
 		</div>
 
