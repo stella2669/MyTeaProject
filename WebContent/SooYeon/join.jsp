@@ -197,7 +197,7 @@ $(document).ready(function() {
 		</div>
 		<div class="txt_center">
 	
-			<input type="submit" onclick="" value="가입하기">
+			<input type="submit" onclick="infoConfirm()" value="가입하기">
 	
 		</div>
 
