@@ -72,14 +72,14 @@ public class JoinController extends HttpServlet {
 		
 		if(result == 1) {
 			//아까 만들어 둔 id를 세션에 저장
-			session.setAttribute("id", dto.getId());
+			/* session.setAttribute("id", dto.getId()); */
 			request.setAttribute("msg", "회원가입에 성공했습니다.");
 		} else {
 			request.setAttribute("msg", "회원가입에 실패했습니다.");
-		}
+		} // 수정_ alert로 .(스크립트)
 		
 		RequestDispatcher dispatcher =	request.getRequestDispatcher("HyoYeon/login.jsp");
-	    dispatcher.forward(request, response);
+	    dispatcher.forward(request, response); // 수정 후 삭제 : 회원가입 후 넘길 정보 없음 굳이 사용x. location.href로 바로 페이지 이동
 		
 		System.out.println();
 		
