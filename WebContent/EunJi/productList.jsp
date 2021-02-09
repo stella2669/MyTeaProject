@@ -76,6 +76,6 @@ img{
 	
 	
 	
-	<input type="button" value="장바구니 "  onclick="javascript:window.location='../JaeHee/cart.jsp'"> 
+	<input type="button" value="장바구니 "  onclick="javascript:window.location='/MyTea/JaeHee/cart.jsp'"> 
 </body>
 </html>

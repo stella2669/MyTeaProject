@@ -34,7 +34,7 @@ public class JoinController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html); charset=utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		
 		//값 불러와서 객체에 저장
 		String id = request.getParameter("id");
