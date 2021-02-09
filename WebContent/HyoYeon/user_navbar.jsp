@@ -38,7 +38,7 @@ body {
 	color: #f8ffd7;
 }
 #text{
-	
+	font-size: 25px;
 }
 </style>
 </head>
