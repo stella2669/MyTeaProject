@@ -85,6 +85,10 @@ body {
 	background-color: #689f38;
 	font-size: 30px;
 }
+
+input {
+	font-size: 25px;
+}
 </style>
 </head>
 <body>
