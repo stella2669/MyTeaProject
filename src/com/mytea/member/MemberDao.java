@@ -134,7 +134,7 @@ public class MemberDao {
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String query = "insert into tea_member values(?,?,?,?,?,?,?,?,?,?,?,?)";
+		String query = "insert into tea_member values(?,?,?,?,?,?,?,?,?,?)";
 
 		try {
 			conn = getConnection();

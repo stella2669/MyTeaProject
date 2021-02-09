@@ -116,13 +116,13 @@
 				</colgroup>
 				<tr>
 					<th><label for="list1">아이디</label><span><em> *</em></span></th>
-					<td id="list1"><input type="text" id="id">
+					<td id="list1"><input type="text" id="id" name="id">
 						<button type="button" class="button h60 btn_gray_dark"
 							id="id_check" onclick="javascript:" autocomplete="off">중복확인</button></td>
 				</tr>
 				<tr>
 					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
-					<td id="list2"><input type="text" id="pw" maxlength="14" autocomplete="off"></td>
+					<td id="list2"><input type="text" name="pw" maxlength="14" autocomplete="off"></td>
 				</tr>
 				<tr>
 					<th><label for="list3">비밀번호 확인</label><span><em> *</em></span></th>
@@ -130,17 +130,17 @@
 				</tr>
 				<tr>
 					<th><label for="list4">이름</label><span><em> *</em></span></th>
-					<td id="list4"><input type="text" id="name" maxlength="6"
+					<td id="list4"><input type="text" name="name" maxlength="6"
 						autocomplete="off"></td>
 				</tr>
 				<tr>
 					<th><label for="list5">생년월일</label></th>
-					<td id="list5"><input type="date" id="birth"
+					<td id="list5"><input type="date" name="birth"
 						max='<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>'></td>
 				</tr>
 				<tr>
 					<th><label for="list6">연락처</label><span><em> *</em></span></th>
-					<td id="list6"><input type="tel" id="phone"
+					<td id="list6"><input type="tel" name="phone"
 						placeholder="전화번호 입력" maxlength="11" autocomplete="off">&nbsp;<input
 						type="button" class="certify" value="인증번호 받기"><br> <input
 						type="text" id="certify" placeholder="인증번호를 입력하세요."></td>
@@ -179,9 +179,9 @@
 			</div>
 		</div>
 		<div class="txt_center">
-		<ul>
-			<li class="submit">가입하기</li>
-		</ul>
+	
+			<input type="submit" onclick="" value="가입하기">
+	
 		</div>
 
 	</div>
