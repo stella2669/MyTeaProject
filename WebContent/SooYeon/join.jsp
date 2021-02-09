@@ -62,7 +62,24 @@
 				}).open();
 	}
 </script>
+<script>
+$(document).on('keyup','#textarea01',function(e) {
+	var textarea01 = $(this).val();
+	$('#cntSPAN').text(getBytes(textarea01));
+});
 
+function getBytes(str) {
+	var cnt = str.length;
+	return cnt;
+}
+$(document).ready(function() {
+	//이메일 선택
+	$("select[name=select_email]").change(function() {
+		$("input[name=email2]").val(this.value);
+	});
+});
+	
+</script>
 </head>
 <body>
 
