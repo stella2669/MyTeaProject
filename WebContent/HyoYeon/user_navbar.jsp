@@ -6,6 +6,14 @@
 <meta charset="UTF-8">
 <title>Navigation Bar</title>
 <style>
+@font-face {
+	font-family: HoonSinamonR;
+	src: url("/MyTea/font/HoonSinamonR.ttf"); 
+}
+
+* {
+	font-family: HoonSinamonR;
+}
 body {
 	margin: 0;
 	background-color: #f9f9f9;
