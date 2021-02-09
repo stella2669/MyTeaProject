@@ -53,7 +53,6 @@ public class After_login extends HttpServlet {
 			out.print("<script>alert('비밀번호를 확인해주세요');history.back();</script>");
 		} 
 		else if(cknum == 1) { //로그인 성공  
-//			out.print("<script>alert('로그인 성공!!!');</script>");
 			MemberDto dto = dao.getMember(id); 
 			if(dto==null) {
 				out.print("<script>alert('아이디가 존재하지 않습니다.'); history.back();</script>");

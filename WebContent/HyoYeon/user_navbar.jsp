@@ -37,7 +37,9 @@ body {
 	text-decoration: none;
 	color: #f8ffd7;
 }
-
+#text{
+	
+}
 </style>
 </head>
 <body>
@@ -49,8 +51,8 @@ body {
 			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
 			<li class="nav-item"><a href="login.jsp">login</a></li>
 			<li class="nav-item"><a href="admin_Member.jsp">logout</a></li>
-			<li class="nav-item"><%=session.getAttribute("id") %>님 환영합니다. </li>
-			<li class="nav-item">logout</li>
+			<li class="nav-item" id="text"><%=session.getAttribute("id") %>님 환영합니다. </li>
+			<li class="nav-item" id="text">logout</li>
 		</ul>
 	</nav>
 </body>
