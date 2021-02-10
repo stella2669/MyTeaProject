@@ -3,6 +3,7 @@ package com.mytea.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +15,7 @@ import com.mytea.pay.PayinformationDao;
 /**
  * Servlet implementation class PayinfoController
  */
-@WebServlet("/payinfo.do")
+@WebServlet("/pay/*")
 public class PayinfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,24 +26,35 @@ public class PayinfoController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String nextPage = null;
+		String action = request.getPathInfo();
+		
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		
 		String id = request.getParameter("id");
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 		PayinformationDao dao = PayinformationDao.getInstance();
+		
 		int result = dao.confirmId(id);
 		
-		if(result == 1){
-			dao.getinfo(id);
-			out.print("<script>location.href='/MyTea/JaeHee/member_pay_info.jsp';</script>");
+		
+		if(action.equals("/add.do")){
+			nextPage="/EunJi/productList.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
+			dispatcher.forward(request, response);
 		}
 		
-		if(result == 0){
-			out.print("<script>location.href='/MyTea/JaeHee/nonmember_pay_info.jsp';</script>");
+		else if(action.equals("/member.do")){
+			nextPage="/JaeHee/member_pay_info.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
+			dispatcher.forward(request, response);
 		}
 		
 		else {
-			out.print("<script>location.href='/MyTea/EunJi/productList.jsp';</script>");
+			nextPage="/JaeHee/nonmember_pay_info.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
+			dispatcher.forward(request, response);
 		}
 	}
 }

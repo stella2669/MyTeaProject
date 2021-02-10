@@ -48,9 +48,9 @@ body {
 #text{
 	font-size: 25px;
 }
-
 </style>
 </head>
+
 <body>
 	<nav>
 		<ul class="nav-container">
@@ -58,9 +58,9 @@ body {
 			<li class="nav-item"><a href="../EunJi/productList.jsp">product</a></li>
 			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
 			<li class="nav-item"><a href="login.jsp">login</a></li>
-			<li class="nav-item"><a href="admin_Member.jsp">logout</a></li>
+			<li class="nav-item"><a href="update.jsp">update</a></li>
 			<li class="nav-item" id="text"><%=session.getAttribute("id") %>님 환영합니다. </li>
-			<li class="nav-item" id="text"> logout <% session.invalidate();%>  </li>
+			<li class="nav-item" id="text"> logout <% session.invalidate();%></li>  <!--클릭시에 세션 정리하고픔 . -->
 		</ul>
 	</nav>
 </body>

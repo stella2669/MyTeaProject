@@ -217,6 +217,47 @@ public class MemberDao {
 		return dto;
 	}
 
+	//회원 수정
+	public int updateMember(MemberDto dto) { 
+		int ri = 0;
 
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String query = "update tea_member set pw=?,name=?,birth=?,phone=?,email1=?,email2=?,address1=?,address2=?"
+				+ "postcode=? where id=?"; 
+
+		try { 
+
+			con = getConnection();
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setString(1, dto.getPw());
+			pstmt.setString(2, dto.getName());
+			pstmt.setString(3, dto.getBirth());
+			pstmt.setString(4, dto.getPhone());
+			pstmt.setString(5, dto.getEmail1());
+			pstmt.setString(6, dto.getEmail2());
+			pstmt.setString(7, dto.getAddress1());
+			pstmt.setString(8, dto.getAddress2());
+			pstmt.setString(9, dto.getPostcode());
+
+			pstmt.setString(10, dto.getId());			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				con.close(); 
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return ri;
+	}
+	
+	
+	
 
 }
