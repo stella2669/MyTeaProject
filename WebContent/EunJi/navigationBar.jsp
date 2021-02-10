@@ -49,6 +49,9 @@ body {
 	text-decoration: none;
 	color: #f8ffd7;
 }
+#text{
+	font-size: 25px;
+}
 </style>
 </head>
 <body>
@@ -59,7 +62,8 @@ body {
 			<li class="nav-item"><a href="${contextPath}/modify">Modify</a></li>
 			<li class="nav-item"><a href="${contextPath}/delete">Delete</a></li>
 			<li class="nav-item"><a href="${contextPath}/EunJi/admin_Member.jsp">Member</a></li>
-			<li class="nav-item"> <%=session.getAttribute("id") %>님 환영합니다. </li>
+			<li class="nav-item" id="text"> <%=session.getAttribute("id") %>님 환영합니다. </li>
+			<li class="nav-item" id="text">logout<% session.invalidate(); %>  </li>
 		</ul>
 	</nav>
 </body>
