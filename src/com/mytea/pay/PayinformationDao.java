@@ -33,6 +33,8 @@ public class PayinformationDao {
 		ResultSet set = null;
 		String query = "select id from tea_member where id=?";
 		
+		System.out.print("id확인");
+		
 		try {
 			connection = getConnection();
 			pstmt = connection.prepareStatement(query);
@@ -63,9 +65,11 @@ public class PayinformationDao {
 		
 		Connection connection = getConnection();
 		ResultSet rs = null;
-		String query = "select name,phone,post,address from tea_member where id=?";
+		String query = "select name,phone,address1,postcode from tea_member where id=?";
 		PreparedStatement pstmt = null;
 		PayinformationDto dto = null;
+		
+		System.out.print("매서드 호출");
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -75,9 +79,9 @@ public class PayinformationDao {
 			if(rs.next()) {
 				dto = new PayinformationDto();
 				dto.setName(rs.getString("name"));
-				dto.setName(rs.getString("phone"));
-				dto.setName(rs.getString("post"));
-				dto.setName(rs.getString("address"));
+				dto.setPhone(rs.getString("phone"));
+				dto.setAddress1(rs.getString("address1"));
+				dto.setPostcode(rs.getString("postcode"));
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -95,15 +99,17 @@ public class PayinformationDao {
 	}
 	
 	private Connection getConnection() {
-	      Connection connection = null;
-	      try {
-	         Context context = new InitialContext();
-	         DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/Oracle11g");
-	         connection = dataSource.getConnection();
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      }
-	      return connection;
-	   }
+		Context context = null;
+		DataSource dataSource = null;
+		Connection connection = null;
 
+		try {
+			context = new InitialContext();
+			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/Oracle11g");
+			connection = dataSource.getConnection();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return connection;
+	}
 }
