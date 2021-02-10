@@ -84,8 +84,7 @@ public class ProductDao {
 	public ArrayList<ProductDto> allProductRetrieve(){
 		String query = "select * from product order by name";
 		ArrayList<ProductDto> products = new ArrayList<ProductDto>();
-		
-		
+
 		try {
 			connection = getConnection();
 			pstmt = connection.prepareStatement(query);
@@ -100,7 +99,7 @@ public class ProductDao {
 				String content = rs.getString("content");
 				
 				//product객체 만들어 products 리스트에 하나씩 넣기.
-				products.add(new ProductDto(fileFullPath,fileName, category, name, price, content));
+				products.add(new ProductDto(fileFullPath, fileName, category, name, price, content));
 			}	
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -123,8 +122,8 @@ public class ProductDao {
 		return products;
 	}
 	
-//Modify.jsp 페이지의 전체 product목록 중 하나를 선택했을 때 선택한 정보만 출력
-	public ProductDto findSelected(String _name) {
+// 선택한 하나의 product 정보 
+	public ProductDto getProduct(String _name) {
 		ProductDto dto = null;
 		String query = "select * from product where name=?";	
 		
@@ -242,4 +241,6 @@ public class ProductDao {
 		
 		return result;
 	}
+	
+
 }
