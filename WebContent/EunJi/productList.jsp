@@ -68,6 +68,8 @@ li {
 	<jsp:include page="../HyoYeon/user_navbar.jsp" flush="true"/>
 	<h1 style="font-size: 50px; text-align:center; color: green; margin-top:40px;">상품 목록</h1>
 		<h1 style="text-align:center; color: green; margin: 40px 0;">수량을 입력해주세요!</h1>
+		
+		<form action="${contextPath}/cart/addCart.do" method="post">
 		<h1 style="text-align:center; color: green;"><input type="radio" name="amount" value="10">10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30 (ea)</h1>
 		<div id="list">	
 			<ul>
@@ -88,5 +90,6 @@ li {
 			</ul>
 		</div>
 		<input type="submit" value="장바구니 넣기"> 
+		</form>
 </body>
 </html>
