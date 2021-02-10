@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="com.mytea.member.MemberDto"%>
+<%@page import="com.mytea.member.MemberDao"%>
+
+<%
+request.setCharacterEncoding("utf-8");
+String id = (String)session.getAttribute("id");
+MemberDao dao = MemberDao.getInstance();
+MemberDto dto = dao.getMember(id);
+
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -136,7 +147,7 @@ function infoConfirm() {
 </head>
 <body>
 
-<form action="../Join.do" method="post" name="reg_frm">
+<form action="../update" method="post" name="reg_frm">
 	<div class="container-fluid">
 		<div class="header">
 			<img alt="" src="../img/MyTea_logo.png" width="130" height="130">
@@ -151,9 +162,9 @@ function infoConfirm() {
 				</colgroup>
 				<tr>
 					<th><label for="list1">아이디</label><span><em> *</em></span></th>
-					<td id="list1"><input type="text" id="id" name="id">
-						<input type="button" class="button h60 btn_gray_dark"
-							id="id_check" onclick="" autocomplete="off" value="중복확인"></td>
+					<td id="list1"><input type="text" id="id" name="id" value="<%=dto.getId()%>"
+							autocomplete="off" readonly="readonly">
+					</td>
 				</tr>
 				<tr>
 					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
