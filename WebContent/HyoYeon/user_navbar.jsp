@@ -48,20 +48,23 @@ body {
 #text{
 	font-size: 25px;
 }
+
 </style>
 </head>
 <body>
 	<nav>
 		<ul class="nav-container">
-<!-- 		<li><img src="../img/logo.png" height="90" width="90"></li> -->
 			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
 			<li class="nav-item"><a href="../EunJi/productList.jsp">product</a></li>
 			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
 			<li class="nav-item"><a href="login.jsp">login</a></li>
 			<li class="nav-item"><a href="admin_Member.jsp">logout</a></li>
 			<li class="nav-item" id="text"><%=session.getAttribute("id") %>님 환영합니다. </li>
-			<li class="nav-item" id="text">logout</li>
+			<li class="nav-item" id="text"> logout <% session.invalidate();%>  </li>
 		</ul>
 	</nav>
 </body>
 </html>
+
+
+

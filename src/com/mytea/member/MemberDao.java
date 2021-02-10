@@ -43,7 +43,7 @@ public class MemberDao {
 		return connection;
 	}
 
-	public int userCheck(String id, String pw) { // 회원 체크
+	public int userCheck(String id, String pw) { 	// 회원 체크
 		int result = 0;
 		String dbPwd;
 
@@ -59,7 +59,7 @@ public class MemberDao {
 			set = pstmt.executeQuery();
 
 			if (set.next()) {
-				dbPwd = set.getString("pw"); // 디비에 pw
+				dbPwd = set.getString("pw"); 	// 디비에 pw
 				if (dbPwd.equals(pw)) {
 					if (id.equals("admin")) {
 						result = MemberDao.LOGIN_ADMIN; // 2
@@ -172,7 +172,7 @@ public class MemberDao {
 		return ri;
 
 	}
-
+	// 멤버 가져올때
 	public MemberDto getMember(String id) {
 
 		MemberDto dto = null;
@@ -199,7 +199,7 @@ public class MemberDao {
 				dto.setPostcode(set.getString("postcode"));
 				dto.setPw(set.getString("pw"));
 				dto.setPw(set.getString("pw"));
-
+				
 			}
 			
 		} catch (Exception e) {
@@ -217,6 +217,6 @@ public class MemberDao {
 		return dto;
 	}
 
-	// 멤버 가져올때
+
 
 }

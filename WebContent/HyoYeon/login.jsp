@@ -64,7 +64,7 @@ body {
 }
 #form {
 	width: 450px;
-	height: 300px;
+	height: 350px;
 	border: 3px solid lightgray;
 	border-radius: 20px;
 	margin: 80px auto;
@@ -100,8 +100,7 @@ input {
 			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
 			<li class="nav-item"><a href="login.jsp">login</a></li>
 			<li class="nav-item"><a href="admin_Member.jsp">logout</a></li>
-<%-- 			<li class="nav-item" id="text"><%=session.getAttribute("id") %>님 환영합니다. </li> --%>
-<!-- 			<li class="nav-item" id="text">logout</li> -->
+
 		</ul>
 	</nav>
     
@@ -114,10 +113,10 @@ input {
 				<h2>Login My Tea</h2>
 				<form action="${pageContext.request.contextPath}/login" method="post" id="form"> 
 					<div id="id">
-						ID: <input type="text" name="id" placeholder="id">
+						ID:<br><input type="text" name="id" placeholder="id">
 					</div>
 					<div id="pw">
-						PW: <input type="password" name="pw" placeholder="password">
+						PW:<br><input type="password" name="pw" placeholder="password">
 					</div>
 					<input type="submit" value="로그인" id="btn" size="50">
 				</form>
