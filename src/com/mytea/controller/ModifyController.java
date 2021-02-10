@@ -67,7 +67,7 @@ public class ModifyController extends HttpServlet {
 			//url통해 넘어온 name값 확인
 			System.out.println(_name);
 			
-			ProductDto dto = dao.findSelected(_name);
+			ProductDto dto = dao.getProduct(_name);
 			request.setAttribute("dto", dto);
 			
 			nextPage = "/EunJi/admin_ModifySelected.jsp";
