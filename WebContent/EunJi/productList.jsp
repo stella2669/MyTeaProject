@@ -52,6 +52,7 @@ img{
 
 li{
 	list-style-type: none;
+	display: inline-block;
 }
 </style>
 </head>
