@@ -81,6 +81,7 @@ public class PayinformationDao {
 				dto.setAddress1(rs.getString("address1"));
 				dto.setPostcode(rs.getString("postcode"));
 			}
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -92,7 +93,7 @@ public class PayinformationDao {
 			e2.printStackTrace();
 		 }
 		}
-		
+	
 		return dto;
 	}
 	

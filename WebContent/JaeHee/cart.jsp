@@ -21,10 +21,20 @@
 	margin : 100px;
 }
 
+form{
+	display : inline;
+}
+
 .button{
 	width : 100%;
 	height : 100px;
 	text-align : center;
+}
+
+.decide{
+	width : 75%;
+	height : 180px;
+	text-align : right;
 }
 
 .btn{
@@ -34,7 +44,15 @@
 	padding: 20px 20px;
 	border-radius: 10px;
 	background-color: #689f38;
+}
 
+.choose{
+	width : 200px;
+	height: 70px;
+	font-size : 200%;
+	padding: 20px 20px;
+	border-radius: 10px;
+	background-color: #689f38;
 	
 }
 
@@ -77,20 +95,25 @@ p{
 			</p>
 		</div>
 		<br>
+		
+		<div class="decide">
+			<form action="${pageContext.request.contextPath}/pay/add.do" method="post">
+				<input type="submit" class="choose" value="더 추가하기">
+			</form>
+		
+			<form action="${pageContext.request.contextPath}/pay/delete.do" method="post">
+				<input type="submit" class="choose" value="삭제">
+			</form>
+		</div>
+		
 		<div class="button">
+			<form action="${pageContext.request.contextPath}/pay/member.do" method="post">
+				<input type="submit" class="btn" value="결제하기">
+			</form>
 		
-		<form action="${pageContext.request.contextPath}/pay/add.do" method="post">
-			<input type="submit" class="btn" value="더 추가하기">
-		</form>
-		
-		<form action="${pageContext.request.contextPath}/pay/member.do" method="post">
-			<input type="submit" class="btn" value="결제하기">
-		</form>
-		
-		<form action="${pageContext.request.contextPath}/pay/no_member.do" method="post">
-			<input type="submit" class="btn" value="비회원 결제하기">
-		</form>
-		
+			<form action="${pageContext.request.contextPath}/pay/no_member.do" method="post">
+				<input type="submit" class="btn" value="비회원 결제하기">
+			</form>
 		</div>
 </body>
 </html>
