@@ -29,29 +29,29 @@ PayinformationDto dto = new PayinformationDto();
 }
 
 h2{
-	font-size: 30px;
+	font-size: 35px;
 	color : green;
 }
 
 fieldset{
-	width : 500px;
+	width : 600px;
 	border-radius : 10px;
 	text-align : center;
 	margin : 0 auto;
 }
 
 legend{
-	font-size : 50px;
+	font-size : 70px;
 
 }
 
 form{
-	font-size : 15px;
+	font-size : 25px;
 }
 
 .btn{
 	width : 100px;
-	height: 30px;
+	height: 50px;
 	font-size : 100%;
 	border-radius: 10px;
 	background-color: #689f38;
@@ -72,16 +72,17 @@ form{
 					<p>주문 정보 리스트 부분</p>
 					<br><br>
 					<h2>주문인 정보</h2>
-					이름: <input type="text" value="<%=dto.getName()%>"><br>
-					전화번호: <input type="tel" value="<%=dto.getPhone()%>"><br><br>
+					이름: <input type="text" style="font-size:25px;" value="<%=dto.getName()%>"><br>
+					전화번호: <input type="tel" style="font-size:25px;" value="<%=dto.getPhone()%>"><br><br>
 					<h2>배송지 입력</h2>
-					우편번호 : <input type="text" value="<%=dto.getPost()%>"><br>
-					상세주소 : <input type="text" value="<%=dto.getAddress()%>"><br><br>
-					<h2>결제 수단</h2>
-					<button class = "btn" type="button">카드 결제</button><br><br>
+					우편번호 : <input type="text" style="font-size:25px;" value="<%=dto.getPost()%>"><br>
+					상세주소 : <input type="text" style="font-size:25px;" value="<%=dto.getAddress()%>"><br><br>
+					
+					<button class = "btn" type="button">다음</button><br><br>
 				</form>
-			
+					
 			</fieldset>
-			</div>
+		</div>
+			
 </body>
 </html>

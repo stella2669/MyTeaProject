@@ -49,6 +49,11 @@ img{
 	width: 150px;
 	height: 130px;
 }
+
+li{
+	list-style-type: none;
+	display: inline-block;
+}
 </style>
 </head>
 <body>
@@ -58,6 +63,7 @@ img{
 	<h2 style="text-align:center; color: green;">수량을 입력해주세요!</h2>
 	<h2 style="text-align:center; color: green;"><input type="radio" name="amount" value="10">10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30 (ea)</h2>
 	<div id="list">
+			<form action="" method="post">
 		<ul>
 			<c:forEach var="dto" items="${products}">
 				<li>
@@ -70,7 +76,9 @@ img{
 					</div>
 				</li>
 			</c:forEach>
-		</ul>
+			</ul>
+		</form>
+		
 	</div>
 	
 	
