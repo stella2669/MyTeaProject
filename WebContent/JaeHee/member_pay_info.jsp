@@ -75,8 +75,8 @@ form{
 					이름: <input type="text" style="font-size:25px;" value="<%=dto.getName()%>"><br>
 					전화번호: <input type="tel" style="font-size:25px;" value="<%=dto.getPhone()%>"><br><br>
 					<h2>배송지 입력</h2>
-					우편번호 : <input type="text" style="font-size:25px;" value="<%=dto.getPost()%>"><br>
-					상세주소 : <input type="text" style="font-size:25px;" value="<%=dto.getAddress()%>"><br><br>
+					우편번호 : <input type="text" style="font-size:25px;" value="<%=dto.getPostcode()%>"><br>
+					상세주소 : <input type="text" style="font-size:25px;" value="<%=dto.getAddress1()%>"><br><br>
 					
 					<button class = "btn" type="button">다음</button><br><br>
 				</form>
