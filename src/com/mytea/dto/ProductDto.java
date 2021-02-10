@@ -73,4 +73,7 @@ public class ProductDto {
 		this.content = content;
 	}
 
+	public String toString() {
+		return "옵션 명 : " + this.fileName + "\n";
+	}
 }
