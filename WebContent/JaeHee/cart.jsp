@@ -78,11 +78,19 @@ p{
 		</div>
 		<br>
 		<div class="button">
-		<form action="${pageContext.request.contextPath}/payinfo.do" method="post">
+		
+		<form action="${pageContext.request.contextPath}/pay/add.do" method="post">
 			<input type="submit" class="btn" value="더 추가하기">
-			<input type="submit" class="btn" value="결제 하기">
+		</form>
+		
+		<form action="${pageContext.request.contextPath}/pay/member.do" method="post">
+			<input type="submit" class="btn" value="결제하기">
+		</form>
+		
+		<form action="${pageContext.request.contextPath}/pay/no_member.do" method="post">
 			<input type="submit" class="btn" value="비회원 결제하기">
 		</form>
+		
 		</div>
 </body>
 </html>
