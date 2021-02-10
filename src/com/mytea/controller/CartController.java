@@ -32,6 +32,9 @@ public class CartController extends HttpServlet {
 		System.out.println("action: " + action);
 		
 		ProductDao dao = ProductDao.getInstance();
-	
+		
+		if(action == null) {
+			
+		}
 	}
 }
