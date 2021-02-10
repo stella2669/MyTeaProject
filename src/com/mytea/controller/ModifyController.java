@@ -52,11 +52,13 @@ public class ModifyController extends HttpServlet {
 			ArrayList<ProductDto> products = dao.allProductRetrieve();
 			HttpSession session = request.getSession();
 			
-			String savePath = request.getServletContext().getRealPath("img");
-			
-			session.setAttribute("savePath", savePath);
-			session.setAttribute("products", products);
-			
+//			String savePath = request.getServletContext().getRealPath("img");
+//			
+//			session.setAttribute("savePath", savePath);
+			request.setAttribute("products", products);
+			for(ProductDto dto: products) {
+				System.out.println(dto.getName());
+			}
 			nextPage = "/EunJi/admin_Modify.jsp";
 			
 		}else if(action.equals("/selected.do")) {
