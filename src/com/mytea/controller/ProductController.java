@@ -46,17 +46,22 @@ public class ProductController extends HttpServlet {
 			ArrayList<ProductDto> products = dao.allProductRetrieve();
 			HttpSession session = request.getSession();
 			
-			String savePath = request.getServletContext().getRealPath("img");
+//			String savePath = request.getServletContext().getRealPath("img");
 			
-			session.setAttribute("savePath", savePath);
-			session.setAttribute("products", products);
+//			for(ProductDto dto : products) {
+//				System.out.println(dto.getName());
+//			}
+			
+//			session.setAttribute("savePath", savePath);
+			request.setAttribute("products", products);
 			
 			nextPage = "/EunJi/productList.jsp";
 			
 		}
-//			else if(action.equals("")){
-//			
-//			nextPage = 
+//		else if(action.equals("addCart.do")){ // cart로 보내기 전 productList.jsp에서 체크된 product들을 session에 저장시켜 cartController로 보내기.
+//			String product
+//			ArrayList<ProductDto> selectedProducts = dao.
+//			nextPage = "/JaeHee/cart.jsp"; // cartController로 보내서 session에 저장된 값 꺼내서 출력시키면 될듯.
 //		}
 		
 		
