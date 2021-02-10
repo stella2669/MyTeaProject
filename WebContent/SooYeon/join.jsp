@@ -188,7 +188,7 @@ function infoConfirm() {
 					<th><label for="list1">아이디</label><span><em> *</em></span></th>
 					<td id="list1"><input type="text" id="id" name="id">
 						<input type="button" class="button h60 btn_gray_dark"
-							id="id_check" onclick="javascript:" autocomplete="off" value="중복확인"></td>
+							id="id_check" onclick="" autocomplete="off" value="중복확인"></td>
 				</tr>
 				<tr>
 					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
