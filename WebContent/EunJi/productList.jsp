@@ -12,31 +12,35 @@
 <style>
 @font-face {
 	font-family: HoonSinamonR;
-	src: url("../font/HoonSinamonR.ttf"); 
+	src: url("../font/HoonSinamonR.ttf");
 }
 
 * {
 	font-family: HoonSinamonR;
 }
 
-#list{
+/* input[type=radio] { */
+/* 	font-size: 25px; */
+/* } */
+
+#list {
 	width: 100%;
- 	border-radius: 20px;
- 	margin : 40px;
+	border-radius: 20px;
+	margin: 40px;
 	text-align: left;
 	font-size: 25px;
 }
 
-#container{
+#container {
 	width: 250px;
-	height: 350px;
+/* 	height: 370px; */
 	display: inline-block;
 	border-radius: 20px;
 	background-color: white;
- 	border: 2px solid lightgray;
+	border: 2px solid lightgray;
 	padding: 5px;
 	text-align: center;
- 	margin : 40px auto;
+	margin: 20px 10px 0px 10px;
 }
 
 select {
@@ -44,46 +48,45 @@ select {
 	font-size: 20px;
 }
 
-img{
-	border-radius : 20px;
+img {
+	border-radius: 20px;
 	width: 150px;
 	height: 130px;
+	border: 1px solid lightgray
 }
 
-li{
+
+li {
 	list-style-type: none;
 	display: inline-block;
 }
+
+
 </style>
 </head>
 <body>
 	<jsp:include page="../HyoYeon/user_navbar.jsp" flush="true"/>
-	<h1 style="text-align:center; color: green;">상품 목록</h1>
-
-	<h2 style="text-align:center; color: green;">수량을 입력해주세요!</h2>
-	<h2 style="text-align:center; color: green;"><input type="radio" name="amount" value="10">10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30 (ea)</h2>
-	<div id="list">
-			<form action="" method="post">
-		<ul>
-			<c:forEach var="dto" items="${products}">
-				<li>
-					<input type="checkbox" name="product">
-					<div id="container">
-						<p><img src="/MyTea/img/${dto.fileName}"></p>
-						<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p>
-						<p>${dto.category}</p>
-						<p>+${dto.price}원</p>
-					</div>
-				</li>
-			</c:forEach>
+	<h1 style="font-size: 50px; text-align:center; color: green; margin-top:40px;">상품 목록</h1>
+		<h1 style="text-align:center; color: green; margin: 40px 0;">수량을 입력해주세요!</h1>
+		<h1 style="text-align:center; color: green;"><input type="radio" name="amount" value="10">10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30 (ea)</h1>
+		<div id="list">	
+			<ul>
+				<c:forEach var="dto" items="${products}">
+					<li>
+						<div id="container">
+							<div style="margin:15px;">
+								<label for="${dto.name}"><img src="/MyTea/img/${dto.fileName}"></label>
+	<%-- 							<p><a href="${contextPath}/modify/selected.do?name=${dto.name}">${dto.name}</a></p> --%>
+								<p>${dto.name}</p>
+								<p>${dto.category}</p>
+								<input style="zoom: 1.5;" type="checkbox" id="${dto.name}" name="product" value="${dto.name}">
+								<p>+${dto.price}원</p>
+							</div>
+						</div>
+					</li>
+				</c:forEach>
 			</ul>
-		</form>
-		
-	</div>
-	
-	
-	
-	
-	<input type="button" value="장바구니 "  onclick="javascript:window.location='/MyTea/JaeHee/cart.jsp'"> 
+		</div>
+		<input type="submit" value="장바구니 넣기"> 
 </body>
 </html>
