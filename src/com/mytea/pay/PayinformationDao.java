@@ -72,7 +72,7 @@ public class PayinformationDao {
 		try {
 			pstmt = connection.prepareStatement(query);
 			pstmt.setString(1, id);
-			rs = pstmt.executeQuery(query);
+			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
 				dto = new PayinformationDto();
