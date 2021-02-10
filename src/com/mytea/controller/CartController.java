@@ -3,22 +3,17 @@ package com.mytea.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.mytea.dao.ProductDao;
 import com.mytea.dto.ProductDto;
 
-/**
- * Servlet implementation class ProductController
- */
-@WebServlet("/product/*")
-public class ProductController extends HttpServlet {
+@WebServlet("/cart/*")
+public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,26 +36,23 @@ public class ProductController extends HttpServlet {
 		
 		ProductDao dao = ProductDao.getInstance();
 		
-		//MainTea.jsp에서 만들러가기 눌렀을 때
 		if(action == null) {
-			ArrayList<ProductDto> products = dao.allProductRetrieve();
-			HttpSession session = request.getSession();
 			
-//			String savePath = request.getServletContext().getRealPath("img");
+		}else if(action.equals("/addCart.do")){ // cart로 보내기 전 productList.jsp에서 체크된 product들을 session에 저장시켜 cartController로 보내기.
+			//form태그를 통해 넘어온 값들을 products안에 저장하고 id, amount, totalprice, products를 request.setAttribute("item",products)로 저장해서 dispatcher로 /cart로 이동 cart테이블에 저장시켜야함(/cart 서블릿으로 넘겨서 insert)
+			ArrayList<ProductDto> item = new ArrayList<ProductDto>();
 			
-//			for(ProductDto dto : products) {
-//				System.out.println(dto.getName());
-//			}
+			String[] products = request.getParameterValues("product");
 			
-//			session.setAttribute("savePath", savePath);
+			//products에 dto.name값 잘 들어옴!
+			for(String product: products) {
+				System.out.println(product);
+			}
+
 			request.setAttribute("products", products);
 			
-			nextPage = "/EunJi/productList.jsp";
 			
+			nextPage = "/JaeHee/cart.jsp"; // cartController로 보내서 session에 저장된 값 꺼내서 출력시키면 될듯.
 		}
-		
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
-		dispatcher.forward(request, response);
 	}
 }
