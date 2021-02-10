@@ -58,11 +58,6 @@ public class ProductController extends HttpServlet {
 			nextPage = "/EunJi/productList.jsp";
 			
 		}
-//		else if(action.equals("addCart.do")){ // cart로 보내기 전 productList.jsp에서 체크된 product들을 session에 저장시켜 cartController로 보내기.
-//			String product
-//			ArrayList<ProductDto> selectedProducts = dao.
-//			nextPage = "/JaeHee/cart.jsp"; // cartController로 보내서 session에 저장된 값 꺼내서 출력시키면 될듯.
-//		}
 		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
