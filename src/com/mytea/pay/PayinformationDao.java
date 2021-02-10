@@ -33,8 +33,6 @@ public class PayinformationDao {
 		ResultSet set = null;
 		String query = "select id from tea_member where id=?";
 		
-		System.out.print("id확인");
-		
 		try {
 			connection = getConnection();
 			pstmt = connection.prepareStatement(query);
@@ -69,12 +67,12 @@ public class PayinformationDao {
 		PreparedStatement pstmt = null;
 		PayinformationDto dto = null;
 		
-		System.out.print("매서드 호출");
+		System.out.print("수정 성공");
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			pstmt.setString(1, id);
-			rs = pstmt.executeQuery(query);
+			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
 				dto = new PayinformationDto();

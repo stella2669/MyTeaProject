@@ -43,7 +43,7 @@ public class PayinfoController extends HttpServlet {
 		}
 		
 		else if(action.equals("/member.do")){
-			dao.confirmId(id);
+			dao.getinfo(id);
 			nextPage="/JaeHee/member_pay_info.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
 			dispatcher.forward(request, response);
