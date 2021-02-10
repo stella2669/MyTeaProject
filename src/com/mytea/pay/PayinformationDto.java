@@ -4,8 +4,8 @@ public class PayinformationDto {
 	private String id;
 	private String name;
 	private String phone;
-	private String post;
-	private String address;
+	private String postcode;
+	private String address1;
 	
 	public String getId() {
 		return id;
@@ -25,16 +25,18 @@ public class PayinformationDto {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getPost() {
-		return post;
+	public String getPostcode() {
+		return postcode;
 	}
-	public void setPost(String post) {
-		this.post = post;
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
 	}
-	public String getAddress() {
-		return address;
+	public String getAddress1() {
+		return address1;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddress1(String address1) {
+		this.address1 = address1;
 	}
+	
+
 }
