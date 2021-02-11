@@ -3,6 +3,7 @@ package com.mytea.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,14 +46,21 @@ public class CartController extends HttpServlet {
 			String[] products = request.getParameterValues("product");
 			
 			//products에 dto.name값 잘 들어옴!
-			for(String product: products) {
-				System.out.println(product);
+			//item arrayLIst안에 넣어주기
+			for(String name: products) {
+				ProductDto dto = dao.getProduct(name);
+				item.add(dto);
 			}
 
-			request.setAttribute("products", products);
+			//productList에서 선택된 아이들
+//			request.setAttribute("products", products); //name값만 들어있음
+			request.setAttribute("item", item); //
 			
 			
-			nextPage = "/JaeHee/cart.jsp"; // cartController로 보내서 session에 저장된 값 꺼내서 출력시키면 될듯.
+			nextPage = "/JaeHee/cart_.jsp"; // cartController로 보내서 session에 저장된 값 꺼내서 출력시키면 될듯.
 		}
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
+		dispatcher.forward(request, response);
 	}
 }
