@@ -97,10 +97,11 @@ p{
 				<p>
 				
 				<c:forEach var="dto" items="${item}">
-
+					
 					${dto.name}
 					
 				</c:forEach>
+				총금액 : 
 					<br>
 					사과 10ea : +1000원<br>
 					...
