@@ -192,7 +192,7 @@ function infoConfirm() {
 				</tr>
 				<tr>
 					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
-					<td id="list2"><input type="text" name="pw" maxlength="14" autocomplete="off"></td>
+					<td id="list2"><input type="text" name="pw" maxlength="14" autocomplete="off" placeholder="영문 /숫자  8자리 이상 입력"></td>
 				</tr>
 				<tr>
 					<th><label for="list3">비밀번호 확인</label><span><em> *</em></span></th>
@@ -206,13 +206,13 @@ function infoConfirm() {
 				<tr>
 					<th><label for="list5">생년월일</label></th>
 					<td id="list5"><input type="date" name="birth"
-						max='<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>'></td>
+						max='<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>' placeholder="ex)1990-02-10"></td>
 				</tr>
 				<tr>
 					<th><label for="list6">연락처</label><span><em> *</em></span></th>
 					<td id="list6"><input type="tel" name="phone"
 						placeholder="전화번호 입력" maxlength="11" autocomplete="off">&nbsp;<input
-						type="button" class="certify" value="인증번호 받기"><br> <input
+						type="button" class="certify" value="인증번호 받기" placeholder="ex)010-000-0000"><br> <input
 						type="text" id="certify" placeholder="인증번호를 입력하세요."></td>
 				</tr>
 
@@ -236,7 +236,7 @@ function infoConfirm() {
 				<tr>
 					<th><label for="list8">주소</label><span><em> *</em></span></th>
 					<td id="list8"><input type="text" placeholder="우편번호"
-						name="postcode" maxlength="5" size="6"> <input
+						name="postcode" maxlength="5" size="6" onclick="execDaumPostcode()"> <input
 						type="button" value="우편번호 검색" onclick="execDaumPostcode()"><br>
 						<input type="text" placeholder="주소 입력" name="address1" size="30">
 						<input type="text" placeholder="상세주소 입력" name="address2" size="30">
