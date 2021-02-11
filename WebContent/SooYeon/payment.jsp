@@ -243,9 +243,7 @@
 		<div class="txt_center">
 			<a href="#" class="submit">확인</a> <a href="#" class="reset">취소</a>
 		</div>
-
 	</div>
-
 	<div class="popup_4">
 		<h2>무통장 입금</h2>
 		<div class="con">
