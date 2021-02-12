@@ -45,12 +45,17 @@ body {
 	text-decoration: none;
 	color: #f8ffd7;
 }
-#text{
-	font-size: 25px;
-}
 </style>
-</head>
+<script type="text/javascript">
 
+	function logout(){
+		alert('로그아웃 되었습니다.');
+	 	session.invalidate();
+	 	 location.href = "<c:url value ='/member/logout'/>";
+
+	 }
+</script>
+</head>
 <body>
 	<nav>
 		<ul class="nav-container">
@@ -59,8 +64,8 @@ body {
 			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
 			<li class="nav-item"><a href="login.jsp">login</a></li>
 			<li class="nav-item"><a href="update.jsp">update</a></li>
-			<li class="nav-item" id="text"><%=session.getAttribute("id") %>님 환영합니다. </li>
-			<li class="nav-item" id="text"> logout <% session.invalidate();%></li>  <!--클릭시에 세션 정리하고픔 . -->
+			<li class="nav-item" style="font-size: 25px"> <%=session.getAttribute("id") %>님 환영합니다. </li>
+			<li class="nav-item" style="font-size: 25px" onclick="logout();"> logout </li> 
 		</ul>
 	</nav>
 </body>
