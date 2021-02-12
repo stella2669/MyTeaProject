@@ -50,9 +50,8 @@ body {
 
 	function logout(){
 		alert('로그아웃 되었습니다.');
-	 	session.invalidate();
-	 	 location.href = "<c:url value ='/member/logout'/>";
-
+// 	 	session.invalidate();
+	 	location.href = "login.jsp";
 	 }
 </script>
 </head>
