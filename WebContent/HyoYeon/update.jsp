@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="com.mytea.member.MemberDto"%>
-<%@page import="com.mytea.member.MemberDao"%>
+<%@page import="com.mytea.dto.MemberDto"%>
+<%@page import="com.mytea.dao.MemberDao"%>
 
 <%
 request.setCharacterEncoding("utf-8");

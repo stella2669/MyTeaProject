@@ -1,4 +1,4 @@
-package com.mytea.member;
+package com.mytea.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

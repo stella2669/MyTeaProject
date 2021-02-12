@@ -1,4 +1,4 @@
-package com.mytea.member;
+package com.mytea.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+
+import com.mytea.dto.MemberDto;
 
 public class MemberDao {
 	public static final int MEMBER_NONEXISTENT = 0; // 멤버 존재 x

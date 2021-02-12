@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.mytea.member.MemberDao;
-import com.mytea.member.MemberDto;
+import com.mytea.dao.MemberDao;
+import com.mytea.dto.MemberDto;
 import com.oracle.jrockit.jfr.RequestDelegate;
 
 @WebServlet("/Join.do")
