@@ -12,10 +12,10 @@ import javax.websocket.Session;
  * Servlet implementation class After_login
  */
 @WebServlet("/login")
-public class After_login extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
-    public After_login() {
+    public LoginController() {
         super();
         
     }
