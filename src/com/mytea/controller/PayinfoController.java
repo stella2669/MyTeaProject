@@ -15,7 +15,7 @@ import com.mytea.pay.PayinformationDao;
 /**
  * Servlet implementation class PayinfoController
  */
-@WebServlet("/pay/*")
+@WebServlet("/pay.do")
 public class PayinfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,27 +33,14 @@ public class PayinfoController extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		
 		String id = request.getParameter("id");
+		
 		//PrintWriter out = response.getWriter();
 		PayinformationDao dao = PayinformationDao.getInstance();
 		
-		if(action.equals("/add.do")){
-			nextPage="/EunJi/productList.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
-			dispatcher.forward(request, response);
-		}
-		
-		else if(action.equals("/member.do")){
-			dao.getinfo(id);
-			nextPage="/JaeHee/member_pay_info.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
-			dispatcher.forward(request, response);
-		}
-		
-		else {
-			nextPage="/JaeHee/nonmember_pay_info.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
-			dispatcher.forward(request, response);
-		}
+		dao.getinfo(id);
+		nextPage="/JaeHee/member_pay_info.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
+		dispatcher.forward(request, response);
 	}
 }
 
