@@ -37,7 +37,7 @@ public class CartController extends HttpServlet {
 		
 		ProductDao dao = ProductDao.getInstance();
 		
-		if(action == null) {
+		if(action==null) {
 			
 		}else if(action.equals("/addCart.do")){ // cart로 보내기 전 productList.jsp에서 체크된 product들을 session에 저장시켜 cartController로 보내기.
 			//form태그를 통해 넘어온 값들을 products안에 저장하고 id, amount, totalprice, products를 request.setAttribute("item",products)로 저장해서 dispatcher로 /cart로 이동 cart테이블에 저장시켜야함(/cart 서블릿으로 넘겨서 insert)
@@ -57,7 +57,7 @@ public class CartController extends HttpServlet {
 			request.setAttribute("item", item); //
 			
 			
-			nextPage = "/JaeHee/cart_.jsp"; // cartController로 보내서 session에 저장된 값 꺼내서 출력시키면 될듯.
+			nextPage = "/JaeHee/cart.jsp"; // cartController로 보내서 session에 저장된 값 꺼내서 출력시키면 될듯.
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
