@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<c:import url="${contextPath}/MemberDto.java" var="dto"></c:import>
+<%-- <c:import url="${contextPath}/MemberDto.java" var="dto"></c:import> --%> <!--  지금 이 시트에서는 세션에 저장된 id값만 가져오는건데 굳이 dto가 필요하지 않잖슴! -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +68,8 @@ body {
 				<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
 				<li class="nav-item"><a href="login.jsp">login</a></li>
 				<li class="nav-item"><a href="update.jsp">update</a></li>
-				<li class="nav-item" style="font-size: 25px"><c:out value="${dto.id}"/>님 환영합니다.</li>
+<%-- 				<li class="nav-item" style="font-size: 25px"><c:out value="${dto.id}"/>님 환영합니다.</li> --%>
+				<li class="nav-item" style="font-size: 25px">${sessionScope.id}님 환영합니다.</li>
 				<li class="nav-item" style="font-size: 25px" onclick="logout();"> logout </li> 
 			</ul>
 		</nav>
