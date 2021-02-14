@@ -2,7 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<%@page import="k" %>
+<%-- <jsp:useBean id="dto" class="com.mytea.dto.MemberDto" />
+<jsp:setProperty property="*" name="dto" /> --%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -155,7 +157,7 @@ function infoConfirm() {
 				<tr>
 					<th><label for="list5">생년월일</label></th>
 					<td id="list5"> <input type="date" name="birth"
-						max='<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" readonly="readonly" />' placeholder="ex)1990-02-10"></td>
+						max='<fmt:formatDate value="${dto.birth}" pattern="yyyy-MM-dd" readonly="readonly" />' placeholder="ex)1990-02-10"></td>
 				</tr> 
 				<tr>
 					<th><label for="list6">연락처</label><span><em> *</em></span></th>
@@ -171,7 +173,7 @@ function infoConfirm() {
 						name="email1" data-validation="1" maxlength="50"
 						autocomplete="off" readonly="readonly"><i>@</i> <input type="text"
 						maxlength="50" name="email2" data-validation="1"
-						autocomplete="off" readonly="readonly"> <select name="select_email"
+						autocomplete="off" readonly="readonly" value="${dto.email1 }"> <select name="select_email"
 						id="btn_email_select">
 							<option value="">직접입력</option>
 							<option value="naver.com">naver.com</option>
