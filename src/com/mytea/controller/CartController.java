@@ -37,8 +37,11 @@ public class CartController extends HttpServlet {
 		
 		ProductDao dao = ProductDao.getInstance();
 		
-		if(action==null) {
+		if(action==null) { //navi에서 장바구니 클릭 시 
 			
+			//로그인된 id값에 해당되는 cart table의 목록 가져와서 출력시키기.
+			
+			nextPage = "/JaeHee/cart.jsp";
 		}else if(action.equals("/addCart.do")){ // cart로 보내기 전 productList.jsp에서 체크된 product들을 session에 저장시켜 cartController로 보내기.
 			//form태그를 통해 넘어온 값들을 products안에 저장하고 id, amount, totalprice, products를 request.setAttribute("item",products)로 저장해서 dispatcher로 /cart로 이동 cart테이블에 저장시켜야함(/cart 서블릿으로 넘겨서 insert)
 			ArrayList<ProductDto> item = new ArrayList<ProductDto>();
