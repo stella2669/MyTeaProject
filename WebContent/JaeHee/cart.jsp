@@ -95,7 +95,7 @@ p{
 
 	<jsp:include page="../HyoYeon/user_navbar.jsp"></jsp:include>
 	<br>
-		
+		<form action="${contextPath}/cart/delete.do" method="post">
 			<div class="information">
 <!-- 				<img class="tea_img" src="../img/default.png"/> -->
 				
@@ -116,6 +116,7 @@ p{
 				<input type="button" class="choose" value="더 추가하기" onclick="history.back();"/> <!-- /pay/add.do -->
 				<input type="submit" class="choose" value="삭제"/> <!-- /pay/delete.do -->
 			</div>	
+			</form>
 			
 			<div class="button">	
 				<form action="${contextPath}/pay.do" method="post">

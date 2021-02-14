@@ -61,6 +61,9 @@ public class CartController extends HttpServlet {
 			
 			
 			nextPage = "/JaeHee/cart.jsp"; // cartController로 보내서 session에 저장된 값 꺼내서 출력시키면 될듯.
+		}else if(action.equals("/delete.do")) {
+			
+			
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
