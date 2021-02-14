@@ -78,9 +78,15 @@ img.tea_img{
 	margin-left : 200px;
 }
 
+img{
+	border-radius : 20px;
+	width: 150px;
+	height: 130px;
+}
+
 p{
 	margin : 200px;
-	font-size:300%;
+	font-size: 25px;
 	text-align : center;
 }
 </style>
@@ -91,19 +97,19 @@ p{
 	<br>
 		
 			<div class="information">
-				<img class="tea_img" src="../img/default.png"/>
-				<p>
+<!-- 				<img class="tea_img" src="../img/default.png"/> -->
+				
 				
 				<c:forEach var="dto" items="${item}">
-					
-					${dto.name}
+					<td><img src="/MyTea/img/${dto.fileName}"/> ${dto.name} </td>
 					
 				</c:forEach>
-				총금액 : 
-					<br>
-					사과 10ea : +1000원<br>
-					...
-				</p>
+<!-- 				총금액 :  -->
+<!-- 					<br> -->
+<!-- 					사과 10ea : +1000원<br> -->
+<!-- 					... -->
+<!-- 				</p> -->
+
 				</div>
 				<br>
 			<div class="decide">
