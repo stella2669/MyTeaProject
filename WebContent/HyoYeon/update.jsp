@@ -2,13 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<%@page import="k" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 
 <title>My Tea > 회원가입</title>
-<link rel="stylesheet" href="style_join.css">
+<link rel="stylesheet" href="${contextPath}/SooYeon/style_join.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 우편번호 api script -->
@@ -153,9 +154,7 @@ function infoConfirm() {
 				</colgroup>
 				<tr>
 					<th><label for="list1">아이디</label><span><em> *</em></span></th> 
-					<td id="list1"><input type="text" id="id" name="id" value="${dto.id}" readonly="readonly">
-						<input type="button" class="button h60 btn_gray_dark"
-							id="id_check" onclick="" autocomplete="off" value="중복확인"></td>
+					<td id="list1"><input type="text" id="id" name="id" value="${sessionScope.id}" readonly="readonly">
 				</tr>
 				<tr>
 					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
@@ -168,13 +167,13 @@ function infoConfirm() {
 				<tr>
 					<th><label for="list4">이름</label><span><em> *</em></span></th>
 					<td id="list4"><input type="text" name="name" maxlength="6"
-						autocomplete="off"></td>
+						autocomplete="off" value="${dto.name}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<th><label for="list5">생년월일</label></th>
-					<td id="list5"><input type="date" name="birth"
-						max='<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>' placeholder="ex)1990-02-10"></td>
-				</tr>
+					<td id="list5"> <input type="date" name="birth"
+						max='<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" readonly="readonly" />' placeholder="ex)1990-02-10"></td>
+				</tr> 
 				<tr>
 					<th><label for="list6">연락처</label><span><em> *</em></span></th>
 					<td id="list6"><input type="tel" name="phone"
@@ -187,9 +186,9 @@ function infoConfirm() {
 					<th><label for="list7">이메일</label></th>
 					<td id="list7"><input type="text" placeholder="이메일 주소 입력"
 						name="email1" data-validation="1" maxlength="50"
-						autocomplete="off"><i>@</i> <input type="text"
+						autocomplete="off" readonly="readonly"><i>@</i> <input type="text"
 						maxlength="50" name="email2" data-validation="1"
-						autocomplete="off"> <select name="select_email"
+						autocomplete="off" readonly="readonly"> <select name="select_email"
 						id="btn_email_select">
 							<option value="">직접입력</option>
 							<option value="naver.com">naver.com</option>
