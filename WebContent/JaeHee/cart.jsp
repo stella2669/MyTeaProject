@@ -102,7 +102,7 @@ p{
 				
 				<c:forEach var="dto" items="${item}">
 					<td><img src="/MyTea/img/${dto.fileName}"/> ${dto.name} </td>
-					
+					<td>${dto.price}</td>
 				</c:forEach>
 <!-- 				총금액 :  -->
 <!-- 					<br> -->
