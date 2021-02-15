@@ -192,11 +192,11 @@ function infoConfirm() {
 				</tr>
 				<tr>
 					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
-					<td id="list2"><input type="text" name="pw" maxlength="14" autocomplete="off" placeholder="영문 /숫자  8자리 이상 입력"></td>
+					<td id="list2"><input type="password" name="pw" maxlength="14" autocomplete="off" placeholder="영문 /숫자  8자리 이상 입력"></td>
 				</tr>
 				<tr>
 					<th><label for="list3">비밀번호 확인</label><span><em> *</em></span></th>
-					<td id="list3"><input type="text" id="pw_check" maxlength="14" autocomplete="off"></td>
+					<td id="list3"><input type="password" id="pw_check" maxlength="14" autocomplete="off"></td>
 				</tr>
 				<tr>
 					<th><label for="list4">이름</label><span><em> *</em></span></th>
@@ -238,7 +238,7 @@ function infoConfirm() {
 					<td id="list8"><input type="text" placeholder="우편번호"
 						name="postcode" maxlength="5" size="6" onclick="execDaumPostcode()"> <input
 						type="button" value="우편번호 검색" onclick="execDaumPostcode()"><br>
-						<input type="text" placeholder="주소 입력" name="address1" size="30">
+						<input type="text" placeholder="주소 입력" name="address1" size="50">
 						<input type="text" placeholder="상세주소 입력" name="address2" size="30">
 					</td>
 				</tr>

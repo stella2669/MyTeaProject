@@ -74,52 +74,25 @@ $(document).ready(function() {
 	
 </script>
 <script type="text/javascript">
-function infoConfirm() {
-	   if (document.reg_frm.id.value.length == 0) {
-	      alert("아이디는 필수 사항입니다.");
-	      reg_frm.id.focus();
-	      return;
-	   }
-	   if (document.reg_frm.id.value.length < 4) {
-	      alert("아이디는 4자리 이상이여야합니다");
-	      reg_frm.id.focus();
-	      return;
-	   }
-	   if (document.reg_frm.pw.value.length == 0) {
-	      alert("비밀번호는 필수 사항입니다.");
-	      reg_frm.pw.focus();
-	      return;
-	   }
-	   if (document.reg_frm.pw.value != document.reg_frm.pw_check.value) {
-	      alert("비밀번호가 일치하지 않습니다.");
-	      reg_frm.pw.focus();
-	      return;
-	   }
-	   if (document.reg_frm.name.value.length == 0) {
-	      alert("이름은 필수 사항입니다.");
-	      reg_frm.name.focus();
-	      return;
-	   }
-	   if (document.reg_frm.email.value.length == 0) {
-	      alert("아이디는 필수 사항입니다.");
-	      reg_frm.name.focus();
-	      return;
-	   }
-	   
-	   if (document.reg_frm.email.value.length == 0) {
-	      alert("이메일은 필수 사항입니다.");
-	      reg_frm.email.focus();
-	      return;
-	   }
-	   
-	   if (document.reg_frm.address.value.length == 0) {
-	      alert("주소는 필수 사항입니다.");
-	      reg_frm.address.focus();
-	      return;
-	   }
-	   
-	   document.reg_frm.submit();
+function updateInfoConfirm(){
+	if(document.reg_frm.pw.value ==""){
+		alert("비밀번호를 입력하세요.");
+		document.reg_frm.pw.focus();
+		return;
 	}
+	if(document.reg_frm.pw.value != document.reg_frm.pw_check.value){
+		alert("비밀번호가 일치하지 않습니다.");
+		reg_frm.pw.focus();
+		return;
+	}
+	if(document.reg_frm.eMail.value.length ==0){
+		alert("이메일은 필수사항입니다.");
+		reg_frm.name.focus();
+		return;
+	}
+	
+	document.reg_frm.submit();
+}
 </script>
 </head>
 <body>
@@ -164,16 +137,16 @@ function infoConfirm() {
 					<td id="list6"><input type="tel" name="phone"
 						placeholder="전화번호 입력" maxlength="11" autocomplete="off">&nbsp;<input
 						type="button" class="certify" value="인증번호 받기" placeholder="ex)010-000-0000"><br> <input
-						type="text" id="certify" placeholder="인증번호를 입력하세요."></td>
+						type="text" id="certify" value="${dto.phone }" ></td>
 				</tr>
 
 				<tr>
 					<th><label for="list7">이메일</label></th>
 					<td id="list7"><input type="text" placeholder="이메일 주소 입력"
 						name="email1" data-validation="1" maxlength="50"
-						autocomplete="off" readonly="readonly"><i>@</i> <input type="text"
+						autocomplete="off" readonly="readonly" value="${dto.email1 }"><i>@</i> <input type="text"
 						maxlength="50" name="email2" data-validation="1"
-						autocomplete="off" readonly="readonly" value="${dto.email1 }"> <select name="select_email"
+						autocomplete="off" readonly="readonly" value="${dto.email2}"> <select name="select_email"
 						id="btn_email_select">
 							<option value="">직접입력</option>
 							<option value="naver.com">naver.com</option>
@@ -201,7 +174,7 @@ function infoConfirm() {
 		</div>
 		<div class="txt_center">
 	
-			<input type="button" onclick="infoConfirm()" value="가입하기">
+			<input type="button" onclick="updateInfoConfirm()" value="수정하기">
 	
 		</div>
 
