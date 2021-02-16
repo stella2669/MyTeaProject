@@ -112,21 +112,21 @@ function infoConfirm() {
 	      return;
 	   }
 
-	   if (document.reg_frm.email.value.length == 0) {
-	      alert("아이디는 필수 사항입니다.");
-	      reg_frm.name.focus();
-	      return;
-	   }
+// 	   if (document.reg_frm.email1.value.length == 0) {
+// 	      alert("이메일은 필수 사항입니다.");
+// 	      reg_frm.name.focus();
+// 	      return;
+// 	   }
 	   
-	   if (document.reg_frm.email.value.length == 0) {
-	      alert("이메일은 필수 사항입니다.");
-	      reg_frm.email.focus();
-	      return;
-	   }
+// 	   if (document.reg_frm.email.value.length == 0) {
+// 	      alert("이메일은 필수 사항입니다.");
+// 	      reg_frm.email.focus();
+// 	      return;
+// 	   }
 	   
-	   if (document.reg_frm.address.value.length == 0) {
+	   if (document.reg_frm.address1.value.length == 0) {
 	      alert("주소는 필수 사항입니다.");
-	      reg_frm.address.focus();
+	      reg_frm.address1.focus();
 	      return;
 	   }
 	   
