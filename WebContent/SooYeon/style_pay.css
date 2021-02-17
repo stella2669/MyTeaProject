@@ -48,7 +48,7 @@ table.sel_pay td{
 
 .popup_1 h2, .popup_2 h2, .popup_3 h2, .popup_4 h2 {
 	padding: 0 0 42px;
-	border-bottom: 3px solid #444;
+	border-bottom: 3px solid #c7c7c7;
 	font-weight: normal;
 	font-size: 36px;
 	color: #222;
@@ -168,6 +168,7 @@ input {
 	transition: all 0.5s;
 	vertical-align: middle;
 	border-radius: 3px;
+	
 }
 
 input:placeholder {color: #999;} 26:42 */
