@@ -112,6 +112,10 @@ th, td {
                   <td>${dto.totalprice}</td>
                </tr>
          </c:forEach>
+         <tr>
+	         <td>예상 결제 금액</td>
+	         <td>${total}</td>
+	     </tr>
          </table>
 		
          <div class="decide">
