@@ -1,4 +1,4 @@
-package com.mytea.pay;
+package com.mytea.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +10,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import com.mytea.dao.MemberDao;
+import com.mytea.dto.PayinformationDto;
 
 public class PayinformationDao {
 	public static final int MEMBER_NONEXISTENT = 0; 
