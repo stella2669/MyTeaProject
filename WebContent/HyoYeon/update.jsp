@@ -127,8 +127,8 @@ function updateInfoConfirm(){
 				</tr>
 				<tr>
 					<th><label for="list5">생년월일</label></th>
-					<td id="list5"> <input type="date" name="birth"
-						max='<fmt:formatDate value="${dto.birth}" pattern="yyyy-MM-dd" readonly="readonly" />' placeholder="ex)1990-02-10"></td>
+					<td id="list5"> <input type="date" name="birth" max='<fmt:formatDate value="${dto.birth}" pattern="yyyy-MM-dd" readonly="readonly" />' 
+					placeholder="ex)1990-02-10"></td>
 				</tr> 
 				<tr>
 					<th><label for="list6">연락처</label><span><em> *</em></span></th>
