@@ -2,7 +2,7 @@
 
 @font-face {
 	font-family: HoonSinamonR;
-	src: url("../font/HoonSinamonR.ttf"); 
+	src: url("../font/HoonSinamonR.ttf");
 }
 
 * {
@@ -10,32 +10,31 @@
 }
 
 body {
-margin:0px;
+	margin: 0px;
 }
 
 .header {
-background: #e1d6d6;;
-text-align: center;
-height: 160px;
+	background: #e1d6d6;;
+	text-align: center;
+	height: 160px;
 }
 
 .header img {
-padding-top: 10px;
+	padding-top: 10px;
 }
 
 .body {
 	padding: 52px 60px 60px;
-	background: #fff;	
+	background: #fff;
 }
 
 .con {
-	
 	padding: 60 78px; /* 체크: 좌우여백 */
 	border-bottom: 1px solid #e8e8e8;
 }
 
 .agree {
-	width:45%;
+	width: 45%;
 	position: relative;
 	margin: 28px auto;
 	border: 2px solid #e8e8e8;
@@ -45,10 +44,8 @@ padding-top: 10px;
 }
 
 .agree label span {
-	
 	color: #de4f41;
 }
-
 
 .agree a.view {
 	position: absolute;
@@ -65,15 +62,14 @@ padding-top: 10px;
 
 table.option {
 	border-bottom: 2px solid #e8e8e8;
-	width:50%;
+	width: 50%;
 	margin: 0 auto;
 	text-align: center;
-	
 }
 
 table.option th, table.option td {
-	position:relative;
-	left:15%;
+	position: relative;
+	left: 15%;
 	padding: 0 0 20px; /* 줄간격 */
 	text-align: left; /*체크*/
 }
@@ -88,11 +84,12 @@ table.option tr:last-child th, table.option tr:last-child td {
 	padding: 0 0 30px;
 }
 
-table.option th em {color: #dd0000;}
+table.option th em {
+	color: #dd0000;
+}
 
-
-input[type=text], input[type=tel], input[type=date], select {	
-	width:150px;
+input[type=text], input[type=tel], input[type=date], select {
+	width: 150px;
 	height: 32px;
 	color: #373737;
 	border: 2px solid #e8e8e8;
@@ -104,11 +101,10 @@ input[type=text], input[type=tel], input[type=date], select {
 	border-radius: 3px;
 }
 
-
 input[type=button] {
 	display: inline-block;
 	width: 100px;
-/* 	height: 40px; */
+	height: 40px;
 	border: 2px solid #e1d6d6;
 	background: #e1d6d6;
 	line-height: 50px;
@@ -116,23 +112,24 @@ input[type=button] {
 	text-align: center;
 	border-radius: 3px;
 	vertical-align: top;
-/* 	font- */
-	
-	
+	/* 	font- */
 }
 
-input:placeholder {color: #999; text-decoration: none;}
+input:placeholder {
+	color: #999;
+	text-decoration: none;
+}
 
-select:focus,
-input:focus {border: #e1d6d6;}
+select:focus, input:focus {
+	border: #e1d6d6;
+}
 
 .txt_center {
 	text-align: center;
 	padding: 30px 0 0;
-	
 }
 
-.txt_center button, .reset {
+.txt_center .submit, .reset {
 	display: inline-block;
 	width: 170px;
 	height: 50px;

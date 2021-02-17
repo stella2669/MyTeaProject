@@ -1,26 +1,28 @@
 @charset "UTF-8";
+
 @font-face {
 	font-family: HoonSinamonR;
-	src: url("../font/HoonSinamonR.ttf"); 
+	src: url("../font/HoonSinamonR.ttf");
 }
 
 * {
 	font-family: HoonSinamonR;
 }
-	
+
 .payment_select {
-	padding-top:10%;
-	width:50%;
+	padding-top: 10%;
+	width: 50%;
 	margin: 0 auto;
 	text-align: center;
 	text-align: center;
 }
 
-table.sel_pay td{
-	position:relative;
-	right:7.5%;
-	padding: 0 40px 20px; 40px;/* 줄간격 */
-
+table.sel_pay td {
+	position: relative;
+	right: 7.5%;
+	padding: 0 40px 20px;
+	40
+	px; /* 줄간격 */
 }
 
 .popup_1, .popup_2, .popup_3, .popup_4 {
@@ -29,21 +31,17 @@ table.sel_pay td{
 	left: 50%;
 	top: 50%;
 	z-index: 100;
-	padding: 52px 60px 60px;
+	padding: 30px 60px 60px;
 	width: 720px;
-	height: 783px;
+	height: 750px;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	background: #fff;
 	position: fixed;
-	
-
-	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	border-radius: 5px;
-	text-align: right;
-	opacity: 0;
-	transition: all 0.5s; */
+	opacity: 5;
+	transition: all 0.5s;
 }
 
 .popup_1 h2, .popup_2 h2, .popup_3 h2, .popup_4 h2 {
@@ -98,7 +96,6 @@ table.sel_pay td{
 	border-radius: 3px;
 }
 
-
 .dim {
 	display: none;
 	position: fixed;
@@ -112,17 +109,16 @@ table.sel_pay td{
 	transition: all 0.5s;
 }
 
-
 table.option {
-	border-bottom: 1px solid #e8e8e8;	
-	width:100%;
+	border-bottom: 1px solid #e8e8e8;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 }
 
 table.option th, table.option td {
-	position:relative;
-	left:15%;
+	position: relative;
+	left: 15%;
 	padding: 0 0 20px; /* 체크: 줄간격 */
 	text-align: left; /*체크*/
 }
@@ -134,11 +130,16 @@ table.option th {
 	text-align: left;
 }
 
-table.option th em {color: #999;}
-.notice{
-font-size: 14px;}
+table.option th em {
+	color: #999;
+}
+
+.notice {
+	font-size: 14px;
+}
+
 em {
-color: red;
+	color: red;
 }
 
 table.option tr:last-child th, table.option tr:last-child td {
@@ -168,20 +169,24 @@ input {
 	transition: all 0.5s;
 	vertical-align: middle;
 	border-radius: 3px;
-	
 }
 
-input:placeholder {color: #999;} 26:42 */
-/* select:focus,
-input:focus {border: 1px solid red} ?? */
-input[type=checkbox]{ /* 체크박스 날리기 */
+input:placeholder {
+	color: #999;
+}
+
+26
+: 42 * /
+	/* select:focus,
+input:focus {border: 1px solid red} ?? */ 
+input[type=checkbox] { /* 체크박스 날리기 */
 	position: absolute;
 	left: -3000%;
 }
 
 input[type=checkbox]+label { /* 체크박스 뒤에 레이블이 올 경우 디자인 */
 	color: #666;
-} 
+}
 
 input[type=checkbox]+label:before {
 	content: "";
@@ -196,16 +201,13 @@ input[type=checkbox]+label:before {
 	transition: all 0.3s;
 }
 
-input[type=checkbox]:checked+label:before
-	{
+input[type=checkbox]:checked+label:before {
 	border: :7px solid #666;
 }
 
 .txt_center {
 	text-align: center;
 	padding: 30px 0 0;
-	
-	
 }
 
 .submit, .reset_1, .reset_2, .reset_3 {

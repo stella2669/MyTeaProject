@@ -16,13 +16,12 @@
 			$(".dim_1").show();
 
 		});
-	
+
 		$(".reset_1").on('click', function() {
 			$(".txt_center").parent().hide();
 			$(".dim_1").hide();
 
 		});
-	
 
 		$(".open_2").on('click', function() {
 			$(".popup_2").show();
@@ -34,7 +33,6 @@
 			$(".dim").hide();
 
 		});
-	
 
 		$(".open_3").on('click', function() {
 			$(".popup_3").show();
@@ -192,10 +190,8 @@
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">확인</a>
-		
-			<a href="#" class="reset_1">취소</a>
-		</div> 
+			<a href="#" class="submit">확인</a> <a href="#" class="reset_1">취소</a>
+		</div>
 	</div>
 	<div class="dim_1"></div>
 	<div class="popup_2">
@@ -208,16 +204,11 @@
 				</colgroup>
 				<tr>
 					<th><label for="list1">상품명</label></th>
-					<td id="list1"><%="#"%></td>
-				</tr>
-				<tr>
-					<th><label for="list2">결제금액</label></th>
-					<td id="list2"><%="#"%></td>
-				</tr>
-
-				<tr>
+					<td id="list1"><%="#"%>&emsp;&emsp;&emsp;&emsp;&emsp;/&emsp;결제금액&emsp;&emsp;&emsp;&emsp;
+						<%="#"%></td>
+					<%-- 
 					<th><label for="list3">결제일</label></th>
-					<td id="list3"><%="#"%></td>
+					<td id="list3"><%="#"%></td> --%>
 				</tr>
 				<tr>
 					<th><label for="list4">통신사</label></th>
@@ -239,7 +230,8 @@
 						type="text" id="iden_2" class="iden_2"> ******</td>
 				</tr>
 				<tr>
-					<th><label for="list6">휴대폰결제 비밀번호</label></th>
+					<th><label for="list6">휴대폰결제<br>비밀번호
+					</label></th>
 					<td id="list6"><ul>
 							<li><input type="radio">사용함&nbsp;&nbsp;&nbsp;</li>
 							<li><input type="radio">사용안함(일반결제)</li>
@@ -248,8 +240,8 @@
 				<tr>
 					<th><label for="list7">인증번호</label></th>
 					<td id="list7"><input type="text" id="인증번호"
-						placeholder="인증번호 입력">&nbsp;&nbsp;
-						<input type="button" id="certify" class="certify" value="인증번호 요청"></td>
+						placeholder="인증번호 입력">&nbsp;&nbsp; <input type="button"
+						id="certify" class="certify" value="인증번호 요청"></td>
 				</tr>
 			</table>
 			<div class="agree">
@@ -287,9 +279,8 @@
 							<option value="경남은행">경남은행</option>
 							<option value="수협은행">수협</option>
 							<option value="케이뱅크">케이뱅크</option>
-					</select> <br>
-					<span class="notice"><em>농협, 국민, 부산, SC, 우체국</em>은 ATM 현금 입급
-							불가 (은행 창구, 인터넷 뱅킹 이용 가능)</span></td>
+					</select> <br> <span class="notice"><em>농협, 국민, 부산, SC, 우체국</em>은
+							ATM 현금 입급 불가 (은행 창구, 인터넷 뱅킹 이용 가능)</span></td>
 				</tr>
 				<tr>
 					<th><label for="list2">환불방법</label></th>
