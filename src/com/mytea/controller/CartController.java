@@ -45,18 +45,25 @@ public class CartController extends HttpServlet {
 		}else if(action.equals("/addCart.do")){ // cart로 보내기 전 productList.jsp에서 체크된 product들을 session에 저장시켜 cartController로 보내기.
 			//form태그를 통해 넘어온 값들을 products안에 저장하고 id, amount, totalprice, products를 request.setAttribute("item",products)로 저장해서 dispatcher로 /cart로 이동 cart테이블에 저장시켜야함(/cart 서블릿으로 넘겨서 insert)
 			ArrayList<ProductDto> item = new ArrayList<ProductDto>();
+			int perPrice = 0;
 			
 			String[] products = request.getParameterValues("product");
+			
+			int amount = Integer.valueOf(request.getParameter("amount"));
 			
 			//products에 dto.name값 잘 들어옴!
 			//item arrayLIst안에 넣어주기
 			for(String name: products) {
 				ProductDto dto = dao.getProduct(name);
 				item.add(dto);
+				perPrice += dto.getPrice();
 			}
+			int totalPrice = perPrice * amount;
 
 			//productList에서 선택된 아이들
-//			request.setAttribute("products", products); //name값만 들어있음
+			request.setAttribute("products", products); //name값만 들어있음
+			request.setAttribute("totalPrice", totalPrice);
+			request.setAttribute("amount", amount);
 			request.setAttribute("item", item); //
 			
 			
