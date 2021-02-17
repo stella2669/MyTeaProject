@@ -29,11 +29,21 @@
 			$(".dim").show();
 
 		});
+		$(".reset_2").on('click', function() {
+			$(".txt_center").parent().hide();
+			$(".dim_1").hide();
+
+		});
 	
 
 		$(".open_3").on('click', function() {
 			$(".popup_3").show();
 			$(".dim").show();
+
+		});
+		$(".reset_3").on('click', function() {
+			$(".txt_center").parent().hide();
+			$(".dim_1").hide();
 
 		});
 	});
@@ -248,7 +258,7 @@
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">확인</a> <a href="#" class="reset">취소</a>
+			<a href="#" class="submit">확인</a> <a href="#" class="reset_2">취소</a>
 		</div>
 	</div>
 	<div class="popup_3">
@@ -304,7 +314,7 @@
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">주문하기</a> <a href="#" class="reset">취소</a>
+			<a href="#" class="submit">주문하기</a> <a href="#" class="reset_3">취소</a>
 		</div>
 
 	</div>
