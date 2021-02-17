@@ -1,4 +1,4 @@
-package com.mytea.member;
+package com.mytea.dto;
 
 public class MemberDto {
 	private String id;

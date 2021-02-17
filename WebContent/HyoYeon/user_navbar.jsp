@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,24 +47,31 @@ body {
 	text-decoration: none;
 	color: #f8ffd7;
 }
-#text{
-	font-size: 25px;
-}
 </style>
-</head>
+<script type="text/javascript">
 
+	function logout(){
+		alert('로그아웃 되었습니다.');
+		
+// 	 	session.invalidate();
+	 	location.href = "login.jsp";
+	 }
+</script>
+</head>
 <body>
-	<nav>
-		<ul class="nav-container">
-			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
-			<li class="nav-item"><a href="../EunJi/productList.jsp">product</a></li>
-			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
-			<li class="nav-item"><a href="login.jsp">login</a></li>
-			<li class="nav-item"><a href="update.jsp">update</a></li>
-			<li class="nav-item" id="text"><%=session.getAttribute("id") %>님 환영합니다. </li>
-			<li class="nav-item" id="text"> logout <% session.invalidate();%></li>  <!--클릭시에 세션 정리하고픔 . -->
-		</ul>
-	</nav>
+
+		<nav>
+			<ul class="nav-container">
+				<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
+				<li class="nav-item"><a href="../EunJi/productList.jsp">product</a></li>
+				<li class="nav-item"><a href="${contextPath}/cart">cart</a></li>
+				<li class="nav-item"><a href="login.jsp">login</a></li>
+				<li class="nav-item"><a href="update.jsp">update</a></li>
+				<li class="nav-item" style="font-size: 25px">${sessionScope.id}님 환영합니다.</li>
+				<li class="nav-item" style="font-size: 25px" onclick="logout();"> logout </li> 
+			</ul>
+		</nav>
+
 </body>
 </html>
 

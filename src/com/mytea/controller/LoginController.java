@@ -1,4 +1,4 @@
-package com.mytea.member;
+package com.mytea.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -8,16 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
+
+import com.mytea.dao.MemberDao;
+import com.mytea.dto.MemberDto;
 /**
  * Servlet implementation class After_login
  */
 @WebServlet("/login")
-public class After_login extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
-    public After_login() {
+    public LoginController() {
         super();
-        
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doAction(request,response);
@@ -45,7 +47,7 @@ public class After_login extends HttpServlet {
 
 			out.print("<script>alert('관리자 페이지로 이동합니다.');location.href='/MyTea/EunJi/admin_Insert.jsp';</script>");
 //			response.sendRedirect("../EunJi/admin_Insert.jsp");  
-		} 
+		}
 		else if(cknum == -1) { //회원이 아닐때. 
 			out.print("<script>alert('아이디가 존재하지 않습니다.');history.back();</script>");
 		}

@@ -9,7 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import com.mytea.member.MemberDao;
+import com.mytea.dao.MemberDao;
 
 public class PayinformationDao {
 	public static final int MEMBER_NONEXISTENT = 0; 

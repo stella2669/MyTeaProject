@@ -108,7 +108,7 @@ input[type=text], input[type=tel], input[type=date], select {
 input[type=button] {
 	display: inline-block;
 	width: 100px;
-	height: 32px;
+/* 	height: 40px; */
 	border: 2px solid #e1d6d6;
 	background: #e1d6d6;
 	line-height: 50px;
@@ -116,7 +116,7 @@ input[type=button] {
 	text-align: center;
 	border-radius: 3px;
 	vertical-align: top;
-	font-
+/* 	font- */
 	
 	
 }
