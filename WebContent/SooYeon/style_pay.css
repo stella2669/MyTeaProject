@@ -18,8 +18,8 @@
 
 table.sel_pay td{
 	position:relative;
-	left:15%;
-	padding: 0 0 20px; /* 줄간격 */
+	
+	padding: 0 40px 20px; 40px;/* 줄간격 */
 
 }
 
