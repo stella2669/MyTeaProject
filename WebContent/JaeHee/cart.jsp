@@ -100,16 +100,17 @@ p{
 <!-- 				<img class="tea_img" src="../img/default.png"/> -->
 				
 				
-				<c:forEach var="dto" items="${item}">
-					<td><img src="/MyTea/img/${dto.fileName}"/> ${dto.name} </td>
-					<td>${dto.price}</td>
+<%-- 				<c:forEach var="dto" items="${item}"> --%>
+<%-- <%-- 					<td ><img src="/MyTea/img/${dto.fileName}"/></td> --%>
+<%-- 					<p><input type="checkbox" name="cartRow" id="${dto.name}"><span>${dto.name}</span><span>${amount}ea</span><span>${totalPrice}</span></p> --%>
+<%-- 					<td style="position: relative; vertical-align: top;">${dto.price}</td> --%>
+<%-- 				</c:forEach> --%>
+				
+				<p>
+				<c:forEach var="name" items="${products}">
+					${name}
 				</c:forEach>
-<!-- 				총금액 :  -->
-<!-- 					<br> -->
-<!-- 					사과 10ea : +1000원<br> -->
-<!-- 					... -->
-<!-- 				</p> -->
-
+				</p>
 				</div>
 				<br>
 			<div class="decide">

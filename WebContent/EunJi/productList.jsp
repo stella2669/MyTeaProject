@@ -29,6 +29,7 @@
 	margin: 40px;
 	text-align: left;
 	font-size: 25px;
+
 }
 
 #container {
@@ -66,11 +67,11 @@ li {
 </head>
 <body>
 	<jsp:include page="../HyoYeon/user_navbar.jsp" flush="true"/>
-	<h1 style="font-size: 50px; text-align:center; color: green; margin-top:40px;">상품 목록</h1>
+	<h1 style="font-size: 40px; text-align:center; color: green; margin-top:40px;">상품 목록</h1>
 		<h1 style="text-align:center; color: green; margin: 40px 0;">수량을 입력해주세요!</h1>
 		
-		<form action="${contextPath}/cart/addCart.do" method="post">
-		<h1 style="text-align:center; color: green;"><input type="radio" name="amount" value="10">10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30 (ea)</h1>
+		<form action="${contextPath}/cart/addCart.do" method="post" style="margin-bottom:40px;">
+		<h1 style="text-align:center; color: green;"><input type="radio" name="amount" value="10" required>10 <input type="radio" name="amount" value="20">20 <input type="radio" name="amount" value="30">30 (ea)</h1>
 		<div id="list">	
 			<ul>
 				<c:forEach var="dto" items="${products}">
@@ -89,7 +90,10 @@ li {
 				</c:forEach>
 			</ul>
 		</div>
-		<input type="submit" value="장바구니 넣기"> 
+		<div style="text-align: center;">
+			<input style="zoom:1.5;"type="submit" value="장바구니 넣기"> 
+		</div>
+
 		</form>
 </body>
 </html>
