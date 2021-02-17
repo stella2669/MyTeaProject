@@ -244,7 +244,7 @@ function infoConfirm() {
 		</div>
 		<div class="txt_center">
 	
-			<input type="button" onclick="infoConfirm()" value="가입하기">
+			<input type="button" class="submit" onclick="infoConfirm()" value="가입하기">
 	
 		</div>
 
