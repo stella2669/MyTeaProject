@@ -207,7 +207,7 @@ input[type=checkbox]:checked+label:before
 	
 }
 
-.submit, .reset_1 {
+.submit, .reset_1, .reset_2, .reset_3 {
 	display: inline-block;
 	width: 170px;
 	height: 50px;
