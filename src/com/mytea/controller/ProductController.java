@@ -44,7 +44,6 @@ public class ProductController extends HttpServlet {
 		//MainTea.jsp에서 만들러가기 눌렀을 때
 		if(action == null) {
 			ArrayList<ProductDto> products = dao.allProductRetrieve();
-			HttpSession session = request.getSession();
 			
 //			String savePath = request.getServletContext().getRealPath("img");
 			

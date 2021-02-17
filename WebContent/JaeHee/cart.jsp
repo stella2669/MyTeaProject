@@ -99,17 +99,13 @@ p{
          <div class="information">
 <!--             <img class="tea_img" src="../img/default.png"/> -->
             
+<!-- 				<p> -->
+<%-- 				<c:forEach var="name" items="${products}"> --%>
+<%-- 					${name} --%>
+<%-- 				</c:forEach> --%>
+<!-- 				</p> -->
             
-            <c:forEach var="dto" items="${item}">
-               <td><img src="/MyTea/img/${dto.fileName}"/> ${dto.name} </td>
-               <td>${dto.price}</td>
-            </c:forEach>
-<!--             총금액 :  -->
-<!--                <br> -->
-<!--                사과 10ea : +1000원<br> -->
-<!--                ... -->
-<!--             </p> -->
-
+<%-- 			<c:forEach var=""> --%>
             </div>
             <br>
          <div class="decide">
