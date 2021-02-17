@@ -18,12 +18,6 @@
    font-family: HoonSinamonR;
 }
 
-.information{
-   weight : 100%;
-   height : 400px;
-   margin : 100px;
-}
-
 form{
    display : inline;
 }
@@ -84,11 +78,17 @@ img{
    height: 130px;
 }
 
-p{
-   margin : 200px;
-   font-size: 25px;
-   text-align : center;
+table {
+  width: 100%;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
 }
+
+th, td {
+  border-bottom: 1px solid #444444;
+  padding: 20px;
+}
+
 </style>
 </head>
 <body>
