@@ -72,7 +72,7 @@ public class CartDao {
 	
 	// 전체 카트 출력
 	public ArrayList<CartDto> allCartRetrieve(){
-		String query = "select * from cart order by ";
+		String query = "select * from cart";
 		ArrayList<CartDto> carts = new ArrayList<CartDto>();
 		
 		try {
