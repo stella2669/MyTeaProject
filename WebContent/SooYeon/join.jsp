@@ -105,35 +105,18 @@ function infoConfirm() {
 	      reg_frm.pw.focus();
 	      return;
 	   }
-<<<<<<< HEAD
-=======
 
 	   if (document.reg_frm.name.value.length == 0) {
 	      alert("이름은 필수 사항입니다.");
 	      reg_frm.name.focus();
 	      return;
 	   }
-
-// 	   if (document.reg_frm.email1.value.length == 0) {
-// 	      alert("이메일은 필수 사항입니다.");
-// 	      reg_frm.name.focus();
-// 	      return;
-// 	   }
->>>>>>> refs/remotes/origin/master
 	   
-<<<<<<< HEAD
-	   if (document.reg_frm.email2.value.length == 0) {
-	      alert("이메일은 필수 사항입니다.");
-	      reg_frm.email.focus();
-	      return;
-	   }
-=======
-// 	   if (document.reg_frm.email.value.length == 0) {
-// 	      alert("이메일은 필수 사항입니다.");
-// 	      reg_frm.email.focus();
-// 	      return;
-// 	   }
->>>>>>> refs/remotes/origin/master
+	   if (document.reg_frm.phone.value.length == 0) {
+		      alert("연락처는 필수 사항입니다.");
+		      reg_frm.address1.focus();
+		      return;
+		   }
 	   
 	   if (document.reg_frm.address1.value.length == 0) {
 	      alert("주소는 필수 사항입니다.");
