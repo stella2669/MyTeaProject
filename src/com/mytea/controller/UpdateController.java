@@ -41,7 +41,6 @@ public class UpdateController extends HttpServlet {
 	    HttpSession session = request.getSession();   //세션에 저장
         PrintWriter out = response.getWriter();    //자바스크립트 쓰려고 
 
-		
         MemberDao dao = MemberDao.getInstance();
         MemberDto dto = new MemberDto();
 
