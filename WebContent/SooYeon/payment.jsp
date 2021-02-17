@@ -31,7 +31,7 @@
 		});
 		$(".reset_2").on('click', function() {
 			$(".txt_center").parent().hide();
-			$(".dim_1").hide();
+			$(".dim").hide();
 
 		});
 	
