@@ -29,21 +29,17 @@ table.sel_pay td{
 	left: 50%;
 	top: 50%;
 	z-index: 100;
-	padding: 52px 60px 60px;
+	padding: 30px 60px 60px;
 	width: 720px;
-	height: 783px;
+	height:750px;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	background: #fff;
 	position: fixed;
-	
-
-	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	border-radius: 5px;
-	text-align: right;
-	opacity: 0;
-	transition: all 0.5s; */
+	opacity: 5;
+	transition: all 0.5s;
 }
 
 .popup_1 h2, .popup_2 h2, .popup_3 h2, .popup_4 h2 {
