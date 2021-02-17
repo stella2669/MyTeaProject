@@ -11,24 +11,28 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
+		$(".open_1").on('click', function() {
+			$(".popup_1").show();
+			$(".dim_1").show();
+
+		});
+	
+		$(".reset_1").on('click', function() {
+			$(".txt_center").parent().hide();
+			$(".dim_1").hide();
+
+		});
+	
+
 		$(".open_2").on('click', function() {
 			$(".popup_2").show();
 			$(".dim").show();
 
 		});
-	});
-	$(document).ready(function() {
+	
 
 		$(".open_3").on('click', function() {
 			$(".popup_3").show();
-			$(".dim").show();
-
-		});
-	});
-	$(document).ready(function() {
-
-		$(".open_4").on('click', function() {
-			$(".popup_4").show();
 			$(".dim").show();
 
 		});
@@ -87,13 +91,13 @@
 			<div class="payment_select">
 				<table class="sel_pay">
 					<tr>
-						<td><a href="#" class="open_2"><img
+						<td><a href="#" class="open_1"><img
 								src="../img/credit-card.png" height="200px" width="200px"></a>
 							<h2>신용카드</h2></td>
-						<td><a href="#" class="open_3"><img
+						<td><a href="#" class="open_2"><img
 								src="../img/phone.png" height="200px" width="200px"></a>
 							<h2>휴대폰결제</h2></td>
-						<td><a href="#" class="open_4"><img
+						<td><a href="#" class="open_3"><img
 								src="../img/money.png" height="200px" width="200px"></a>
 							<h2>무통장입금</h2></td>
 					</tr>
@@ -101,7 +105,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="popup_2">
+	<div class="popup_1">
 		<h2>카드정보</h2>
 		<div class="con">
 			<table class="option">
@@ -178,10 +182,13 @@
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">확인</a> <a href="#" class="reset">취소</a>
-		</div>
+			<a href="#" class="submit">확인</a>
+		
+			<a href="#" class="reset_1">취소</a>
+		</div> 
 	</div>
-	<div class="popup_3">
+	<div class="dim_1"></div>
+	<div class="popup_2">
 		<h2>휴대폰 결제</h2>
 		<div class="con">
 			<table class="option">
@@ -244,7 +251,7 @@
 			<a href="#" class="submit">확인</a> <a href="#" class="reset">취소</a>
 		</div>
 	</div>
-	<div class="popup_4">
+	<div class="popup_3">
 		<h2>무통장 입금</h2>
 		<div class="con">
 			<table class="option">
