@@ -10,38 +10,43 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mytea.pay.PayinformationDao;
+import com.mytea.dao.PayinformationDao;
 
 /**
  * Servlet implementation class PayinfoController
  */
-@WebServlet("/pay.do")
+@WebServlet("/pay/*")
 public class PayinfoController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doPost(request, response);
-	}
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      // TODO Auto-generated method stub
+      doPost(request, response);
+      
+   }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String nextPage = null;
-		String action = request.getPathInfo();
-		
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
-		
-		String id = request.getParameter("id");
-		
-		//PrintWriter out = response.getWriter();
-		PayinformationDao dao = PayinformationDao.getInstance();
-		
-		dao.getinfo(id);
-		nextPage="/JaeHee/member_pay_info.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
-		dispatcher.forward(request, response);
-	}
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      // TODO Auto-generated method stub
+      String nextPage = null;
+      String action = request.getPathInfo();
+      
+      request.setCharacterEncoding("utf-8");
+      response.setCharacterEncoding("utf-8");
+      
+      String id = request.getParameter("id");
+      
+      //PrintWriter out = response.getWriter();
+      PayinformationDao dao = PayinformationDao.getInstance();
+      
+      if(action.equals("/mem")) {
+         dao.getinfo(id);
+         nextPage="/JaeHee/member_pay_info.jsp";
+      }
+      else if(action.equals("/nomem")) {
+         nextPage="/JaeHee/nonmember_pay_info.jsp";
+      }
+      
+      RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
+      dispatcher.forward(request, response);
+   }
 }
-
-

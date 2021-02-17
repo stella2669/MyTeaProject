@@ -1,4 +1,4 @@
-package com.mytea.pay;
+package com.mytea.dto;
 
 public class PayinformationDto {
 	private String id;
