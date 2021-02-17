@@ -63,68 +63,67 @@
 	}
 </script>
 <script>
-$(document).on('keyup','#textarea01',function(e) {
-	var textarea01 = $(this).val();
-	$('#cntSPAN').text(getBytes(textarea01));
-});
-
-function getBytes(str) {
-	var cnt = str.length;
-	return cnt;
-}
-$(document).ready(function() {
-	//이메일 선택
-	$("select[name=select_email]").change(function() {
-		$("input[name=email2]").val(this.value);
+	$(document).on('keyup', '#textarea01', function(e) {
+		var textarea01 = $(this).val();
+		$('#cntSPAN').text(getBytes(textarea01));
 	});
-});
-	
+
+	function getBytes(str) {
+		var cnt = str.length;
+		return cnt;
+	}
+	$(document).ready(function() {
+		//이메일 선택
+		$("select[name=select_email]").change(function() {
+			$("input[name=email2]").val(this.value);
+		});
+	});
 </script>
 <script type="text/javascript">
-function infoConfirm() {
-	   if (document.reg_frm.id.value.length == 0) {
-	      alert("아이디는 필수 사항입니다.");
-	      reg_frm.id.focus();
-	      return;
-	   }
+	function infoConfirm() {
+		if (document.reg_frm.id.value.length == 0) {
+			alert("아이디는 필수 사항입니다.");
+			reg_frm.id.focus();
+			return;
+		}
 
-	   if (document.reg_frm.id.value.length < 4) {
-	      alert("아이디는 4자리 이상이여야합니다");
-	      reg_frm.id.focus();
-	      return;
-	   }
+		if (document.reg_frm.id.value.length < 4) {
+			alert("아이디는 4자리 이상이여야합니다");
+			reg_frm.id.focus();
+			return;
+		}
 
-	   if (document.reg_frm.pw.value.length == 0) {
-	      alert("비밀번호는 필수 사항입니다.");
-	      reg_frm.pw.focus();
-	      return;
-	   }
+		if (document.reg_frm.pw.value.length == 0) {
+			alert("비밀번호는 필수 사항입니다.");
+			reg_frm.pw.focus();
+			return;
+		}
 
-	   if (document.reg_frm.pw.value != document.reg_frm.pw_check.value) {
-	      alert("비밀번호가 일치하지 않습니다.");
-	      reg_frm.pw.focus();
-	      return;
-	   }
+		if (document.reg_frm.pw.value != document.reg_frm.pw_check.value) {
+			alert("비밀번호가 일치하지 않습니다.");
+			reg_frm.pw.focus();
+			return;
+		}
 
-	   if (document.reg_frm.name.value.length == 0) {
-	      alert("이름은 필수 사항입니다.");
-	      reg_frm.name.focus();
-	      return;
-	   }
-	   
-	   if (document.reg_frm.phone.value.length == 0) {
-		      alert("연락처는 필수 사항입니다.");
-		      reg_frm.address1.focus();
-		      return;
-		   }
-	   
-	   if (document.reg_frm.address1.value.length == 0) {
-	      alert("주소는 필수 사항입니다.");
-	      reg_frm.address1.focus();
-	      return;
-	   }
-	   
-	   document.reg_frm.submit();
+		if (document.reg_frm.name.value.length == 0) {
+			alert("이름은 필수 사항입니다.");
+			reg_frm.name.focus();
+			return;
+		}
+
+		if (document.reg_frm.phone.value.length == 0) {
+			alert("연락처는 필수 사항입니다.");
+			reg_frm.address1.focus();
+			return;
+		}
+
+		if (document.reg_frm.address1.value.length == 0) {
+			alert("주소는 필수 사항입니다.");
+			reg_frm.address1.focus();
+			return;
+		}
+
+		document.reg_frm.submit();
 	}
 </script>
 </head>
@@ -165,92 +164,99 @@ function infoConfirm() {
 	</div> -->
 
 
-<form action="../Join.do" method="post" name="reg_frm">
-	<div class="container-fluid">
-		<div class="header">
-			<img alt="" src="../img/MyTea_logo.png" width="130" height="130">
-		</div>
-	</div>
-	<div class="body">
-		<div class="con">
-			<table class="option">
-				<colgroup>
-					<col style="width: 111px">
-					<col>
-				</colgroup>
-				<tr>
-					<th><label for="list1">아이디</label><span><em> *</em></span></th>
-					<td id="list1"><input type="text" id="id" name="id">
-						<input type="button" class="button h60 btn_gray_dark"
-							id="id_check" onclick="" autocomplete="off" value="중복확인"></td>
-				</tr>
-				<tr>
-					<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
-					<td id="list2"><input type="password" name="pw" maxlength="14" autocomplete="off" placeholder="영문 /숫자  8자리 이상 입력"></td>
-				</tr>
-				<tr>
-					<th><label for="list3">비밀번호 확인</label><span><em> *</em></span></th>
-					<td id="list3"><input type="password" id="pw_check" maxlength="14" autocomplete="off"></td>
-				</tr>
-				<tr>
-					<th><label for="list4">이름</label><span><em> *</em></span></th>
-					<td id="list4"><input type="text" name="name" maxlength="6"
-						autocomplete="off"></td>
-				</tr>
-				<tr>
-					<th><label for="list5">생년월일</label></th>
-					<td id="list5"><input type="date" name="birth"
-						max='<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>' placeholder="ex)1990-02-10"></td>
-				</tr>
-				<tr>
-					<th><label for="list6">연락처</label><span><em> *</em></span></th>
-					<td id="list6"><input type="tel" name="phone"
-						placeholder="전화번호 입력" maxlength="11" autocomplete="off">&nbsp;<input
-						type="button" class="certify" value="인증번호 받기" placeholder="ex)010-000-0000"><br> <input
-						type="text" id="certify" placeholder="인증번호를 입력하세요."></td>
-				</tr>
-
-				<tr>
-					<th><label for="list7">이메일</label></th>
-					<td id="list7"><input type="text" placeholder="이메일 주소 입력"
-						name="email1" data-validation="1" maxlength="50"
-						autocomplete="off"><i>@</i> <input type="text"
-						maxlength="50" name="email2" data-validation="1"
-						autocomplete="off"> <select name="select_email"
-						id="btn_email_select">
-							<option value="">직접입력</option>
-							<option value="naver.com">naver.com</option>
-							<option value="daum.net">daum.net</option>
-							<option value="gmail.com">gmail.com</option>
-							<option value="hotmail.com">hotmail.com</option>
-							<option value="nate.com">nate.com</option>
-							<option value="yahoo.co.kr">yahoo.co.kr</option>
-					</select></td>
-				</tr>
-				<tr>
-					<th><label for="list8">주소</label><span><em> *</em></span></th>
-					<td id="list8"><input type="text" placeholder="우편번호"
-						name="postcode" maxlength="5" size="6" onclick="execDaumPostcode()"> <input
-						type="button" value="우편번호 검색" onclick="execDaumPostcode()"><br>
-						<input type="text" placeholder="주소 입력" name="address1" size="50">
-						<input type="text" placeholder="상세주소 입력" name="address2" size="30">
-					</td>
-				</tr>
-			</table>
-			<div class="agree">
-				<input type="checkbox" id=chk_1><label for="chk_1"><span>[필수]
-				</span>개인정보 수집 및 이용동의</label> <a href="#a" class="view">전문보기</a>
+	<form action="../Join.do" method="post" name="reg_frm">
+		<div class="container-fluid">
+			<div class="header">
+				<img alt="" src="../img/MyTea_logo.png" width="130" height="130">
 			</div>
 		</div>
-		<div class="txt_center">
-	
-			<input type="button" class="submit" onclick="infoConfirm()" value="가입하기">
-	
+		<div class="body">
+			<div class="con">
+				<table class="option">
+					<colgroup>
+						<col style="width: 111px">
+						<col>
+					</colgroup>
+					<tr>
+						<th><label for="list1">아이디</label><span><em> *</em></span></th>
+						<td id="list1"><input type="text" id="id" name="id">
+							<input type="button" class="button h60 btn_gray_dark"
+							id="id_check" onclick="" autocomplete="off" value="중복확인"></td>
+					</tr>
+					<tr>
+						<th><label for="list2">비밀번호</label><span><em> *</em></span></th>
+						<td id="list2"><input type="password" name="pw"
+							maxlength="14" autocomplete="off" placeholder="영문 /숫자  8자리 이상 입력"></td>
+					</tr>
+					<tr>
+						<th><label for="list3">비밀번호 확인</label><span><em>
+									*</em></span></th>
+						<td id="list3"><input type="password" id="pw_check"
+							maxlength="14" autocomplete="off"></td>
+					</tr>
+					<tr>
+						<th><label for="list4">이름</label><span><em> *</em></span></th>
+						<td id="list4"><input type="text" name="name" maxlength="6"
+							autocomplete="off"></td>
+					</tr>
+					<tr>
+						<th><label for="list5">생년월일</label></th>
+						<td id="list5"><input type="date" name="birth"
+							max='<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>'
+							placeholder="ex)1990-02-10"></td>
+					</tr>
+					<tr>
+						<th><label for="list6">연락처</label><span><em> *</em></span></th>
+						<td id="list6"><input type="tel" name="phone"
+							placeholder="전화번호 입력" maxlength="11" autocomplete="off">&nbsp;<input
+							type="button" class="certify" value="인증번호 받기"
+							placeholder="ex)010-000-0000"><br> <input
+							type="text" id="certify" placeholder="인증번호를 입력하세요."></td>
+					</tr>
+
+					<tr>
+						<th><label for="list7">이메일</label></th>
+						<td id="list7"><input type="text" placeholder="이메일 주소 입력"
+							name="email1" data-validation="1" maxlength="50"
+							autocomplete="off"><i>@</i> <input type="text"
+							maxlength="50" name="email2" data-validation="1"
+							autocomplete="off"> <select name="select_email"
+							id="btn_email_select">
+								<option value="">직접입력</option>
+								<option value="naver.com">naver.com</option>
+								<option value="daum.net">daum.net</option>
+								<option value="gmail.com">gmail.com</option>
+								<option value="hotmail.com">hotmail.com</option>
+								<option value="nate.com">nate.com</option>
+								<option value="yahoo.co.kr">yahoo.co.kr</option>
+						</select></td>
+					</tr>
+					<tr>
+						<th><label for="list8">주소</label><span><em> *</em></span></th>
+						<td id="list8"><input type="text" placeholder="우편번호"
+							name="postcode" maxlength="5" size="6"
+							onclick="execDaumPostcode()"> <input type="button"
+							value="우편번호 검색" onclick="execDaumPostcode()"><br> <input
+							type="text" placeholder="주소 입력" name="address1" size="50">
+							<input type="text" placeholder="상세주소 입력" name="address2"
+							size="30"></td>
+					</tr>
+				</table>
+				<div class="agree">
+					<input type="checkbox" id=chk_1><label for="chk_1"><span>[필수]
+					</span>개인정보 수집 및 이용동의</label> <a href="#a" class="view">전문보기</a>
+				</div>
+			</div>
+			<div class="txt_center">
+
+				<input type="button" class="submit" onclick="infoConfirm()"
+					value="가입하기">
+
+			</div>
+
 		</div>
 
-	</div>
-
-	<div class="dim"></div>
-</form>
+		<div class="dim"></div>
+	</form>
 </body>
 </html>
