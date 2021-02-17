@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<%-- <jsp:useBean id="dto" class="com.mytea.dto.MemberDto" />
-<jsp:setProperty property="*" name="dto" /> --%>
 
 <!DOCTYPE html>
 <html>
@@ -161,7 +159,7 @@ function updateInfoConfirm(){
 					<th><label for="list8">주소</label><span><em> *</em></span></th>
 					<td id="list8"><input type="text" placeholder="우편번호"name="postcode" maxlength="5" size="6" onclick="execDaumPostcode()"> 
 					<input type="button" value="우편번호 검색" onclick="execDaumPostcode()" ><br>
-						<input type="text" placeholder="주소 입력" name="address1" size="30" value="${dto.postcode}">
+						<input type="text" placeholder="주소 입력" name="address1" size="30" value="">
 						<input type="text" placeholder="상세주소 입력" name="address2" size="30">
 					</td>
 				</tr>

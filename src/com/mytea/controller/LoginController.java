@@ -36,6 +36,7 @@ public class LoginController extends HttpServlet {
 		
 		String id=request.getParameter("id");
 		String pw= request.getParameter("pw");
+		
 		HttpSession session = request.getSession(); 
         PrintWriter out = response.getWriter();
 		
@@ -61,6 +62,7 @@ public class LoginController extends HttpServlet {
 			}else {		//값이 null이 아닐경우니까 회원일 경우
 				
 				session.setAttribute("id", id);
+				
 				String name= dto.getName();
 				System.out.println(name+"님 입장!!");
 				

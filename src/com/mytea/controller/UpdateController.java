@@ -39,35 +39,23 @@ public class UpdateController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8"); //자바스크립트 한글깨짐 
 		
-		/*
-		 * String action = request.getPathInfo(); //어떤 request에서 넘어왓는지 확인
-		 * System.out.println("action: "+ action);
-		 */
 		
         MemberDao dao = MemberDao.getInstance();
         MemberDto dto = new MemberDto();
-        PrintWriter out = response.getWriter();    //자바스크립트 쓰려고
-//        HttpSession session = request.getSession();   //세션에 저장
+        PrintWriter out = response.getWriter();    //자바스크립트 쓰려고 
+
+//        int ri= dao.updateMember(dto);
         
-		/*
-		 * if(action == null) { MemberDto dto = dao.getMember("id");
-		 * 
-		 * String id=(String)session.getAttribute("id"); // MemberDto dto =
-		 * dao.getMember(id); request.setAttribute("dto", dto);
-		 * 
-		 * nextPage= "/HyoYeon/update.jsp"; }else if(action) {
-		 * 
-		 * 
-		 * }
-		 */
-        request.setAttribute("name", dto.getName());
-        request.setAttribute("birth", dto.getBirth());
-        request.setAttribute("phone", dto.getPhone());
-        request.setAttribute("email1", dto.getEmail1());
-        request.setAttribute("email2", dto.getEmail2());
-        request.setAttribute("postcode", dto.getPostcode());
+//        request.setAttribute("name", dto.getName());
+//        request.setAttribute("birth", dto.getBirth());
+//        request.setAttribute("phone", dto.getPhone());
+//        request.setAttribute("email1", dto.getEmail1());
+//        request.setAttribute("email2", dto.getEmail2());
+//        request.setAttribute("postcode", dto.getPostcode());
         
-        System.out.println(dto.getPostcode());
+        
+        HttpSession session = request.getSession();   //세션에 저장
+        
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
 		dispatcher.forward(request, response);
