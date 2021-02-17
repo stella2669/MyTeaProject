@@ -80,7 +80,6 @@ public class CartController extends HttpServlet {
 			
 		}else if(action.equals("/delete.do")) {
 			
-			
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);

@@ -1,4 +1,4 @@
-<%@ page import="com.mytea.pay.PayinformationDto" %>
+<%@ page import="com.mytea.dto.PayinformationDto" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
