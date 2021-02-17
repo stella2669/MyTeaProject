@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>My Tea > 회원가입</title>
+<title> 회원 정보수정 </title>
 <link rel="stylesheet" href="${contextPath}/SooYeon/style_join.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -137,14 +137,14 @@ function updateInfoConfirm(){
 					<td id="list6"><input type="tel" name="phone"
 						placeholder="전화번호 입력" maxlength="11" autocomplete="off">&nbsp;<input
 						type="button" class="certify" value="인증번호 받기" placeholder="ex)010-000-0000"><br> <input
-						type="text" id="certify" value="${dto.phone }" ></td>
+						type="text" id="certify" value="${dto.phone}" ></td>
 				</tr>
 
 				<tr>
 					<th><label for="list7">이메일</label></th>
 					<td id="list7"><input type="text" placeholder="이메일 주소 입력"
 						name="email1" data-validation="1" maxlength="50"
-						autocomplete="off" readonly="readonly" value="${dto.email1 }"><i>@</i> <input type="text"
+						autocomplete="off" readonly="readonly" value="${dto.email1}"><i>@</i> <input type="text"
 						maxlength="50" name="email2" data-validation="1"
 						autocomplete="off" readonly="readonly" value="${dto.email2}"> <select name="select_email"
 						id="btn_email_select">
@@ -159,10 +159,9 @@ function updateInfoConfirm(){
 				</tr>
 				<tr>
 					<th><label for="list8">주소</label><span><em> *</em></span></th>
-					<td id="list8"><input type="text" placeholder="우편번호"
-						name="postcode" maxlength="5" size="6" onclick="execDaumPostcode()"> <input
-						type="button" value="우편번호 검색" onclick="execDaumPostcode()"><br>
-						<input type="text" placeholder="주소 입력" name="address1" size="30">
+					<td id="list8"><input type="text" placeholder="우편번호"name="postcode" maxlength="5" size="6" onclick="execDaumPostcode()"> 
+					<input type="button" value="우편번호 검색" onclick="execDaumPostcode()" ><br>
+						<input type="text" placeholder="주소 입력" name="address1" size="30" value="${dto.postcode}">
 						<input type="text" placeholder="상세주소 입력" name="address2" size="30">
 					</td>
 				</tr>

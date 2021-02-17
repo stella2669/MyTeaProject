@@ -242,9 +242,14 @@ public class MemberDao {
 			pstmt.setString(7, dto.getAddress1());
 			pstmt.setString(8, dto.getAddress2());
 			pstmt.setString(9, dto.getPostcode());
-
-			pstmt.setString(10, dto.getId());			
-			pstmt.executeUpdate();
+			pstmt.setString(10, dto.getId());		
+			
+			int num= pstmt.executeUpdate();
+			if(num>0) {
+				ri= 1;
+			}else {
+				ri = -1;
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
