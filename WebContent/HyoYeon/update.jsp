@@ -10,8 +10,7 @@
 
 <title> 회원 정보수정 </title>
 <link rel="stylesheet" href="${contextPath}/SooYeon/style_join.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 우편번호 api script -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
@@ -127,14 +126,12 @@ function updateInfoConfirm(){
 				</tr>
 				<tr>
 					<th><label for="list5">생년월일</label></th>
-					<td id="list5"> <input type="date" name="birth" max='<fmt:formatDate pattern="yyyy-MM-dd" />'value="${dto.birth}" ></td>
+					<td id="list5"> <input type="text" name="birth" value="${dto.birth}" readonly="readonly"></td>
 				</tr> 
 				<tr>
 					<th><label for="list6">연락처</label><span><em> *</em></span></th>
 					<td id="list6"><input type="tel" name="phone"
-						placeholder="전화번호 입력" maxlength="11" autocomplete="off" value="${dto.phone}">&nbsp;<input
-						type="button" class="certify" value="인증번호 받기" placeholder="ex)010-000-0000"><br> <input
-						type="text" id="certify"  ></td>
+						placeholder="전화번호 입력" maxlength="11" autocomplete="off" value="${dto.phone}">&nbsp;</td>
 				</tr>
 				<tr> 
 					<th><label for="list7">이메일</label></th>
@@ -168,9 +165,8 @@ function updateInfoConfirm(){
 			</div>
 		</div>
 		<div class="txt_center">
-	
-			<input type="button" onclick="updateInfoConfirm()" value="수정하기">
-	
+<!-- 			<input type="button" onclick="updateInfoConfirm()" value="수정하기"> -->
+				<input type="submit" value="수정하기 ">
 		</div>
 
 	</div>
