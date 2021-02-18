@@ -20,6 +20,7 @@ public class MemberDao {
 	public static final int LOGIN_ADMIN = 2; // 어드민 로그인
 //싱글턴
 	private static MemberDao instance = new MemberDao();
+
 //static메서드를 통해서만 생성할 수 있도록 함
 	public static MemberDao getInstance() {
 		return instance;
@@ -45,8 +46,8 @@ public class MemberDao {
 		return connection;
 	}
 
-	public int userCheck(String id, String pw) { 	// 회원 체크
-		int result = 0;	
+	public int userCheck(String id, String pw) { // 회원 체크
+		int result = 0;
 		String dbPwd;
 
 		Connection connection = null;
@@ -61,7 +62,7 @@ public class MemberDao {
 			set = pstmt.executeQuery();
 
 			if (set.next()) {
-				dbPwd = set.getString("pw"); 	// 디비에 pw
+				dbPwd = set.getString("pw"); // 디비에 pw
 				if (dbPwd.equals(pw)) {
 					if (id.equals("admin")) {
 						result = MemberDao.LOGIN_ADMIN; // 2
@@ -95,40 +96,40 @@ public class MemberDao {
 
 		return result;
 	}
-	
+
 	// id중복체크
-		public int confirmId(String id) {
-			int ri = 0;
+	public int confirmId(String id) {
+		int ri = 0;
 
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet set = null;
-			String query = "select id from tea_member where id=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet set = null;
+		String query = "select id from tea_member where id=?";
 
-			try {
-				conn = getConnection();
-				pstmt = conn.prepareStatement(query);
-				pstmt.setString(1, id);
-				set = pstmt.executeQuery(); 
-				if (set.next()) {
-					ri = MemberDao.MEMBER_EXISTENT; 
-				} else {
-					ri = MemberDao.MEMBER_NONEXISTENT;
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					set.close();
-					pstmt.close();
-					conn.close(); 
-				} catch (Exception e2) {
-					e2.printStackTrace();
-				}
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			set = pstmt.executeQuery();
+			if (set.next()) {
+				ri = MemberDao.MEMBER_EXISTENT;
+			} else {
+				ri = MemberDao.MEMBER_NONEXISTENT;
 			}
-
-			return ri; 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				set.close();
+				pstmt.close();
+				conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
+
+		return ri;
+	}
 
 	// 회원 추가
 	public int insertMember(MemberDto dto) {
@@ -174,6 +175,7 @@ public class MemberDao {
 		return ri;
 
 	}
+
 	// 멤버 가져올때
 	public MemberDto getMember(String id) {
 
@@ -201,9 +203,9 @@ public class MemberDao {
 				dto.setPostcode(set.getString("postcode"));
 				dto.setAddress1(set.getString("address1"));
 				dto.setAddress2(set.getString("address2"));
-				
+
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -219,20 +221,19 @@ public class MemberDao {
 		return dto;
 	}
 
-	//회원 수정
-	public int updateMember(MemberDto dto) { 
+	// 회원 수정
+	public int updateMember(MemberDto dto) {
 		int ri = 0;
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String query = "update tea_member set pw=?,name=?,birth=?,phone=?,email1=?,email2=?,address1=?,address2=?"
-				+ "postcode=? where id=?"; 
+		String query = "update tea_member set pw=?,name=?,birth=?,phone=?,email1=?,email2=?,address1=?,address2=?,postcode=? where id=?";
 
-		try { 
+		try {
 
 			con = getConnection();
 			pstmt = con.prepareStatement(query);
-			
+
 			pstmt.setString(1, dto.getPw());
 			pstmt.setString(2, dto.getName());
 			pstmt.setString(3, dto.getBirth());
@@ -242,29 +243,21 @@ public class MemberDao {
 			pstmt.setString(7, dto.getAddress1());
 			pstmt.setString(8, dto.getAddress2());
 			pstmt.setString(9, dto.getPostcode());
-			pstmt.setString(10, dto.getId());		
-			
-			int num= pstmt.executeUpdate();
-			if(num>0) {
-				ri= 1;
-			}else {
-				ri = -1;
-			}
-			
+			pstmt.setString(10, dto.getId());
+
+			ri = pstmt.executeUpdate();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			try {
 				pstmt.close();
-				con.close(); 
+				con.close();
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
 		}
 		return ri;
 	}
-	
-	
-	
 
 }

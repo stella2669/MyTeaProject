@@ -35,7 +35,7 @@ public class UpdateController extends HttpServlet {
 
 	private void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
-		String nextPage = null;
+		String nextPage = "HyoYeon/update.jsp";
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8"); //자바스크립트 한글깨짐 
 	    HttpSession session = request.getSession();   //세션에 저장
