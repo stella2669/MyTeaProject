@@ -94,7 +94,7 @@ function updateInfoConfirm(){
 </head>
 <body>
 
-<form action="${contextPath }/update" method="post" name="reg_frm">
+<form action="${contextPath}/updateOk" method="post" name="reg_frm">
 	<div class="container-fluid">
 		<div class="header">
 			<img alt="" src="../img/MyTea_logo.png" width="130" height="130">
@@ -166,7 +166,8 @@ function updateInfoConfirm(){
 		</div>
 		<div class="txt_center">
 <!-- 			<input type="button" onclick="updateInfoConfirm()" value="수정하기"> -->
-				<input type="submit" value="수정하기 ">
+			<button onclick="updateInfoConfirm()">수정하기</button>
+<!-- 				<input type="submit" value="수정하기 "> -->
 		</div>
 
 	</div>
