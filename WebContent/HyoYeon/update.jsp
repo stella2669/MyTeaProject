@@ -155,10 +155,10 @@ function updateInfoConfirm(){
 				</tr>
 				<tr>
 					<th><label for="list8">주소</label><span><em> *</em></span></th>
-					<td id="list8"><input type="text" placeholder="우편번호"name="postcode" maxlength="5" size="6" value="${dto.postcode }" onclick="execDaumPostcode()"> 
+					<td id="list8"><input type="text" placeholder="우편번호"name="postcode" maxlength="5" size="6" value="${dto.postcode}" onclick="execDaumPostcode()"> 
 					<input type="button" value="우편번호 검색" onclick="execDaumPostcode()" ><br>
-						<input type="text" placeholder="주소 입력" name="address1" size="30" value="${dto.address1 }">
-						<input type="text" placeholder="상세주소 입력" name="address2" size="30" value="${dto.address2}">
+						<input type="text" placeholder="주소 입력" value="${dto.address1}" name="address1" size="30">
+						<input type="text" placeholder="상세주소 입력" value="${dto.address2}" name="address2" size="30">
 					</td>
 				</tr>
 			</table>
