@@ -61,7 +61,7 @@ public class LoginController extends HttpServlet {
 				out.print("<script>alert('아이디가 존재하지 않습니다.'); history.back();</script>");
 			}else {		//값이 null이 아닐경우니까 회원일 경우
 				
-//				session.setAttribute("id", id);
+				session.setAttribute("id", id);
 				session.setAttribute("dto", dto);
 				
 				String name= dto.getName();
