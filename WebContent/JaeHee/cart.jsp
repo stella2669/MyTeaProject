@@ -18,12 +18,6 @@
    font-family: HoonSinamonR;
 }
 
-.information{
-   weight : 100%;
-   height : 400px;
-   margin : 100px;
-}
-
 form{
    display : inline;
 }
@@ -84,11 +78,17 @@ img{
    height: 130px;
 }
 
-p{
-   margin : 200px;
-   font-size: 25px;
-   text-align : center;
+table {
+  width: 100%;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
 }
+
+th, td {
+  border-bottom: 1px solid #444444;
+  padding: 20px;
+}
+
 </style>
 </head>
 <body>
@@ -96,22 +96,33 @@ p{
    <jsp:include page="../HyoYeon/user_navbar.jsp"></jsp:include>
    <br>
       <form action="${contextPath}/cart/delete.do" method="post">
-         <div class="information">
-<!--             <img class="tea_img" src="../img/default.png"/> -->
-            
-<!-- 				<p> -->
-<%-- 				<c:forEach var="name" items="${products}"> --%>
-<%-- 					${name} --%>
-<%-- 				</c:forEach> --%>
-<!-- 				</p> -->
-            
-<%-- 			<c:forEach var=""> --%>
-            </div>
-            <br>
+		<div style="margin: 100px 100px 0px 100px; font-size:25px; ">
+         <table>
+            <tr>
+               <th>선택</th>
+               <th>품목</th>
+               <th>수량</th>
+               <th>상품가</th>
+            </tr>
+            <c:forEach var="dto" items="${carts}">
+               <tr>
+                  <td><input type="checkbox" name="selected" value="${dto.names}"></td>
+                  <td>${dto.names}</td>
+                  <td>${dto.amount}</td>
+                  <td>${dto.totalprice}</td>
+               </tr>
+         </c:forEach>
+         <tr>
+	         <td>예상 결제 금액</td>
+	         <td>${total}</td>
+	     </tr>
+         </table>
+		
          <div class="decide">
             <input type="button" class="choose" value="더 추가하기" onclick="history.back();"/> <!-- /pay/add.do -->
             <input type="submit" class="choose" value="삭제"/> <!-- /pay/delete.do -->
-         </div>   
+         </div> 
+         </div>  
       </form>
          
          <div class="button">   
