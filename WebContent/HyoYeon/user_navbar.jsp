@@ -51,11 +51,11 @@ body {
 <script type="text/javascript">
 
 	function logout(){
-		alert('로그아웃 되었습니다.');
-		
+		alert('로그아웃 되었습니다.');	
 // 	 	session.invalidate();
-	 	location.href = "${contextPath}/login.jsp";
-	 }
+	 	location.href = "<c:url value='HyoYeon/login.jsp'/>;
+	 	
+	}
 </script>
 </head>
 <body>
@@ -69,6 +69,7 @@ body {
 				<li class="nav-item"><a href="update.jsp">update</a></li>
 				<li class="nav-item" style="font-size: 25px">${sessionScope.id}님 환영합니다.</li>
 				<li class="nav-item" style="font-size: 25px" onclick="logout();"> logout </li> 
+				
 			</ul>
 		</nav>
 

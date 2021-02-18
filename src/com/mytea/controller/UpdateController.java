@@ -47,9 +47,11 @@ public class UpdateController extends HttpServlet {
 //        request.setAttribute("dto", dto);
         session.setAttribute("dto", dto);
         
+        dao.updateMember(dto);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
 		dispatcher.forward(request, response);
+		
 		
 	}
 

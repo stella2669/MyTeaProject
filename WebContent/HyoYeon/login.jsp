@@ -111,7 +111,7 @@ input {
 				<hr>
 				
 				<h2>Login My Tea</h2>
-				<form action="${pageContext.request.contextPath}/login" method="post" id="form"> 
+				<form action="${pageContext.request.contextPath}/login/login.do" method="post" id="form"> 
 					<div id="id">
 						ID:<br><input type="text" name="id" placeholder="id">
 					</div>
