@@ -9,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.mytea.dao.PayinformationDao;
+import com.mytea.dto.PayinformationDto;
 
 /**
  * Servlet implementation class PayinfoController
@@ -33,19 +35,20 @@ public class PayinfoController extends HttpServlet {
       request.setCharacterEncoding("utf-8");
       response.setCharacterEncoding("utf-8");
       
-      String id = request.getParameter("id");
-      
+     HttpSession session= request.getSession();
+     String id =(String) session.getAttribute("id");
       //PrintWriter out = response.getWriter();
       PayinformationDao dao = PayinformationDao.getInstance();
-      
+      PayinformationDto dto = new PayinformationDto();
+     
       if(action.equals("/mem")) {
-         dao.getinfo(id);
+         dto=dao.getinfo(id);
          nextPage="/JaeHee/member_pay_info.jsp";
       }
       else if(action.equals("/nomem")) {
          nextPage="/JaeHee/nonmember_pay_info.jsp";
       }
-      
+      System.out.println(dto.getId());
       RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
       dispatcher.forward(request, response);
    }

@@ -3,8 +3,6 @@ package com.mytea.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
@@ -15,7 +13,7 @@ import com.mytea.dto.PayinformationDto;
 public class PayinformationDao {
 	public static final int MEMBER_NONEXISTENT = 0; 
 	public static final int MEMBER_EXISTENT = 1; 
-	
+	ResultSet rs = null;
 	private static PayinformationDao payInstance = new PayinformationDao();
 	
 	private PayinformationDao() {
@@ -61,22 +59,17 @@ public class PayinformationDao {
 	}
 	
 	public PayinformationDto getinfo(String id) {
-		
 		Connection connection = getConnection();
-		ResultSet rs = null;
+		
 		String query = "select name,phone,address1,postcode from tea_member where id=?";
 		PreparedStatement pstmt = null;
-		PayinformationDto dto = null;
-		
-		System.out.print("수정 성공");
-		
+		PayinformationDto dto = new PayinformationDto();
 		try {
 			pstmt = connection.prepareStatement(query);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) {
-				dto = new PayinformationDto();
+			while(rs.next()) {
 				dto.setName(rs.getString("name"));
 				dto.setPhone(rs.getString("phone"));
 				dto.setAddress1(rs.getString("address1"));
@@ -87,14 +80,15 @@ public class PayinformationDao {
 			e.printStackTrace();
 		}finally {
 			try {
-			rs.close();
-			pstmt.close();
-			connection.close();
-		} catch(Exception e2) {
-			e2.printStackTrace();
-		 }
+				rs.close();
+				pstmt.close();
+				connection.close();
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
 		}
-	
+		System.out.println("수정 성공");
+		System.out.println(dto.getId());
 		return dto;
 	}
 	
