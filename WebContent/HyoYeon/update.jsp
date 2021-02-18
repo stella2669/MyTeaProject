@@ -136,8 +136,7 @@ function updateInfoConfirm(){
 						type="button" class="certify" value="인증번호 받기" placeholder="ex)010-000-0000"><br> <input
 						type="text" id="certify"  ></td>
 				</tr>
-
-				<tr>
+				<tr> 
 					<th><label for="list7">이메일</label></th>
 					<td id="list7"><input type="text" placeholder="이메일 주소 입력"
 						name="email1" data-validation="1" maxlength="50"
