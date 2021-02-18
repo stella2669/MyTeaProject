@@ -41,13 +41,10 @@ public class UpdateController extends HttpServlet {
 	    HttpSession session = request.getSession();   //세션에 저장
         PrintWriter out = response.getWriter();    //자바스크립트 쓰려고 
 
-        MemberDao dao = MemberDao.getInstance();
-        MemberDto dto = new MemberDto();
+        String id =(String) session.getAttribute("id");
+        MemberDto dto = MemberDao.getInstance().getMember(id);
 
-//        request.setAttribute("dto", dto);
         session.setAttribute("dto", dto);
-        
-        dao.updateMember(dto);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
 		dispatcher.forward(request, response);

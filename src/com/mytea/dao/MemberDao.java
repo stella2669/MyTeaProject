@@ -46,7 +46,7 @@ public class MemberDao {
 	}
 
 	public int userCheck(String id, String pw) { 	// 회원 체크
-		int result = 0;
+		int result = 0;	
 		String dbPwd;
 
 		Connection connection = null;
@@ -199,8 +199,8 @@ public class MemberDao {
 				dto.setEmail1(set.getString("email1"));
 				dto.setEmail2(set.getString("email2"));
 				dto.setPostcode(set.getString("postcode"));
-				dto.setPw(set.getString("pw"));
-				dto.setPw(set.getString("pw"));
+				dto.setAddress1(set.getString("address1"));
+				dto.setAddress2(set.getString("address2"));
 				
 			}
 			
