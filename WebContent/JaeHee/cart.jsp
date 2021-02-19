@@ -82,6 +82,7 @@ table {
   width: 100%;
   border-top: 1px solid #444444;
   border-collapse: collapse;
+  text-align: center;
 }
 
 th, td {
@@ -101,8 +102,8 @@ th, td {
             <tr>
                <th>선택</th>
                <th>품목</th>
-               <th>수량</th>
-               <th>상품가</th>
+               <th>수량(ea)</th>
+               <th>상품가(원)</th>
             </tr>
             <c:forEach var="dto" items="${carts}">
                <tr>
@@ -113,8 +114,8 @@ th, td {
                </tr>
          </c:forEach>
          <tr>
-	         <td>예상 결제 금액</td>
-	         <td>${total}</td>
+	         <td colspan="2">예상 결제 금액</td>
+	         <td colspan="2">${total}</td>
 	     </tr>
          </table>
 		
