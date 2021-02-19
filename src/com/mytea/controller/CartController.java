@@ -44,10 +44,12 @@ public class CartController extends HttpServlet {
 		ProductDao productDao = ProductDao.getInstance();
 		CartDao cartDao = CartDao.getInstance();
 		
-		if(action==null) { //navi에서 장바구니 클릭 시 
-			
+		String _id = (String)session.getAttribute("id");
+		System.out.println(_id);
+		
+		if(action==null) { //navi에서 장바구니 클릭 시 	
 			//로그인된 id값에 해당되는 cart table의 목록 가져와서 출력시키기.
-			ArrayList<CartDto> carts = cartDao.allCartRetrieve();
+			ArrayList<CartDto> carts = cartDao.allCartRetrieve(_id);
 			request.setAttribute("carts", carts);
 			
 			nextPage = "/JaeHee/cart.jsp";
@@ -72,7 +74,7 @@ public class CartController extends HttpServlet {
 			CartDto cartDto = new CartDto(id, names, perprice, amount, totalprice);
 			cartDao.insertCart(cartDto);
 			
-			ArrayList<CartDto> carts = cartDao.allCartRetrieve();
+			ArrayList<CartDto> carts = cartDao.allCartRetrieve(_id);
 			request.setAttribute("carts", carts);
 //			request.setAttribute("cartDto", cartDto);
 			
