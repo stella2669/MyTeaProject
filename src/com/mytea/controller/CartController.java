@@ -58,6 +58,7 @@ public class CartController extends HttpServlet {
 			//form태그를 통해 넘어온 값들을 products안에 저장하고 id, amount, totalprice, products를 request.setAttribute("item",products)로 저장해서 dispatcher로 /cart로 이동 cart테이블에 저장시켜야함(/cart 서블릿으로 넘겨서 insert)
 			ArrayList<ProductDto> item = new ArrayList<ProductDto>();
 			int perprice = 0;
+			int total = 0;
 			
 			String[] products = request.getParameterValues("product");
 			
@@ -75,8 +76,14 @@ public class CartController extends HttpServlet {
 			cartDao.insertCart(cartDto);
 			
 			ArrayList<CartDto> carts = cartDao.allCartRetrieve(_id);
+			
+			// 예상 결제 금액
+			for(CartDto cart: carts) {
+				total += cart.getTotalprice();
+			}
+			
 			request.setAttribute("carts", carts);
-//			request.setAttribute("cartDto", cartDto);
+			request.setAttribute("total", total);
 			
 			nextPage = "/JaeHee/cart.jsp";
 			
