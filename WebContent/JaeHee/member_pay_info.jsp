@@ -1,10 +1,7 @@
-<%@ page import="com.mytea.dto.PayinformationDto" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%
-PayinformationDto dto = new PayinformationDto();
-%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html>
@@ -56,7 +53,6 @@ form{
 	border-radius: 10px;
 	background-color: #689f38;
 }
-
 </style>
 </head>
 <body>
@@ -67,16 +63,16 @@ form{
 			<fieldset>
 				<legend>결제 하기</legend><br>
 				
-				<form>
+				 <form action="${contextPath}/pay/mem" method="post">
 					<h2>주문 정보</h2>
 					<p>주문 정보 리스트 부분</p>
 					<br><br>
 					<h2>주문인 정보</h2>
-					이름: <input type="text" style="font-size:25px;" value="<%=dto.getName()%>"><br>
-					전화번호: <input type="tel" style="font-size:25px;" value="<%=dto.getPhone()%>"><br><br>
+					이름: <input type="text" style="font-size:25px;" value="${dto.name}"><br>
+					전화번호: <input type="tel" style="font-size:25px;" value="${dto.phone}"><br><br>
 					<h2>배송지 입력</h2>
-					우편번호 : <input type="text" style="font-size:25px;" value="<%=dto.getPostcode()%>"><br>
-					상세주소 : <input type="text" style="font-size:25px;" value="<%=dto.getAddress1()%>"><br><br>
+					우편번호 : <input type="text" style="font-size:25px;" value="${dto.postcode}"><br>
+					상세주소 : <input type="text" style="font-size:25px;" value="${dto.address1}"><br><br>
 					
 					<button class = "btn" type="button">다음</button><br><br>
 				</form>
