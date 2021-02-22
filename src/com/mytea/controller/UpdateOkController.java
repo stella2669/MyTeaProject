@@ -61,6 +61,7 @@ public class UpdateOkController extends HttpServlet {
 		if (a == 1) {
 			System.out.println("수정성공");
 		}
+		out.print("<script>alert('회원정보 수정 완료!!');location.href='HyoYeon/login.jsp'</script>");
 		session.setAttribute("dto", dto);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
 		dispatcher.forward(request, response);
