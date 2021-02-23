@@ -46,7 +46,7 @@ form{
 .choose{
    width : 200px;
    height: 70px;
-   font-size : 200%;
+   font-size : 100%;
    padding: 20px 20px;
    border-radius: 10px;
    background-color: #689f38;
