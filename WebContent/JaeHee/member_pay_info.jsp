@@ -76,10 +76,10 @@ form{
 						 
 					<h2>배송시 요청사항</h2>
 					<p><textarea cols="100" rows="10"></textarea></p><br><br>
-					
-					<input type="button" class="btn" value="다음" ><br><br>
 				</form>
-					
+				<form action="${contextPath}/pay/payment.do" method="post">
+					<input type="submit" class="btn" value="다음"><br><br>
+				</form>
 			</fieldset>
 		</div>
 			

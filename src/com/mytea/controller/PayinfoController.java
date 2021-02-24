@@ -50,7 +50,12 @@ public class PayinfoController extends HttpServlet {
      else if(action.equals("/nomem")) {
         nextPage="/JaeHee/nonmember_pay_info.jsp";
      }
-     System.out.println(dto.getId());
+     else if(action.equals("/payment.do")) {
+    	nextPage="/SooYeon/payment.jsp";
+     }
+     
+     //System.out.println(dto.getId());
+     
      RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
      dispatcher.forward(request, response);
    }
