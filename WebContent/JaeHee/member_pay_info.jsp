@@ -31,7 +31,7 @@ h2{
 }
 
 fieldset{
-	width : 600px;
+	width : 800px;
 	border-radius : 10px;
 	text-align : center;
 	margin : 0 auto;
@@ -64,17 +64,20 @@ form{
 				<legend>결제 하기</legend><br>
 				
 				 <form action="${contextPath}/pay/mem" method="post">
-					<h2>주문 정보</h2>
-					<p>주문 정보 리스트 부분</p>
-					<br><br>
 					<h2>주문인 정보</h2>
-					이름: <input type="text" style="font-size:25px;" value="${dto.name}"><br>
+					이름: <input type="text" style="font-size:25px;" value="${dto.name}"><br><br>
 					전화번호: <input type="tel" style="font-size:25px;" value="${dto.phone}"><br><br>
+					이메일 : <input type="text" style="font-size:25px;" value="${dto.email1}">
+						  - <input type="text" style="font-size:25px;" value="${dto.email2}"><br><br>
 					<h2>배송지 입력</h2>
-					우편번호 : <input type="text" style="font-size:25px;" value="${dto.postcode}"><br>
-					상세주소 : <input type="text" style="font-size:25px;" value="${dto.address1}"><br><br>
+					우편번호 : <input type="text" style="font-size:25px;" value="${dto.postcode}"><br><br>
+					상세 주소 : <input type="text" style="font-size:25px;" value="${dto.address1}">
+						 - <input type="text" style="font-size:25px;" value="${dto.address2}"><br><br>
+						 
+					<h2>배송시 요청사항</h2>
+					<p><textarea cols="100" rows="10"></textarea></p><br><br>
 					
-					<button class = "btn" type="button">다음</button><br><br>
+					<input type="button" class="btn" value="다음" ><br><br>
 				</form>
 					
 			</fieldset>

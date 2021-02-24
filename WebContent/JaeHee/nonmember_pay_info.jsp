@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html>
@@ -29,7 +31,7 @@ h2{
 }
 
 fieldset{
-	width : 600px;
+	width : 800px;
 	border-radius : 10px;
 	text-align : center;
 	margin : 0 auto;
@@ -51,7 +53,6 @@ form{
 	border-radius: 10px;
 	background-color: #689f38;
 }
-
 </style>
 </head>
 <body>
@@ -62,18 +63,21 @@ form{
 			<fieldset>
 				<legend>결제 하기</legend><br>
 				
-				<form>
-					<h2>주문 정보</h2>
-					<p>주문 정보 리스트 부분</p>
-					<br><br>
+				 <form action="${contextPath}/pay/mem" method="post">
 					<h2>주문인 정보</h2>
-					이름: <input type="text" style="font-size:25px;"><br>
+					이름: <input type="text" style="font-size:25px;"><br><br>
 					전화번호: <input type="tel" style="font-size:25px;"><br><br>
+					이메일 : <input type="text" style="font-size:25px;">
+						  - <input type="text" style="font-size:25px;"><br><br>
 					<h2>배송지 입력</h2>
-					우편번호 : <input type="text" style="font-size:25px;"><br>
-					상세주소 : <input type="text" style="font-size:25px;"><br><br>
+					우편번호 : <input type="text" style="font-size:25px;"><br><br>
+					상세 주소 : <input type="text" style="font-size:25px;">
+						 - <input type="text" style="font-size:25px;"><br><br>
+						 
+					<h2>배송시 요청사항</h2>
+					<p><textarea cols="100" rows="10"></textarea></p><br><br>
 					
-					<button class = "btn" type="button">다음</button><br><br>
+					<input type="button" class="btn" value="다음" ><br><br>
 				</form>
 					
 			</fieldset>
