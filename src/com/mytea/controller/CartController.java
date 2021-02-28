@@ -63,7 +63,7 @@ public class CartController extends HttpServlet {
 			String[] products = request.getParameterValues("product");
 			
 			String id = (String)session.getAttribute("id");
-			String names = (String)Arrays.toString(products);
+			String names = Arrays.toString(products);
 			for(String name: products) {
 
 				ProductDto dto = productDao.getProduct(name);
@@ -93,9 +93,8 @@ public class CartController extends HttpServlet {
 		}else if(action.equals("/delete.do")) {
 			String[] selected = request.getParameterValues("selected");
 			
-			for(Object _selected: selected) {
-				cartDao.deleteCart(_selected);
-				
+			for(String cart_id: selected) {
+				cartDao.deleteCart(Integer.valueOf(cart_id));
 			}
 			
 			ArrayList<CartDto> carts = cartDao.allCartRetrieve(_id);
