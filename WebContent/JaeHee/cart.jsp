@@ -91,12 +91,21 @@ th, td {
 }
 
 </style>
+<script type="text/javascript">
+function del() {
+  if (confirm("정말 삭제하시겠습니까?") == true){
+	  document.getElementById('cart').submit();
+  }else{
+ 	 return;
+  }
+}
+</script>
 </head>
 <body>
 
    <jsp:include page="../HyoYeon/user_navbar.jsp"></jsp:include>
    <br>
-      <form action="${contextPath}/cart/delete.do" method="post">
+      <form id = "cart" action="${contextPath}/cart/delete.do" method="post">
 		<div style="margin: 100px 100px 0px 100px; font-size:25px; ">
          <table>
             <tr>
@@ -120,8 +129,8 @@ th, td {
          </table>
 		
          <div class="decide">
-            <input type="button" class="choose" value="더 추가하기" onclick="history.back();"/> <!-- /pay/add.do -->
-            <input type="submit" class="choose" value="삭제"/> <!-- /pay/delete.do -->
+            <input type="button" class="choose" value="더 추가하기" onclick="location.href='${contextPath}/product'"/> <!-- /pay/add.do -->
+            <input type="button" class="choose" value="삭제" onclick="del()"/> <!-- /pay/delete.do -->
          </div> 
          </div>  
       </form>
@@ -136,3 +145,5 @@ th, td {
             </form>
          </div>
 </body>
+
+</html>
