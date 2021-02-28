@@ -107,7 +107,7 @@ th, td {
             </tr>
             <c:forEach var="dto" items="${carts}">
                <tr>
-                  <td><input type="checkbox" name="selected" value="${dto.names}"></td>
+                  <td><input type="checkbox" name="selected" value="${dto.cart_id}"></td>
                   <td>${dto.names}</td>
                   <td>${dto.amount}</td>
                   <td>${dto.totalprice}</td>
