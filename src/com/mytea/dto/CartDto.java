@@ -18,6 +18,13 @@ public class CartDto {
 		this.cart_id = cart_id;
 	}
 
+	public CartDto(String id, String names, int perprice, int amount, int totalprice) {
+		this.id = id;
+		this.names = names;
+		this.perprice = perprice;
+		this.amount = amount;
+		this.totalprice = totalprice;
+	}
 
 	public String getId() {
 		return id;
