@@ -112,14 +112,16 @@ public class CartDao {
    }
    
    //선택된 목록 카트 삭제
-   public void deleteCart(CartDto dto) {
-      String query = "delete * from cart";
+   public void deleteCart(Object _selected) {
+      String query = "delete from cart where id = ? names = ?";
       
       try {
          connection = getConnection();
          pstmt = connection.prepareStatement(query);
+         pstmt.setObject(1, _selected);
          
          pstmt.executeUpdate();
+         
       }catch(Exception e) {
          e.getStackTrace();
       }finally {
