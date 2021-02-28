@@ -39,7 +39,7 @@ public class CartDao {
    
    //productsList.jsp 에서 선택된 product들을 cart테이블로 insert할 때
    public void insertCart(CartDto dto) {
-      String query = "insert into cart values(?,?,?,?,?)";
+      String query = "insert into cart values(?,?,?,?,?,seq_cart.nextval)";
       
       try {
          connection = getConnection();
@@ -72,7 +72,8 @@ public class CartDao {
    
    // 전체 카트 출력
    public ArrayList<CartDto> allCartRetrieve(String _id){
-      String query = "select * from cart where id = ?";
+	   // 해당 id의 최근에 넣은 cart가 상단에 오도록 정렬해서 select함
+      String query = "select * from cart where id = ? order by cart_id desc";
       ArrayList<CartDto> carts = new ArrayList<CartDto>();
       
       try {
@@ -87,8 +88,9 @@ public class CartDao {
             int perprice = rs.getInt(3);
             int amount = rs.getInt(4);
             int totalprice = rs.getInt(5);
+            int cart_id = rs.getInt(6);
             
-            carts.add(new CartDto(id, names, perprice, amount, totalprice));
+            carts.add(new CartDto(id, names, perprice, amount, totalprice, cart_id));
          }
       }catch(Exception e) {
          e.printStackTrace();
@@ -112,13 +114,13 @@ public class CartDao {
    }
    
    //선택된 목록 카트 삭제
-   public void deleteCart(Object _selected) {
-      String query = "delete from cart where id = ? names = ?";
+   public void deleteCart(int cart_id) {
+      String query = "delete from cart where cart_id = ?";
       
       try {
          connection = getConnection();
          pstmt = connection.prepareStatement(query);
-         pstmt.setObject(1, _selected);
+         pstmt.setInt(1, cart_id);
          
          pstmt.executeUpdate();
          
