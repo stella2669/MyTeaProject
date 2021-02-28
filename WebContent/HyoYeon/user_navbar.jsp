@@ -62,7 +62,7 @@ body {
 		<nav>
 			<ul class="nav-container">
 				<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
-				<li class="nav-item"><a href="../EunJi/productList.jsp">product</a></li>
+				<li class="nav-item"><a href="${contextPath}/product">product</a></li>
 				<li class="nav-item"><a href="${contextPath}/cart">cart</a></li>
 				<li class="nav-item"><a href="login.jsp">login</a></li>
 				<li class="nav-item"><a href="update.jsp">update</a></li>
