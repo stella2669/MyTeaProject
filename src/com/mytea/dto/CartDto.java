@@ -6,14 +6,16 @@ public class CartDto {
 	private int perprice;
 	private int amount;
 	private int totalprice;
+	private int cart_id;
 	
 	
-	public CartDto(String id, String names, int perprice, int amount, int totalprice) {
+	public CartDto(String id, String names, int perprice, int amount, int totalprice, int cart_id) {
 		this.id = id;
 		this.names = names;
 		this.perprice = perprice;
 		this.amount = amount;
 		this.totalprice = totalprice;
+		this.cart_id = cart_id;
 	}
 
 
@@ -64,6 +66,16 @@ public class CartDto {
 
 	public void setTotalprice(int totalprice) {
 		this.totalprice = totalprice;
+	}
+
+
+	public int getCart_id() {
+		return cart_id;
+	}
+
+
+	public void setCart_id(int cart_id) {
+		this.cart_id = cart_id;
 	}
 
 
