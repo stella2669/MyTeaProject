@@ -63,13 +63,13 @@ public class CartController extends HttpServlet {
 			String[] products = request.getParameterValues("product");
 			
 			String id = (String)session.getAttribute("id");
-			String names = Arrays.toString(products);
+			String names = (String)Arrays.toString(products);
 			for(String name: products) {
-//				String str = "";
+
 				ProductDto dto = productDao.getProduct(name);
 				item.add(dto);
 				perprice += dto.getPrice();
-//				str += dto.getName();
+
 			}
 			int amount = Integer.valueOf(request.getParameter("amount"));
 			int totalprice = perprice * amount;
@@ -86,11 +86,23 @@ public class CartController extends HttpServlet {
 			
 			request.setAttribute("carts", carts);
 			request.setAttribute("total", total);
-//			request.setAttribute("str", str);
+
 			
 			nextPage = "/JaeHee/cart.jsp";
 			
 		}else if(action.equals("/delete.do")) {
+			String[] selected = request.getParameterValues("selected");
+			
+			for(Object _selected: selected) {
+				cartDao.deleteCart(_selected);
+				
+			}
+			
+			ArrayList<CartDto> carts = cartDao.allCartRetrieve(_id);
+			request.setAttribute("carts", carts);
+			
+			nextPage = "/JaeHee/cart.jsp";
+			
 			
 		}
 		
