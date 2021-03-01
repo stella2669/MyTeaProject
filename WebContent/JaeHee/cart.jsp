@@ -139,8 +139,7 @@ function pay(){
          </div>  
       
          <div class="button">   
-            <input type="button" class="btn" value="결제하기" onclick="pay()"/> <!-- /pay/member.do -->
-            <input type="button" class="btn" value="비회원 결제하기" onclick="pay()"/>
+            <input type="button" class="btn" value="결제 하러가기" onclick="location.href='${contextPath}/cart/mem'"/> <!-- /pay/member.do -->
          </div>
        </form>
 </body>
