@@ -94,10 +94,14 @@ th, td {
 <script type="text/javascript">
 function del() {
   if (confirm("정말 삭제하시겠습니까?") == true){
-	  document.getElementById('cart').submit();
+     document.getElementById('cart').submit();
   }else{
- 	 return;
+     return;
   }
+}
+
+function pay(){
+   document.getElementById('cart').submit();
 }
 </script>
 </head>
@@ -106,7 +110,7 @@ function del() {
    <jsp:include page="../HyoYeon/user_navbar.jsp"></jsp:include>
    <br>
       <form id = "cart" action="${contextPath}/cart/delete.do" method="post">
-		<div style="margin: 100px 100px 0px 100px; font-size:25px; ">
+      <div style="margin: 100px 100px 0px 100px; font-size:25px; ">
          <table>
             <tr>
                <th>선택</th>
@@ -123,27 +127,22 @@ function del() {
                </tr>
          </c:forEach>
          <tr>
-	         <td colspan="2">예상 결제 금액</td>
-	         <td colspan="2">${total}</td>
-	     </tr>
+            <td colspan="2">예상 결제 금액</td>
+            <td colspan="2">${total}</td>
+        </tr>
          </table>
-		
+      
          <div class="decide">
             <input type="button" class="choose" value="더 추가하기" onclick="location.href='${contextPath}/product'"/> <!-- /pay/add.do -->
             <input type="button" class="choose" value="삭제" onclick="del()"/> <!-- /pay/delete.do -->
          </div> 
          </div>  
-      </form>
-         
+      
          <div class="button">   
-            <form action="${contextPath}/pay/mem" method="post">
-            <button type="submit" class="btn">결제하기</button> <!-- /pay/member.do -->
-            </form>
-            
-            <form action="${contextPath}/pay/nomem" method="post">
-            <button type="submit" class="btn">비회원 결제하기</button> 
-            </form>
+            <input type="button" class="btn" value="결제하기" onclick="pay()"/> <!-- /pay/member.do -->
+            <input type="button" class="btn" value="비회원 결제하기" onclick="pay()"/>
          </div>
+       </form>
 </body>
 
 </html>
