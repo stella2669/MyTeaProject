@@ -18,21 +18,15 @@ import com.mytea.dto.MemberDto;
 public class UpdateOkController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public UpdateOkController() {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		doAction(request, response);
-
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		doAction(request, response);
 	}
 
@@ -41,9 +35,9 @@ public class UpdateOkController extends HttpServlet {
 
 		String nextPage = "HyoYeon/update.jsp";
 		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=UTF-8"); // 자바스크립트 한글깨짐
+		response.setContentType("text/html;charset=UTF-8"); // 자바스크립트 한글깨짐 방지
 		HttpSession session = request.getSession(); // 세션에 저장
-		PrintWriter out = response.getWriter(); // 자바스크립트 쓰려고
+		PrintWriter out = response.getWriter(); // 자바스크립트 쓰려고 사용
 
 		MemberDto dto = new MemberDto();
 		dto.setId(request.getParameter("id"));
