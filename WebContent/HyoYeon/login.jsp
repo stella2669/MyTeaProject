@@ -62,6 +62,21 @@ body {
 	color: #f8ffd7;
 }
 
+.button{
+   width : 100%;
+   height : 100px;
+   text-align : center;
+}
+
+
+.btn{
+   width : 300px;
+   height: 100px;
+   font-size : 200%;
+   padding: 20px 20px;
+   border-radius: 10px;
+   background-color: #689f38;
+}
 
 #text{
 	font-size: 25px;
@@ -88,7 +103,7 @@ body {
 	padding: 20px 20px;
 	border-radius: 10px;
 	background-color: #689f38;
-	font-size: 20px;
+	font-size: 30px;
 }
 
 input {
