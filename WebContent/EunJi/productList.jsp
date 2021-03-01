@@ -44,6 +44,22 @@
 	margin: 20px 10px 0px 10px;
 }
 
+.button{
+   width : 100%;
+   height : 100px;
+   text-align : center;
+}
+
+.btn{
+   width : 300px;
+   height: 80px;
+   font-size : 200%;
+   padding: 20px 20px;
+   border-radius: 10px;
+   background-color: #689f38;
+   
+}
+
 select {
 	width: 300px;
 	font-size: 20px;
@@ -90,9 +106,15 @@ li {
 				</c:forEach>
 			</ul>
 		</div>
+		
+		<!--  
 		<div style="text-align: center;">
 			<input style="zoom:1.5;"type="submit" value="장바구니 넣기"> 
-		</div>
+		</div> -->
+		
+		 <div class="button">   
+            <input type="submit" class="btn" value="장바구니로 이동" />
+         </div>
 
 		</form>
 </body>
