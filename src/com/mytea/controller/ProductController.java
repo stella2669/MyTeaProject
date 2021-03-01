@@ -29,7 +29,8 @@ public class ProductController extends HttpServlet {
 		doHandle(request, response);
 	}
 
-	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doHandle(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String nextPage = null;
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
@@ -41,17 +42,10 @@ public class ProductController extends HttpServlet {
 		
 		ProductDao dao = ProductDao.getInstance();
 		
-		//MainTea.jsp에서 만들러가기 눌렀을 때
+		//상품 목록 출력
 		if(action == null) {
 			ArrayList<ProductDto> products = dao.allProductRetrieve();
 			
-//			String savePath = request.getServletContext().getRealPath("img");
-			
-//			for(ProductDto dto : products) {
-//				System.out.println(dto.getName());
-//			}
-			
-//			session.setAttribute("savePath", savePath);
 			request.setAttribute("products", products);
 			
 			nextPage = "/EunJi/productList.jsp";
