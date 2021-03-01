@@ -86,7 +86,7 @@ body {
 					<li class="nav-item"><a href="${contextPath}/product">product</a></li>
 					<li class="nav-item"><a href="${contextPath}/cart">cart</a></li>
 					<li class="nav-item"><a href="${contextPath}/HyoYeon/update.jsp">update</a></li>
-					<li class="nav-item" style="font-size: 25px">로그아웃됨.</li>
+<!-- 					<li class="nav-item" style="font-size: 25px">로그아웃됨.</li> -->
 				</c:otherwise>
 			</c:choose>
 		</ul>

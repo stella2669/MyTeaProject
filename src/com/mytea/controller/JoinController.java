@@ -65,8 +65,6 @@ public class JoinController extends HttpServlet {
 		dto.setAddress2(address2);
 		dto.setPostcode(postcode);
 
-		// 무슨 일을 하는 부분..?
-		// dao의 insert 부르기?
 		MemberDao dao = MemberDao.getInstance();
 		// dao에 dto요소를 전부 db에 insert하기
 		int result = dao.insertMember(dto);
@@ -76,7 +74,7 @@ public class JoinController extends HttpServlet {
 		} else {
 			out.print("<script>alert('회원가입에 실패했습니다.');location.href='HyoYeon/login.jsp'</script>");
 		}
-//id중복체크 ???
+
 		int result2 = dao.confirmId(id);
 
 		if (result2 == 1) {
