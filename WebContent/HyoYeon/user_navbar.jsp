@@ -53,9 +53,14 @@ body {
 	function logout(){
 		alert('로그아웃 되었습니다.');	
 // 	 	session.invalidate();
-	 	location.href = "HyoYeon/login.jsp";
-	}
-</script>
+// 	 	location.href = "HyoYeon/login.jsp";
+}
+	<c:if test="${not empty sessionScope.id }"> <!-- sessionScopre.id가 있으면 -->
+		${sessionScope.name } 님 방가방가<br/>
+		<a href="logout.jsp">로그아웃</a><br/>
+	</c:if>
+	
+	</script>
 </head>
 <body>
 

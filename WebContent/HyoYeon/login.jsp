@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,11 +98,10 @@ input {
 	<nav>
 		<ul class="nav-container">
 			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
-			<li class="nav-item"><a href="${contextPath}/product">product</a></li>
-			<li class="nav-item"><a href="../JaeHee/cart.jsp">cart</a></li>
-			<li class="nav-item"><a href="login.jsp">login</a></li>
-			<li class="nav-item"><a href="admin_Member.jsp">logout</a></li>
-
+			<li class="nav-item"><a href="#">product</a></li>
+			<li class="nav-item"><a href="#">cart</a></li>
+			<li class="nav-item"><a href="#">login</a></li>
+			<li class="nav-item"><a href="#">logout</a></li>
 		</ul>
 	</nav>
     
@@ -111,7 +112,7 @@ input {
 				<hr>
 				
 				<h2>Login My Tea</h2>
-				<form action="${pageContext.request.contextPath}/login" method="post" id="form"> 
+				<form action="${contextPath}/login" method="post" id="form"> 
 					<div id="id">
 						ID:<br><input type="text" name="id" placeholder="id">
 					</div>
