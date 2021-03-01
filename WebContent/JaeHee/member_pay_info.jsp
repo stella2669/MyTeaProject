@@ -77,9 +77,9 @@ form{
 					<h2>배송시 요청사항</h2>
 					<p><textarea cols="100" rows="10"></textarea></p><br><br>
 				</form>
-				<form action="${contextPath}/cart/payment.do" method="post">
-					<input type="submit" class="btn" value="다음"><br><br>
-				</form>
+				
+					<input type="button" class="btn" value="다음" onClick="location.href='../SooYeon/payment.jsp';"><br><br>
+			
 			</fieldset>
 		</div>
 			
