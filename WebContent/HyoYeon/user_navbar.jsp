@@ -70,7 +70,7 @@ body {
 				<li class="nav-item"><a href="update.jsp">update</a></li>
 				<li class="nav-item" style="font-size: 25px">${sessionScope.id}님 환영합니다.</li>
 				<li class="nav-item" style="font-size: 25px" onclick="logout();"> logout </li> 
-				
+
 		<c:if test="${not empty sessionScope.id }"> <!-- sessionScopre.id가 있으면 -->
 			${sessionScope.name } 님 방가방가<br/>
 <!-- 			<a href="logout.jsp">로그아웃</a><br/> -->
@@ -89,9 +89,9 @@ body {
 				<li class="nav-item"><a href="login.jsp">login</a></li>
 				<li class="nav-item"><a href="update.jsp">update</a></li>
 		        <li class="nav-item" style="font-size: 25px"><!-- <a href="${contextPath}/users/info.do"> -->${sessionScope.id} 님 환영합니다.</li>
-		        <li class="nav-item"><a href="${contextPath}/logout.do"> 로그아웃 </a></li>
-		    </c:when> 
-		    <c:otherwise>   
+		        <li class="nav-item"><a href="${contextPath}/logout.jsp"> 로그아웃 </a></li>
+		    </c:when>
+		    <c:otherwise>
 		        <li><a href="javascript:showPopup()">로그인</a></li>
 		    </c:otherwise>                  
 		</c:choose>

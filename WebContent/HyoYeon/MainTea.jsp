@@ -44,6 +44,8 @@ h3{
 <div>
 	<img src="../img/tea-bag.png">
 </div>
+
+
 <div id="text">
 	<h3><a href="${contextPath}/product">만들러가기</a></h3>
 </div>
