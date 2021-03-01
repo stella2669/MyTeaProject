@@ -110,11 +110,7 @@ public class CartController extends HttpServlet {
       else if(action.equals("/mem")) {
            nextPage="/JaeHee/member_pay_info.jsp";
        }
-      
-      else if(action.equals("/nomem")) {
-          nextPage="/JaeHee/nonmember_pay_info.jsp";
-       }
-       
+   
       else if(action.equals("/payment.do")) {
           nextPage="/SooYeon/payment.jsp";
        }

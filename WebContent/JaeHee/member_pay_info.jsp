@@ -63,7 +63,7 @@ form{
 			<fieldset>
 				<legend>결제 하기</legend><br>
 				
-				 <form action="${contextPath}/pay/mem" method="post">
+				 <form action="${contextPath}/cart/mem" method="post">
 					<h2>주문인 정보</h2>
 					이름: <input type="text" style="font-size:25px;" value="${dto.name}"><br><br>
 					전화번호: <input type="tel" style="font-size:25px;" value="${dto.phone}"><br><br>
@@ -77,7 +77,7 @@ form{
 					<h2>배송시 요청사항</h2>
 					<p><textarea cols="100" rows="10"></textarea></p><br><br>
 				</form>
-				<form action="${contextPath}/pay/payment.do" method="post">
+				<form action="${contextPath}/cart/payment.do" method="post">
 					<input type="submit" class="btn" value="다음"><br><br>
 				</form>
 			</fieldset>
