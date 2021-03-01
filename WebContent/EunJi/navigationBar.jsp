@@ -11,7 +11,7 @@
 <style>
 @font-face {
 	font-family: HoonSinamonR;
-	src: url("/MyTea/font/HoonSinamonR.ttf"); 
+	src: url("/MyTea/font/HoonSinamonR.ttf");
 }
 
 * {
@@ -29,7 +29,7 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: #94af76;	
+	background-color: #94af76;
 	list-style-type: none;
 }
 
@@ -62,39 +62,39 @@ body {
 </script>
 </head>
 <body>
-<%-- 	<nav>
+	<nav>
 		<ul class="nav-container">
-			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">ADMIN</li>
-			<li class="nav-item"><a href="${contextPath}/EunJi/admin_Insert.jsp">Insert</a></li>
-			<li class="nav-item"><a href="${contextPath}/modify">Modify</a></li>
-			<li class="nav-item"><a href="${contextPath}/delete">Delete</a></li>
-			<li class="nav-item"><a href="${contextPath}/EunJi/admin_Member.jsp">Member</a></li>
-			<li class="nav-item" style="font-size: 25px">${sessionScope.id}님 환영합니다.</li>
-			<li class="nav-item" style="font-size: 25px" onclick="logout();"> logout </li> 
-		</ul>
-	</nav> --%>
-		<nav>
-		<ul class="nav-container">
-		<c:choose> 
-		    <c:when test="${not empty sessionScope.id }">     <!-- if문, sessionScope영역에 id라는 값이 비어있지 않으면  -->
-		    	<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">ADMIN</li>
-				<li class="nav-item"><a href="${contextPath}/EunJi/admin_Insert.jsp">Insert</a></li>
-				<li class="nav-item"><a href="${contextPath}/modify">Modify</a></li>
-				<li class="nav-item"><a href="${contextPath}/delete">Delete</a></li>
-				<li class="nav-item"><a href="${contextPath}/EunJi/admin_Member.jsp">Member</a></li>
-		        <li class="nav-item" style="font-size: 25px">${sessionScope.id} 님 환영합니다.</li>
-		        <li class="nav-item"><a href="${contextPath}/HyoYeon/logout.jsp"> 로그아웃 </a></li>
-		    </c:when>
-		    <c:otherwise>
-		        <li><a href="login.jsp">로그인</a></li>
-		    </c:otherwise>                  
-		</c:choose>
+			<c:choose>
+				<c:when test="${not empty sessionScope.id }">
+					<!-- if문, sessionScope영역에 id라는 값이 비어있지 않으면  -->
+					<li class="nav-item"
+						style="color: #345F53; font-weight: 900; font-size: 30px;">ADMIN</li>
+					<li class="nav-item"><a
+						href="${contextPath}/EunJi/admin_Insert.jsp">Insert</a></li>
+					<li class="nav-item"><a href="${contextPath}/modify">Modify</a></li>
+					<li class="nav-item"><a href="${contextPath}/delete">Delete</a></li>
+					<li class="nav-item"><a
+						href="${contextPath}/EunJi/admin_Member.jsp">Member</a></li>
+					<li class="nav-item" style="font-size: 25px">${sessionScope.id}
+						님 환영합니다.</li>
+					<li class="nav-item"><a
+						href="${contextPath}/HyoYeon/logout.jsp"> 로그아웃 </a></li>
+				</c:when>
+				<c:otherwise>
+					<li class="nav-item"
+						style="color: #345F53; font-weight: 900; font-size: 30px;">Tea
+						Shop</li>
+					<li class="nav-item"><a href="${contextPath}/product">product</a></li>
+					<li class="nav-item"><a href="${contextPath}/cart">cart</a></li>
+					<li class="nav-item"><a
+						href="${contextPath}/HyoYeon/update.jsp">update</a></li>
+					<li class="nav-item" style="font-size: 25px">로그아웃됨.</li>
+				</c:otherwise>
+			</c:choose>
 		</ul>
 	</nav>
-	
+
 </body>
 </html>
-
-
 
 
