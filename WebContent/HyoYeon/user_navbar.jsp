@@ -86,14 +86,23 @@ body {
 		    	<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
 				<li class="nav-item"><a href="${contextPath}/product">product</a></li>
 				<li class="nav-item"><a href="${contextPath}/cart">cart</a></li>
-<%-- 				<li class="nav-item"><a href="${contextPath}/login.jsp">login</a></li> --%>
+<%-- 			<li class="nav-item"><a href="${contextPath}/login.jsp">login</a></li> --%>
 				<li class="nav-item"><a href="${contextPath}/HyoYeon/update.jsp">update</a></li>
 		        <li class="nav-item" style="font-size: 25px">${sessionScope.id} 님 환영합니다.</li>
 		        <li class="nav-item"><a href="${contextPath}/HyoYeon/logout.jsp"> 로그아웃 </a></li>
 		    </c:when>
 		    <c:otherwise>
-		        <li><a href="login.jsp">로그인</a></li>
-		    </c:otherwise>                  
+		    
+		<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
+<%-- 			<li class="nav-item"><a href="${contextPath}/product">product</a></li>
+				<li class="nav-item"><a href="${contextPath}/cart">cart</a></li>
+				<li class="nav-item"><a href="${contextPath}/HyoYeon/update.jsp">update</a></li>
+		        <li class="nav-item" style="font-size: 25px">로그아웃됨.</li>
+ --%>
+
+<%-- 				<jsp:include page="login.jsp"></jsp:include> --%>
+								
+		      </c:otherwise>                  
 		</c:choose>
 		</ul>
 	</nav>
