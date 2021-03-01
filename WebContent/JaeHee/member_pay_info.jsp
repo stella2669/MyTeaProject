@@ -61,6 +61,7 @@ form{
 	
 		<div class="pay">
 			<fieldset>
+			
 				<legend>결제 하기</legend><br>
 				
 				 <form action="${contextPath}/cart/mem" method="post">

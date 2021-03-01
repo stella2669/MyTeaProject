@@ -61,6 +61,23 @@ body {
 	text-decoration: none;
 	color: #f8ffd7;
 }
+
+.button{
+   width : 100%;
+   height : 100px;
+   text-align : center;
+}
+
+
+.btn{
+   width : 300px;
+   height: 100px;
+   font-size : 200%;
+   padding: 20px 20px;
+   border-radius: 10px;
+   background-color: #689f38;
+}
+
 #text{
 	font-size: 25px;
 }
@@ -80,6 +97,7 @@ body {
 	margin: 0px 80px;
 	font-size: 30px;
 }
+
 #btn {
 	margin-top: 50px;
 	padding: 20px 20px;
@@ -119,7 +137,12 @@ input {
 					<div id="pw">
 						PW:<br><input type="password" name="pw" placeholder="password">
 					</div>
+					
+					
 					<input type="submit" value="로그인" id="btn" size="50">
+					<input type="button" value="회원가입 " id="btn" onClick="location.href='../SooYeon/join.jsp';">
+					
+				
 				</form>
 			</div>
 		</div>
