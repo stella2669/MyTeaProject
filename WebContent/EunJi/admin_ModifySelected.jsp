@@ -86,7 +86,7 @@ img{
 <body>
 <jsp:include page="navigationBar.jsp"/>
 	<div>
-		<h1>메뉴 수정</h1>
+		<h1>상품 수정</h1>
 		<form action="${contextPath}/modify/modifySelected.do" id="form">
 			<div id="container" >
 				<p><img src="../img/${dto.fileName}" id="loadImg" width="300px" style="margin-top: 20px;"></p>

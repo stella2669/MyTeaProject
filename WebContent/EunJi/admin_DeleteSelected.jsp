@@ -68,7 +68,7 @@ img{
 <body>
 <jsp:include page="navigationBar.jsp"/>
 	<div>
-		<h1>메뉴 삭제</h1>
+		<h1>상품 삭제</h1>
 		<form action="${contextPath}/delete/deleteSelected.do" id="form" method="post">
 			<div id="container" >
 				<p><img src="../img/${dto.fileName}" id="loadImg" width="300px" style="margin-top: 20px;"></p>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 | 메뉴 추가</title>
+<title>관리자 | 상품 수정</title>
 <script type="text/javascript">
 /* 파일 삽입 시 이미지 미리보기 */
 	function LoadImg(){
@@ -79,7 +79,7 @@ img{
 </head>
 <body>
 	<jsp:include page="navigationBar.jsp" flush="true"/>
-	<h1>메뉴 수정</h1>
+	<h1>상품 수정</h1>
 	<div id="list">
 		<c:forEach var="dto" items="${products}">
 				<div id="container">
