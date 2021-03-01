@@ -53,18 +53,15 @@ body {
 	function logout(){
 		alert('로그아웃 되었습니다.');	
 // 	 	session.invalidate();
-// 	 	location.href = "HyoYeon/login.jsp";
+	 	location.href = "HyoYeon/login.jsp";
 }
-	<c:if test="${not empty sessionScope.id }"> <!-- sessionScopre.id가 있으면 -->
-		${sessionScope.name } 님 방가방가<br/>
-		<a href="logout.jsp">로그아웃</a><br/>
-	</c:if>
+
 	
 	</script>
 </head>
 <body>
 
-		<nav>
+<%-- 		<nav>
 			<ul class="nav-container">
 				<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
 				<li class="nav-item"><a href="${contextPath}/product">product</a></li>
@@ -74,9 +71,33 @@ body {
 				<li class="nav-item" style="font-size: 25px">${sessionScope.id}님 환영합니다.</li>
 				<li class="nav-item" style="font-size: 25px" onclick="logout();"> logout </li> 
 				
+		<c:if test="${not empty sessionScope.id }"> <!-- sessionScopre.id가 있으면 -->
+			${sessionScope.name } 님 방가방가<br/>
+<!-- 			<a href="logout.jsp">로그아웃</a><br/> -->
+		</c:if>
 			</ul>
 		</nav>
-
+ --%>
+ 
+	<nav>
+		<ul class="nav-container">
+		<c:choose> 
+		    <c:when test="${not empty sessionScope.id }">     <!-- if문, sessionScope영역에 id라는 값이 비어있지 않으면  -->
+		    	<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
+				<li class="nav-item"><a href="${contextPath}/product">product</a></li>
+				<li class="nav-item"><a href="${contextPath}/cart">cart</a></li>
+				<li class="nav-item"><a href="login.jsp">login</a></li>
+				<li class="nav-item"><a href="update.jsp">update</a></li>
+		        <li class="nav-item" style="font-size: 25px"><!-- <a href="${contextPath}/users/info.do"> -->${sessionScope.id} 님 환영합니다.</li>
+		        <li class="nav-item"><a href="${contextPath}/logout.do"> 로그아웃 </a></li>
+		    </c:when> 
+		    <c:otherwise>   
+		        <li><a href="javascript:showPopup()">로그인</a></li>
+		    </c:otherwise>                  
+		</c:choose>
+		</ul>
+	</nav>
+	
 </body>
 </html>
 
