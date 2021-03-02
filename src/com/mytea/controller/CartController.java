@@ -33,6 +33,7 @@ public class CartController extends HttpServlet {
 
    protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       String nextPage = null;
+      int total = 0;
       HttpSession session = request.getSession(); 
       
       request.setCharacterEncoding("utf-8");
@@ -54,7 +55,13 @@ public class CartController extends HttpServlet {
       if(action==null) { //navi에서 장바구니 클릭 시    
          //로그인된 id값에 해당되는 cart table의 목록 가져와서 출력시키기.
          ArrayList<CartDto> carts = cartDao.allCartRetrieve(_id);
+      // 예상 결제 금액
+         for(CartDto cart: carts) {
+            total += cart.getTotalprice();
+         }
+         
          request.setAttribute("carts", carts);
+         request.setAttribute("total", total);
          
          nextPage = "/JaeHee/cart.jsp";
          
@@ -62,7 +69,7 @@ public class CartController extends HttpServlet {
          //form태그를 통해 넘어온 값들을 products안에 저장하고 id, amount, totalprice, products를 request.setAttribute("item",products)로 저장해서 dispatcher로 /cart로 이동 cart테이블에 저장시켜야함(/cart 서블릿으로 넘겨서 insert)
          ArrayList<ProductDto> item = new ArrayList<ProductDto>();
          int perprice = 0;
-         int total = 0;
+
          
          String[] products = request.getParameterValues("product");
          
@@ -104,7 +111,7 @@ public class CartController extends HttpServlet {
          ArrayList<CartDto> carts = cartDao.allCartRetrieve(_id);
          request.setAttribute("carts", carts);
          
-         nextPage = "/JaeHee/cart.jsp";
+         nextPage = "/cart";
       }
       
       else if(action.equals("/mem")) {
