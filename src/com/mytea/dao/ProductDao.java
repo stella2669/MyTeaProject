@@ -37,12 +37,11 @@ public class ProductDao {
 		return connection;
 	}
 	
-	// 메뉴 추가
+	// 상품 추가
 	public int insertProduct(ProductDto dto) {
 		int result = -1;
 		String query = "insert into product values(?,?,?,?,?,?)";
 
-		
 		try{
 			connection = getConnection();
 			pstmt = connection.prepareStatement(query);
@@ -53,7 +52,7 @@ public class ProductDao {
 			pstmt.setInt(5, dto.getPrice());
 			pstmt.setString(6, dto.getContent());
 			rs = pstmt.executeQuery();
-			
+
 			if(rs.next()) {
 				result = 1;
 			}else {
@@ -76,7 +75,6 @@ public class ProductDao {
 				e2.printStackTrace();
 			}
 		}
-		
 		return result;
 	}
 	
@@ -122,7 +120,7 @@ public class ProductDao {
 		return products;
 	}
 	
-// 선택한 하나의 product 정보 
+	// 선택한 하나의 product 정보 
 	public ProductDto getProduct(String _name) {
 		ProductDto dto = null;
 		String query = "select * from product where name=?";	
@@ -139,11 +137,9 @@ public class ProductDao {
 				String category = rs.getString(3);
 				String name = rs.getString(4);
 				int price = rs.getInt(5);
-				String content = rs.getString(6);
-				
+				String content = rs.getString(6);				
 				dto = new ProductDto(fileFullPath, fileName, category, name, price, content);
-			}
-			
+			}			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -160,11 +156,11 @@ public class ProductDao {
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
-		}
-		
+		}	
 		return dto;
 	}
 	
+	//상품 정보 수정
 	public int modifyProduct(ProductDto dto) {
 		int result = 0;
 		String query = "update product set category=?, price=?, content=? where name=?";
@@ -176,15 +172,14 @@ public class ProductDao {
 			pstmt.setInt(2, dto.getPrice());
 			pstmt.setString(3, dto.getContent());
 			pstmt.setString(4, dto.getName());
-			
-			int num = pstmt.executeUpdate();
-			
+			int num = pstmt.executeUpdate();		
+			// 수정 성공 시
 			if(num > 0) {
 				result = 1;
+			//수정 실패 시
 			}else {
 				result = -1;
-			}
-			
+			}			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -201,11 +196,11 @@ public class ProductDao {
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
-		}
-		
+		}		
 		return result;
 	}
 	
+	//상품 삭제
 	public int deleteProduct(ProductDto dto) {
 		int result = 0;
 		String query = "delete from product where name=?";
@@ -215,9 +210,10 @@ public class ProductDao {
 			pstmt = connection.prepareStatement(query);
 			pstmt.setString(1, dto.getName());
 			int num = pstmt.executeUpdate();
-			
+			//삭제 성공 시
 			if(num > 0) {
 				result = 1;
+			//삭제 실패 시
 			}else {
 				result = -1;
 			}
@@ -237,8 +233,7 @@ public class ProductDao {
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
-		}
-		
+		}		
 		return result;
 	}
 	

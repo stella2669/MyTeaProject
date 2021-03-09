@@ -43,24 +43,23 @@ public class ModifyController extends HttpServlet {
 		
 		String action = request.getPathInfo();
 		
-		//어떤 request에서 넘어왔는지 acrtion값 확인
+		//어떤 request에서 넘어왔는지 action값 확인
 		System.out.println("action: " + action);
 		
 		ProductDao dao = ProductDao.getInstance();
 		
+		//상품 목록
 		if(action == null) {
 			ArrayList<ProductDto> products = dao.allProductRetrieve();
 			HttpSession session = request.getSession();
 			
-//			String savePath = request.getServletContext().getRealPath("img");
-//			
-//			session.setAttribute("savePath", savePath);
 			request.setAttribute("products", products);
 			for(ProductDto dto: products) {
 				System.out.println(dto.getName());
 			}
 			nextPage = "/EunJi/admin_Modify.jsp";
 			
+		// 상품 선택 시 상세페이지로 이동
 		}else if(action.equals("/selected.do")) {
 			String _name = (String)request.getParameter("name");
 			
@@ -72,6 +71,7 @@ public class ModifyController extends HttpServlet {
 			
 			nextPage = "/EunJi/admin_ModifySelected.jsp";
 			
+		// 상세페이지의 수정 버튼 클릭 시
 		}else if(action.equals("/modifySelected.do")) {
 			response.setContentType("text/html; charset=UTF-8");
 			
@@ -93,7 +93,8 @@ public class ModifyController extends HttpServlet {
 				out.println("<script>alert('메뉴 수정 성공!!');");
 				out.println("location.href = '/MyTea/modify';</script>");
 			}else {
-				out.println("<script>alert('메뉴 수정 실패ㅠ 다시 돌아갈게요ㅜ');location.href='/MyTea/modify'</script>");
+				out.println("<script>alert('메뉴 수정 실패ㅠ 다시 돌아갈게요ㅜ');"
+						+ "location.href='/MyTea/modify'</script>");
 			}
 		}
 		

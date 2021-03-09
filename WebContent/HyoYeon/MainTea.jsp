@@ -24,8 +24,8 @@ img {
 }
 h3{
 	position: absolute;
-	top: 47%;
-	left: 33%;
+	top: 40%;
+	left: 37%;
 }
 
 #text a{

@@ -49,13 +49,6 @@ public class InsertController extends HttpServlet {
 		
 		ProductDto dto = new ProductDto(fileFullPath,fileName, category, name, price, content);
 		
-//		dto.setfileFullPath(fileFullPath);
-//		dto.setfileName(fileName);
-//		dto.setCategory(category);
-//		dto.setName(name);
-//		dto.setPrice(price);
-//		dto.setContent(content);
-		
 		ProductDao dao = ProductDao.getInstance();
 		int result = dao.insertProduct(dto);
 		
@@ -63,12 +56,8 @@ public class InsertController extends HttpServlet {
 		if(result == 1) {
 			out.println("<script>alert('메뉴 추가 성공!!'); location.href='EunJi/admin_Insert.jsp';</script>");
 		}else {
-			out.println("<script>alert('메뉴 추가 실패ㅠ 다시 돌아갈게요ㅜ'); location.href='EunJi/admin_Insert.jsp';</script>");
-			
+			out.println("<script>alert('메뉴 추가 실패ㅠ 다시 돌아갈게요ㅜ'); location.href='EunJi/admin_Insert.jsp';</script>");			
 		}
-		
-		
-		
 	}
 
 }

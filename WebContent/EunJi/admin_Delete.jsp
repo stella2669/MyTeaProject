@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 | 메뉴 삭제</title>
+<title>관리자 | 상품 삭제</title>
 <style>
 @font-face {
 	font-family: HoonSinamonR;
@@ -63,7 +63,7 @@ img{
 </head>
 <body>
 	<jsp:include page="navigationBar.jsp" flush="true"/>
-	<h1>메뉴 삭제</h1>
+	<h1>상품 삭제</h1>
 	<div id="list">
 		<c:forEach var="dto" items="${products}">
 				<div id="container">

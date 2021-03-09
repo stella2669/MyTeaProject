@@ -90,7 +90,7 @@
 <body>
 
 	<!-- Navigation -->
-	<jsp:include page="../EunJi/navigationBar.jsp" />
+	<jsp:include page="../HyoYeon/user_navbar.jsp" flush="true"/>
 
 	<div class="container-fluid text-center">
 		<div class="row content" style="text-align: center;">
@@ -190,7 +190,7 @@
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">확인</a> <a href="#" class="reset_1">취소</a>
+			<a href="#" class="submit">확인</a> <a href="payment.jsp" class="reset_1">취소</a>
 		</div>
 	</div>
 	<div class="dim_1"></div>
@@ -250,7 +250,7 @@
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">확인</a> <a href="#" class="reset_2">취소</a>
+			<a href="#" class="submit">확인</a> <a href="payment.jsp" class="reset_2">취소</a>
 		</div>
 	</div>
 	<div class="popup_3">
@@ -305,7 +305,7 @@
 			</div>
 		</div>
 		<div class="txt_center">
-			<a href="#" class="submit">주문하기</a> <a href="#" class="reset_3">취소</a>
+			<a href="#" class="submit">주문하기</a> <a href="payment.jsp" class="reset_3">취소</a>
 		</div>
 
 	</div>

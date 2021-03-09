@@ -27,7 +27,6 @@ public class DeleteController extends HttpServlet {
 	}
 
 	protected void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String nextPage = "/EunJi/admin_Delete.jsp";
 		String nextPage = null;
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
@@ -39,12 +38,13 @@ public class DeleteController extends HttpServlet {
 		
 		ProductDao dao = ProductDao.getInstance();
 		
+		//상품 목록
 		if(action == null) {
 			ArrayList<ProductDto> products = dao.allProductRetrieve();
 			request.setAttribute("products", products);
-			
 			nextPage = "/EunJi/admin_Delete.jsp";
 			
+		// 상품 선택 시 상세페이지로 이동	
 		}else if(action.equals("/selected.do")) {
 			String _name = (String)request.getParameter("name");
 			
@@ -52,24 +52,23 @@ public class DeleteController extends HttpServlet {
 			System.out.println(_name);
 			
 			ProductDto dto = dao.getProduct(_name);
-			request.setAttribute("dto", dto);
-			
+			request.setAttribute("dto", dto);			
 			nextPage = "/EunJi/admin_DeleteSelected.jsp";
-			
+		
+		// 상세페이지의 삭제 버튼 클릭 시
 		}else if(action.equals("/deleteSelected.do")) {
-			response.setContentType("text/html; charset=UTF-8");
-			
+			response.setContentType("text/html; charset=UTF-8");			
 			String _name = (String)request.getParameter("name");
+
 			ProductDto dto = dao.getProduct(_name);
 			
-			int result = dao.deleteProduct(dto);
-		
-			PrintWriter out = response.getWriter();
-			
+			int result = dao.deleteProduct(dto);		
+			PrintWriter out = response.getWriter();			
 			if(result == 1) {
 				out.println("<script>alert('메뉴 삭제 성공!!');location.href='/MyTea/delete';</script>");
 			}else {
-				out.println("<script>alert('메뉴 삭제 실패ㅠ 다시 돌아갈게요ㅜ');location.href='/MyTea/delete';</script>");
+				out.println("<script>alert('메뉴 삭제 실패ㅠ 다시 돌아갈게요ㅜ');"
+						+ "location.href='/MyTea/delete';</script>");
 			}
 		}
 		

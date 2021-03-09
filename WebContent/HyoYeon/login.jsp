@@ -118,7 +118,7 @@ input {
 			<li class="nav-item" style="color:#345F53; font-weight:900; font-size:30px;">Tea Shop</li>
 			<li class="nav-item"><a href="#">product</a></li>
 			<li class="nav-item"><a href="#">cart</a></li>
-			<li class="nav-item"><a href="#">login</a></li>
+<!-- 			<li class="nav-item"><a href="#">login</a></li> -->
 			<li class="nav-item"><a href="#">logout</a></li>
 		</ul>
 	</nav>
