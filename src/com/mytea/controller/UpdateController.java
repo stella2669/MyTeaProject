@@ -21,13 +21,16 @@ public class UpdateController extends HttpServlet {
     public UpdateController() {
         super();
     }
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		doAction(request,response);
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		doAction(request,response);
 	}
-	private void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	private void doAction(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException{
 
 		String nextPage = "HyoYeon/update.jsp";
 		request.setCharacterEncoding("utf-8");

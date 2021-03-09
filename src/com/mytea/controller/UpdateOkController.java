@@ -21,18 +21,16 @@ public class UpdateOkController extends HttpServlet {
 	public UpdateOkController() {
 		super();
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doAction(request, response);
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doAction(request, response);
 	}
-
 	private void doAction(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		String nextPage = "HyoYeon/update.jsp";
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8"); // 자바스크립트 한글깨짐 방지
